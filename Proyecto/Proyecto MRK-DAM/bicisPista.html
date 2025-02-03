@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="fotos/logo/logo2.png" type="image/x-icon">
+    <title>Bicis Pista</title>
+</head>
+<body>
+    <header>
+        <div id="contenedorLogoHeader">
+            <img src="fotos/logo/logo2.png" alt="Logo">
+        </div>
+        <div id="cesta">
+            <a href="formularioCompra.html" target="_blank">
+                <img src="fotos/carito.png" alt="Carito">
+            </a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="enlaceNav">Inicio</a></li>
+            <li class="desplegableNav">
+                <p>Bicis</p>
+                <ul class="desplegableNavContenido">
+                    <li><a href="bicisCarretera.html" target="_blank">Carretera</a></li>
+                    <li><a href="bicisMontana.html" target="_blank">Montaña</a></li>
+                    <li><a href="bicisPista.html" target="_blank">Pista</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html#conocenos" class="enlaceNav">Conócenos</a></li>
+            <li><a href="registro.html" class="enlaceNav" target="_blank">Registro</a></li>
+        </ul>
+    </nav>
+    <div id="imagenFondoPista">
+        <section id="fondoElementosPista">
+
+            <article>
+                <h2 style="border: 1px solid black;">Presentación bicis Pista</h2>
+                <p class="pPresentacionBicis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut ullamcorper ante, ac vehicula tortor. Nullam vel tortor id felis dictum tincidunt a sit amet purus. Ut maximus sapien sed nisi eleifend, at bibendum libero gravida. Integer vitae nulla sit amet eros feugiat dictum nec eu dui. Fusce aliquam neque non purus vehicula, a tempor enim dignissim. Mauris suscipit urna nec velit pharetra suscipit. Aenean euismod nisl vel augue maximus, ac gravida ante fermentum.
+                
+                    Quisque condimentum velit id sapien tincidunt.</p>
+            </article>
+            <article style="margin-top: 40px;">
+                <h2 style="border: 1px solid black;">Info</h2>
+                <p class="pPresentacionBicis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut ullamcorper ante, ac vehicula tortor. Nullam vel tortor id felis dictum tincidunt a sit amet purus. Ut maximus sapien sed nisi eleifend, at bibendum libero gravida. Integer vitae nulla sit amet eros feugiat dictum nec eu dui. Fusce aliquam neque non purus vehicula, a tempor enim dignissim. Mauris suscipit urna nec velit pharetra suscipit. Aenean euismod nisl vel augue maximus, ac gravida ante fermentum.
+                
+                    Quisque condimentum velit id sapien tincidunt.</p>
+            </article>
+    
+        </section>
+
+        <div class="tablaIzquierda">
+            <h3>Tabla Izquierda</h3>
+
+            <div class="desplegableIzquierda">
+
+                <form action="" method="get" class="desplegableIzquierda">
+                    <label for="desplegableTallasBicis">Carretera</label><br>
+                    <select class="desplegableTallasBicis" name="enlaces" onchange="window.location=this.value;">
+                        <option value="elegir">-elegir-</option>
+                        <option value="bicisCarretera.html#biciUnoCarretera"><a href="#biciUnoCarretera">Bici 1</a></option>
+                        <option value="bicisCarretera.html#biciDosCarretera"><a href="#biciDosCarretera">Bici 2</a></option>
+                        <option value="bicisCarretera.html#biciTresCarretera"><a href="#biciTresCarretera">Bici 3</a></option>
+                        <option value="bicisCarretera.html#biciCuatroCarretera"><a href="#biciCuatroCarretera">Bici 4</a></option>
+                        <option value="bicisCarretera.html#biciCincoCarretera"><a href="#biciCincoCarretera">Bici 5</a></option>
+                        <option value="bicisCarretera.html#biciPersonalizableCarretera"><a href="#biciPersonalizableCarretera">Bici 6</a></option>
+                    </select>
+                </form>
+
+                <form action="" method="get" class="desplegableIzquierda">
+                    <label for="desplegableTallasBicis">Montaña</label><br>
+                    <select class="desplegableTallasBicis" name="enlaces" onchange="window.location=this.value;">
+                        <option value="elegir">-elegir-</option>
+                        <option value="bicisMontana.html#biciUnoMontana"><a href="#biciUnoMontana" tabindex="_blank">Bici 1</a></option>
+                        <option value="bicisMontana.html#biciDosMontana"><a href="#biciDosMontana">Bici 2</a></option>
+                        <option value="bicisMontana.html#biciTresMontana"><a href="#biciTresPista">Bici 3</a></option>
+                        <option value="bicisMontana.html#biciCuatroMontana"><a href="#biciCuatroMontana">Bici 4</a></option>
+                        <option value="bicisMontana.html#biciCincoMontana"><a href="#biciCincoMontana">Bici 5</a></option>
+                        <option value="bicisMontana.html#biciPersonalizableMontana"><a href="#biciPersonalizableMontana">Bici 6</a></option>
+                    </select>
+                </form>
+
+                <form action="" method="get" class="desplegableIzquierda">
+                    <label for="desplegableTallasBicis">Pista</label><br>
+                    <select class="desplegableTallasBicis" name="enlaces" onchange="window.location=this.value;">
+                        <option value="elegir">-elegir-</option>
+                        <option value="#biciUnoPista"><a href="#biciUnoPista">Bici 1</a></option>
+                        <option value="#biciDosPista"><a href="#biciDosPista">Bici 2</a></option>
+                        <option value="#biciTresPista"><a href="#biciTresPista">Bici 3</a></option>
+                        <option value="#biciCuatroPista"><a href="#biciCuatroPista">Bici 4</a></option>
+                        <option value="#biciCincoPista"><a href="#biciCincoPista">Bici 5</a></option>
+                        <option value="#biciPersonalizablePista"><a href="#biciPersonalizablePista">Bici 6</a></option>
+                    </select>
+                </form>
+            </div>
+            <div>
+
+                <form action="" method="get" class="desplegableIzquierda">
+                    <label for="desplegableTallasBicis">Accesorios</label><br>
+                    <select class="desplegableTallasBicis" name="enlaces" onchange="window.location=this.value;">
+                        <option value="elegir">-elegir-</option>
+                        <option value="accesorios.html#casco"><a href="#casco">Casco</a></option>
+                        <option value="accesorios.html#ropa"><a href="#ropa">Ropa</a></option>
+                        <option value="accesorios.html#calzado"><a href="#calzado">Calzado</a></option>
+                        <option value="accesorios.html#botella"><a href="#botella">Botella</a></option>
+                    </select>
+                </form>
+
+            </div>
+        </div>
+
+        <section class="seccionBicis">
+            <table class="tablaBicis">
+                <tr class="trBiciCarretera">
+
+                        <td class="tdBiciCarretera"> <!--Bici 1-->
+
+                            <div class="contenedorNombreBici">
+                                <p id="biciUnoPista">Bici 1</p>
+                            </div>
+                            <div class="contenedorImgBici">
+                                <img src="fotos/biciPistaPrincipal.webp" alt="Imagen 1a bici" class="imgBicis">
+                            </div>
+                            <div class="contendorBiografiaBici">
+                                <p>Biografia</p>
+                            </div>
+                            <div class="contenedorPrecioBici">
+                                <p>Precio</p>
+                            </div>
+                            <div class="contenedorDesplegable">
+                                <label for="opciones">Selecciona una talla:</label>
+                                <select class="desplegableTallasBicis">
+                                    <option value="talla">-talla-</option>
+                                    <option value="talla1">Talla 1</option>
+                                    <option value="talla2">Talla 2</option>
+                                    <option value="talla3">Talla 3</option>
+                                    <option value="talla4">Talla 4</option>
+                                </select>
+                            </div>
+                            <div class="contenedorBotonComprar">
+                                <a href="formularioCompra.html" target="_blank">
+                                    <input type="button" value="Comprar" class="botonComprar">
+                                </a>
+                            </div>
+                            
+                        </td>
+                        <td class="tdBiciCarretera"> <!--Bici 2-->
+    
+                            <div class="contenedorNombreBici">
+                                <p id="biciDosPista">Bici 2</p>
+                            </div>
+                            <div class="contenedorImgBici">
+                                <img src="fotos/biciPistaPrincipal.webp" alt="Imagen 2a bici" class="imgBicis">
+                            </div>
+                            <div class="contendorBiografiaBici">
+                                <p>Biografia</p>
+                            </div>
+                            <div class="contenedorPrecioBici">
+                                <p>Precio</p>
+                            </div>
+                            <div class="contenedorDesplegable">
+                                <label for="opciones">Selecciona una talla:</label>
+                                <select class="desplegableTallasBicis">
+                                    <option value="talla">-talla-</option>
+                                    <option value="talla1">Talla 1</option>
+                                    <option value="talla2">Talla 2</option>
+                                    <option value="talla3">Talla 3</option>
+                                    <option value="talla4">Talla 4</option>
+                                </select>
+                            </div>
+                            <div class="contenedorBotonComprar">
+                                <a href="formularioCompra.html" target="_blank">
+                                    <input type="button" value="Comprar" class="botonComprar">
+                                </a>
+                            </div>
+        
+                        </td>              
+                </tr>
+                <tr class="trBiciCarretera">
+
+                    <td class="tdBiciCarretera"> <!--Bici 3-->
+
+                        <div class="contenedorNombreBici">
+                            <p id="biciTresPista">Bici 3</p>
+                        </div>
+                        <div class="contenedorImgBici">
+                            <img src="fotos/biciPistaPrincipal.webp" alt="Imagen 3a bici" class="imgBicis">
+                        </div>
+                        <div class="contendorBiografiaBici">
+                            <p>Biografia</p>
+                        </div>
+                        <div class="contenedorPrecioBici">
+                            <p>Precio</p>
+                        </div>
+                        <div class="contenedorDesplegable">
+                            <label for="opciones">Selecciona una talla:</label>
+                            <select class="desplegableTallasBicis">
+                                <option value="talla">-talla-</option>
+                                <option value="talla1">Talla 1</option>
+                                <option value="talla2">Talla 2</option>
+                                <option value="talla3">Talla 3</option>
+                                <option value="talla4">Talla 4</option>
+                            </select>
+                        </div>
+                        <div class="contenedorBotonComprar">
+                            <a href="formularioCompra.html" target="_blank">
+                                <input type="button" value="Comprar" class="botonComprar">
+                            </a>
+                        </div>
+    
+                    </td>
+                    <td class="tdBiciCarretera"> <!--Bici 4-->
+                    
+                        <div class="contenedorNombreBici">
+                            <p id="biciCuatroPista">Bici 4</p>
+                        </div>
+                        <div class="contenedorImgBici">
+                            <img src="fotos/biciPistaPrincipal.webp" alt="Imagen 4a bici" class="imgBicis">
+                        </div>
+                        <div class="contendorBiografiaBici">
+                            <p>Biografia</p>
+                        </div>
+                        <div class="contenedorPrecioBici">
+                            <p>Precio</p>
+                        </div>
+                        <div class="contenedorDesplegable">
+                            <label for="opciones">Selecciona una talla:</label>
+                            <select class="desplegableTallasBicis">
+                                <option value="talla">-talla-</option>
+                                <option value="talla1">Talla 1</option>
+                                <option value="talla2">Talla 2</option>
+                                <option value="talla3">Talla 3</option>
+                                <option value="talla4">Talla 4</option>
+                            </select>
+                        </div>
+                        <div class="contenedorBotonComprar">
+                            <a href="formularioCompra.html" target="_blank">
+                                <input type="button" value="Comprar" class="botonComprar">
+                            </a>
+                        </div>
+    
+                    </td>
+                </tr>
+                <tr class="trBiciCarretera">
+
+                    <td class="tdBiciCarretera"> <!--Bici 5-->
+                    
+                        <div class="contenedorNombreBici">
+                            <p id="biciCincoPista">Bici 5</p>
+                        </div>
+                        <div class="contenedorImgBici">
+                            <img src="fotos/biciPistaPrincipal.webp" alt="Imagen 5a bici" class="imgBicis">
+                        </div>
+                        <div class="contendorBiografiaBici">
+                            <p>Biografia</p>
+                        </div>
+                        <div class="contenedorPrecioBici">
+                            <p>Precio</p>
+                        </div>
+                        <div class="contenedorDesplegable">
+                            <label for="opciones">Selecciona una talla:</label>
+                            <select class="desplegableTallasBicis">
+                                <option value="talla">-talla-</option>
+                                <option value="talla1">Talla 1</option>
+                                <option value="talla2">Talla 2</option>
+                                <option value="talla3">Talla 3</option>
+                                <option value="talla4">Talla 4</option>
+                            </select>
+                        </div>
+                        <div class="contenedorBotonComprar">
+                            <a href="formularioCompra.html" target="_blank">
+                                <input type="button" value="Comprar" class="botonComprar">
+                            </a>
+                        </div>
+    
+                    </td>
+                    <td class="tdBiciCarretera"> <!--Bici 6 (personalizable)-->
+                        
+                        <div class="contenedorNombreBici">
+                            <p id="biciPersonalizablePista">Bici 6</p>
+                        </div>
+                        <div class="contenedorImgBici">
+                            <img src="fotos/biciPistaPrincipal.webp" alt="Imagen bici base para personalizar" class="imgBicis">
+                        </div>
+                        <div class="contendorBiografiaBici">
+                            <p>Biografia</p>
+                        </div>
+                        <div class="contenedorPrecioBici">
+                            <p>Precio</p>
+                        </div>
+                        <div class="contenedorDesplegable">
+                            <label for="opciones">Selecciona una talla:</label>
+                            <select class="desplegableTallasBicis">
+                                <option value="talla">-talla-</option>
+                                <option value="talla1">Talla 1</option>
+                                <option value="talla2">Talla 2</option>
+                                <option value="talla3">Talla 3</option>
+                                <option value="talla4">Talla 4</option>
+                            </select>
+                        </div>
+                        <div class="contenedorBotonComprar">
+                            <a href="formularioCompra.html" target="_blank">
+                                <input type="button" value="Comprar" class="botonComprar">
+                            </a>
+                        </div>
+        
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        <div id="contactoFooter">
+            <p style="font-size: 14px; margin-top: 10px;">Contáctanos:
+                <ul>
+                    <li style="font-size: 14px; text-decoration: none;">&#128241;: +34 123456789</li>
+                    <li style="font-size: 14px; text-decoration: none;">&#128233;: ejemplo@ejemplo.com</li>
+                </ul>
+            </p>
+        </div>
+        
+        <div id="redesFooter">
+            <ul id="segundoUlFooter">
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="fotos/RRSS/facebook.png" alt="facebook" class="redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/?lang=es" target="_blank">
+                        <img src="fotos/RRSS/x.png" alt="X" class="redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="fotos/RRSS/instagram.png" alt="instagram" class="redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://web.telegram.org/a/" target="_blank">
+                        <img src="fotos/RRSS/telegram.png" alt="telegram" class="redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/login?lang=es&redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fupload%3Flang%3Des" target="_blank">
+                        <img src="fotos/RRSS/tiktok.png" alt="tik tok" class="redes">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="enlacesWeb">
+            <a href="index.html">Inicio</a>
+            <a href="registro.html">Registro</a>
+            <a href="politicaPepcycle.html" target="_blank">Política de Pepcycle</a>
+        </div>
+
+        <hr style="margin-top: 40px">
+        <p style="padding-top: 15px; padding-bottom: 0; font-size: 13px;">&copy Copyright Pepcycle 2025 | Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
