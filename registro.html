@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="fotos/logo/logo2.png" type="image/x-icon">
+    <title>Registro</title>
+  </head>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <div id="contenedorLogoHeader">
+                <img src="fotos/logo/logo2.png" alt="Logo">
+            </div>
+            <div id="cesta">
+                <a href="formularioCompra.html" target="_blank">
+                    <img src="fotos/carito.png" alt="Carito">
+                </a>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="enlaceNav">Inicio</a></li>
+                <li class="desplegableNav">
+                    <p>Bicis</p>
+                    <ul class="desplegableNavContenido">
+                        <li><a href="bicisCarretera.html" target="_blank">Carretera</a></li>
+                        <li><a href="bicisMontana.html" target="_blank">Montaña</a></li>
+                        <li><a href="bicisPista.html" target="_blank">Pista</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#conocenos" class="enlaceNav">Conócenos</a></li>
+            </ul>
+        </nav>
+        <form action="/submit" method="POST">
+            <table id="tablaRegistro">
+                <caption style="margin-bottom: 30px; font-size: 25px; color: white;">Registro Cliente</caption>
+                
+                <tr class="trRegistro">
+                    <td>
+                        <p style="font-size: 18px; margin-bottom: 10px;">Registrate y llévate un <span style="color: red;">20%</span> de descuento en tu primera compra y envío <span style="color: rgb(0, 158, 0);">gratuito</span></p>
+                    </td>
+                </tr>
+                <tr class="trRegistro">
+                    <td class="tdRegistro"> <!--Nombre-->
+                        <p class="pRegistro">* Nombre:</p>
+                        
+                        <label class="areaEscribir">
+                            <input type="text" name="nombre" class="input" placeholder="Ej: Jose Martínez" required>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="trRegistro"> <!--tlf-->
+                    <td class="tdRegistro">
+                        <p class="pRegistro">Teléfono:</p>
+                        
+                        <label class="areaEscribir">
+                            <input type="tel" style="width: 95px;" maxlength="20"  name="telefono" class="input" type="tel" placeholder="Ej: 123456789" required>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="trRegistro"> <!--correo-->
+                    <td class="tdRegistro">
+                        <p class="pRegistro">* Correo electrónico:</p>
+                        
+                        <label class="areaEscribir">
+                            <input type="email" style="width: 230px;" name="correo" class="input" placeholder="ejemplo@gmail.com" required>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="trFormulario">
+                    <td>
+                        <p style="font-size: 12px;">Obligatorio (*)</p>
+                    </td>
+                </tr>
+                <tr class="trFormulario">
+                    <td>
+    
+                        <label>
+                            <input type="checkbox" name="aceptar" required> Acepto los 
+                            <span style="color: blue; text-decoration: underline; cursor: pointer;">
+                                <a href="politicaPepcycle.html" target="_blank">términos y condiciones</a></span>
+                        </label><br><br>
+                        <label>
+                            <input type="checkbox" name="aceptar"> Acepto recibir ofertas 
+                        </label>                   
+                        
+                    </td>
+                </tr>
+                <tr class="trRegistro"> <!--Botón-->
+                    <td style="padding-top: 20px;">
+                        <button type="submit" id="botonRegistro">Guardar</button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+    <footer>
+        <div id="contactoFooter">
+            <p style="font-size: 14px; margin-top: 10px;">Contáctanos:
+                <ul>
+                    <li style="font-size: 14px; text-decoration: none;">&#128241;: +34 123456789</li>
+                    <li style="font-size: 14px; text-decoration: none;">&#128233;: ejemplo@ejemplo.com</li>
+                </ul>
+            </p>
+        </div>
+        
+        <div id="redesFooter">
+            <ul id="segundoUlFooter">
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="fotos/RRSS/facebook.png" alt="facebook" class="redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/?lang=es" target="_blank">
+                        <img src="fotos/RRSS/x.png" alt="X" class="redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="fotos/RRSS/instagram.png" alt="instagram" class="redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://web.telegram.org/a/" target="_blank">
+                        <img src="fotos/RRSS/telegram.png" alt="telegram" class="redes">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/login?lang=es&redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fupload%3Flang%3Des" target="_blank">
+                        <img src="fotos/RRSS/tiktok.png" alt="tik tok" class="redes">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="enlacesWeb">
+            <a href="index.html">Inicio</a>
+            <a href="politicaPepcycle.html" target="_blank">Política de Pepcycle</a>
+        </div>
+
+        <hr style="margin-top: 40px">
+        <p style="padding-top: 15px; padding-bottom: 0; font-size: 13px;">&copy Copyright Pepcycle 2025 | Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

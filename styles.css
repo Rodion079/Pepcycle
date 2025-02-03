@@ -1,0 +1,727 @@
+/*Imports*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playwrite+BR+Guides&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+/*********************************/
+/* Reset de márgenes y padding por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#imagenFondoIndex {
+    background-size: cover; /* Las imágenes deben cubrir toda la pantalla */
+    background-position: center;
+    background-attachment: fixed;
+    animation: cambioImagenIndex 40s ease-in-out infinite;
+}
+@keyframes cambioImagenIndex {
+    0% {
+        background-image: url(fotos/imagenesFondo/imagenTransitiva1.jpg);
+    }
+    12.5% {
+        background-image: url(fotos/imagenesFondo/imagenTransitiva2.jpg);
+    }
+    25% {
+        background-image: url(fotos/imagenesFondo/imagenTransitiva3.jpg);
+    }
+    37.5% {
+        background-image: url(fotos/imagenesFondo/imagenTransitiva4.jpg);
+    }
+    50% {
+        background-image: url(fotos/imagenesFondo/imagenTransitiva5.jpg);
+    }
+    62.5% {
+        background-image: url(fotos/imagenesFondo/imagenTransitiva6.jpg);
+    }
+    75% {
+        background-image: url(fotos/imagenesFondo/imagenTransitiva7.jpg);
+    }
+    87.5% {
+        background-image: url(fotos/imagenesFondo/imagenTransitiva8.jpg);
+    }
+    100% {
+        background-image: url(fotos/imagenesFondo/imagenTransitiva1.jpg); /* Vuelve a la primera imagen */
+    }
+}
+
+/* Body como contenedor flexible */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que la página tenga al menos la altura completa de la ventana */
+}
+ 
+
+/*HEADER GENERAL*/
+header {
+    z-index: 2;
+    background-color: rgb(71, 73, 77); /*Color de fondo*/
+    text-align: center; /*Texto centrado*/
+    color: rgb(252, 252, 253); /*Color de la letra*/
+    display: flex;
+    flex-direction: column; /* Cambiado de row a column para apilar el logo y el nav */
+    align-items: center;
+    padding: 10px 20px; /*Espacio entre el contenido de dentro del header y el borde de la pantalla*/
+    position: relative; /* Necesario para el carrito en posición absoluta */
+}
+
+/* Estilo para el contenedor del logo */
+#contenedorLogoHeader img {
+    height: 100px; /*Altura del contenedor*/
+    width: 130px; /*Ancho del contenedor del logo*/
+    padding-bottom: 10px; /* Espacio entre el logo y el nav */
+}
+
+/* Estilo para la navegación */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: rgb(71, 73, 77);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul {
+    font-family: "Roboto Condensed", serif; /*Fuente*/
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0; /*Márgenes por fuera de la lista desordenada*/
+    padding: 0;
+    text-align: center; /*Texto centrado*/
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.enlaceNav {
+    /****************/
+    padding: 15px 12px 4px;
+}
+nav ul li a {
+    color: white; /*Color de la letra*/
+    padding: 15px 12px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid transparent; /*Línea transparente al principio*/
+    transition: border-bottom 0.4s ease; /*Aparece línea blanca al pasar con el cursor*/
+}
+.enlaceNav:hover {
+    border-bottom: 2px solid white;
+}
+
+.desplegableNav p {
+    color: white; /*Color de la letra*/
+    padding: 15px 20px;
+    background-color: rgb(71, 73, 77); /*Color de fondo*/
+}
+
+.desplegableNavContenido {
+    display: none;
+    position: absolute;
+    background-color: #333; /*Color de fondo*/
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.desplegableNavContenido a {
+    color: white; /*Color de la letra*/
+    text-decoration: none;
+    /*display: block;*/
+    margin: 5px;
+}
+
+.desplegableNavContenido a:hover {
+    background-color: #575757; /*Color de fondo*/
+    border-radius:  10px;
+}
+
+.desplegableNav:hover .desplegableNavContenido {
+    display: block;
+}
+
+/* Estilo para el carrito */
+#cesta {
+    position: absolute;
+    right: 90px; /* Ajusta el margen de 120px desde el borde derecho */
+    top: 50%; /* Lo posiciona verticalmente en el centro del header */
+    transform: translateY(-50%); /* Ajuste para centrar verticalmente */
+}
+
+#cesta img {
+    height: 45px; /*Altura de la imagen*/
+    border-radius: 50%;
+}
+
+/* Estilos para el contenido principal */
+#presentacionIndex {
+    font-family: "Roboto Condensed", serif;
+    margin: 100px 250px;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#articulosIndex {
+    font-family: "Kanit", serif; /*Fuente*/
+    display: flex; /* Para alinear las imágenes en fila */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+#enlacesBicis {
+    transform: scale(1.2); /*Aumenta el tamaño del enlace*/
+    background-color: #f39c12; /*Color de fondo*/
+    /*margin: 0 20px;*/
+}
+/*
+.tituloBicisIndex {
+    position: absolute;
+}*/
+
+.tdArticulosIndex {
+    position: relative; /* Contenedor para posicionar el texto sobre la imagen */
+    width: 500px; /*Espacio entre imágenes de las columnas de las imágenes*/
+    text-align: center; /*Imágenes centradas*/
+}
+
+/* Estilo para las imágenes */
+.tdArticulosIndex img {
+    width: 410px; /*Ancho de las imágenes*/
+    height: 310px; /*Altura de la imagen*/
+    border-radius: 40px;
+    transition: transform 0.3s ease;
+}
+.tdArticulosIndex img:hover {
+    transform: scale(1.06);
+}
+
+/* Estilo para el texto */
+.tdArticulosIndex .tituloBicisIndex {
+    position: absolute; /* Posiciona el texto de forma absoluta */
+    top: 50%; /* Centra el texto verticalmente */
+    left: 50%; /* Centra el texto horizontalmente */
+    transform: translate(-60%, -90%); /* Ajuste fino para centrar el texto */
+    color: white; /*Color de la letra*/
+    font-size: 24px; /* Tamaño de la fuente */
+    text-shadow: 7px 7px 9px rgba(0, 0, 0, 0.7); /* Sombra para mayor legibilidad */
+}
+
+#seccionPresentacionConocenos {
+    font-family: "Roboto Condensed", serif; /*Fuente*/
+    margin: 75px 100px;
+    background-color: rgb(227, 227, 227, 0.6);
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 20px;
+}
+.textoPresentacionConocenos {
+    border: 1px solid black;
+    margin: 10px 30px;
+    text-align: justify;
+}
+#conocenos {
+    border: 1px solid black;
+}
+
+/* Estilo para el footer */
+footer {
+    z-index: 2;
+    font-family: "Kanit", serif; /*Fuente*/
+    background-color: rgb(71, 73, 77); /*Color de fondo*/
+    color: white; /*Color de la letra*/
+    text-align: center; /*Texto centrado*/
+    padding: 15px;
+}
+
+footer ul {
+    list-style: none;
+    text-align: center; /*Texto centrado*/
+}
+#contactoFooter ul {
+    margin: 30px 0;
+    text-align: center; /*Texto centrado*/
+}
+#redesFooter ul {
+    display: flex;
+    justify-content: center;  /* Centra las redes sociales */
+    gap: 20px;
+    /*padding: 0;*/
+    margin-top: 40px;
+    /*list-style: none;*/
+}
+footer .redes {
+    width: 30px; /*Ancho de las imágenes de los enlaces*/
+    height: 30px; /*Altura de las imágenes de los enlaces*/
+}
+.enlacesWeb {
+    display: flex; /* Usamos flexbox para alinear los enlaces en línea */
+    gap: 20px; /* Esto agrega separación entre los enlaces */
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Estilos de los enlaces */
+.enlacesWeb a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: white; /* Pone el color negro */
+}
+
+
+/** Fin index**/
+/**************/
+
+/**Estilo bicis en general**/
+.seccionPresentacionBicis, .pPresentacionBicis {
+    border: 1px solid black;
+}
+.seccionPresentacionBicis {
+    font-family: "Roboto Condensed", serif; /*Fuente*/
+    margin-top: 70px;
+    margin-left: 120px;
+    margin-right: 120px;
+    background-color: rgb(145, 145, 145, 0.3);
+    margin: 120px 220px;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+#fondoElementosPista {
+    font-family: "Roboto Condensed", serif; /*Fuente*/
+    background-color: rgb(145, 145, 145, 0.4);
+    margin: 120px 220px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: white;
+}
+.pPresentacionBicis {
+    margin: 30px 40px;
+    text-align: justify;
+}
+
+.tablaBicis {
+    margin: 10px auto;
+    border-spacing: 20px;
+}
+.trBiciCarretera, .tdBiciCarretera {
+    padding: 20px;
+}
+
+.contenedorNombreBici,
+.contenedorImgBici,
+.contendorBiografiaBici,
+.contenedorPrecioBici, 
+.contenedorDesplegable,
+.contenedorBotonComprar {
+    border: 1px solid black;
+    padding: 10px 30px;
+}
+.tdBiciCarretera {
+    width: 400px; /*Ancho de la columna*/
+    text-align: center; /*Texto centrado*/
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+/* Todo lo que va dentro de la celda de cada bici */
+
+/*Nombre*/
+.contenedorNombreBici {
+    padding: 20px;
+}
+
+/*Imagen*/
+.imgBicis {
+    width: 400px; /*Ancho de las imágenes de las bicis*/
+    height: 320px; /*Altura de las imágenes de las bicis*/
+    border-radius: 40px;
+    transition: transform 0.3s ease;
+}
+.imgBicis:hover {
+    transform: scale(1.08);
+}
+
+/*Precio*/
+.contenedorPrecioBiciCarretera {
+    padding: 20px;
+}
+
+/*Desplegable*/
+.contenedorDesplegable {
+    padding: 20px;
+}
+.desplegableNavContenido a {
+    color: white; /*Color de la letra*/
+    text-decoration: none;
+    /*display: block;*/
+    margin: 5px;
+}
+
+/*Botón*/
+.contenedorBotonComprar {
+    padding: 15px;
+}
+.botonComprar {
+    height: 30px; /*Altura del botón "Comprar"*/
+    width: 100px; /*Ancho del botón "Comprar"*/
+    border-radius: 20px;
+    border: 3px solid black;
+    background-color: rgb(93, 93, 93); /*Color de fondo*/
+    color: white; /*Color de la letra*/
+    cursor: pointer;
+}
+/** Fin bicis de carretera **/
+
+/***** FONDOS PARA BICIS *****/
+
+/** Bicis de carretera **/
+
+.seccionBicis {
+    background-color: rgb(145, 145, 145, 0.5);
+    margin: 0 220px 100px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.tablaIzquierda {
+    position: sticky; /* Hace que la tabla fija se quede pegada */
+    top: 100px; /* Fija la tabla desde la parte superior */
+    margin-bottom: 100px;
+    width: 200px; /* Ajusta el ancho según tus necesidades */
+    background-color: rgb(71, 73, 77, 0.6);
+    float: left;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /*overflow-y: auto; /* Asegura que si hay más contenido, se haga scroll */
+}
+.tablaIzquierda h3 {
+    text-align: center;
+    padding: 10px 0;
+}
+.tablaIzquierda a {
+    text-decoration: none;
+    color:  black;
+}
+
+.tablaIzquierda table {
+    width: 100%;
+}
+
+.tablaIzquierda td {
+    padding: 8px;
+    text-align: center;
+}
+
+.desplegableIzquierda {
+    text-align: center;
+    padding: 15px 0;
+}
+.desplegableTallasBicis {
+    margin-top: 10px;
+}
+#imagenFondoCarretera {
+    background-image: url(fotos/imagenesFondo/fondoBicisCarretera.jpg);
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    /*background-attachment: fixed;*/
+}
+
+/** Fin bicis de carretera **/
+
+/** Bicis de montaña **/
+#imagenFondoMontana {
+    background-image: url(fotos/imagenesFondo/fondoBicisMontana.jpg);
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    /*background-attachment: fixed;*/
+}
+/** Fin bicis de montaña **/
+
+/** Bicis de pista **/
+#imagenFondoPista {
+    background-image: url(fotos/imagenesFondo/fondoBicisPista.jpg);
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    /*background-attachment: fixed;*/
+}
+/** Fin bicis de pista **/
+/*** FIN FONDOS ***/
+
+/** REGISTRO **/
+
+#tablaRegistro {
+    border-spacing: 15px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center; /*Texto centrado*/
+    background-color: rgb(227, 227, 227); /*Color de fondo*/
+    border-radius: 20px;
+}
+.tdRegistro {
+    height: 60px; /*Altura de las columnas del registro*/
+    width: 350px; /*Ancho de las columnas del registro*/
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.trRegistro {
+    font-family: "Roboto Condensed", serif; /*Fuente*/
+    text-align: center; /*Texto centrado*/
+}
+.pRegistro {
+    font-family: "Roboto Condensed", serif; /*Fuente*/
+    font-size: 17px;
+    padding: 15px 0;
+}
+.tdRegistro input {
+    margin-bottom: 20px;
+}
+#botonRegistro {
+    width: 130px; /*Ancho del botón del registro*/
+    height: 30px; /*Altura del botón del registro*/
+    border-radius: 20px;
+    background-color: blue; /*Color de fondo*/
+    color: white; /*Color de la letra*/
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Asegura que la página ocupe toda la altura de la ventana */
+    background-image: url(fotos/imagenesFondo/imagenFondo.jpg); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que el fondo no se mueva cuando se hace scroll */
+    /*flex-grow: 1; /* Hace que el contenido ocupe el espacio restante */
+    flex: 1;
+}
+
+/*Área para escribir*/
+.areaEscribir {
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 12px;
+    background-color: rgb(191, 191, 191);
+    padding: 5px 5px 9px 5px;
+  }
+ 
+.input {
+    outline: none;
+    border: none;
+    background: none;
+    color: black;
+}
+  
+
+
+/**FIN REGISTRO**/
+
+
+/**FORMULARIO**/
+
+#tablaFormulario {
+    border-spacing: 15px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center; /*Texto centrado*/
+    background-color: rgb(227, 227, 227); /*Color de fondo*/
+    border-radius: 20px;
+}
+.tdFormulario {
+    border: 2px solid black;
+}
+.trFormulario {
+    font-family: "Roboto Condensed", serif;
+    margin-top: 10px;
+}
+.tdFormulario {
+    height: 60px; /*Altura de las columnas del formulario*/
+    width: 350px; /*Ancho de las columnas del formulario*/
+    border-radius: 20px;
+}
+.tdFormulario input {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.pFormulario {
+    font-size: 17px;
+    padding: 10px 0;
+}
+#botonFormulario {
+    width: 130px; /*Ancho del botón del formulario*/
+    height: 30px; /*Altura del botón del formulario*/
+    border-radius: 20px;
+    background-color: blue; /*Color de fondo*/
+    color: white; /*Color de la letra*/
+    cursor: pointer;
+}
+#formFormulario {
+    background-image: url(fotos/imagenesFondo/fondoPorDeterminar.jpg); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center bottom; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que el fondo no se mueva cuando se hace scroll */
+}
+
+/**FIN FORMULARIO**/
+
+/**POLITICA**/
+
+#contenedorPolitica {
+    font-family: "Roboto Condensed", serif;
+    text-align: center;
+    margin: 125px 350px;
+    text-align: justify;
+    border-radius: 20px;
+    background-color: rgb(194, 194, 194);
+    padding: 20px 50px;
+}
+#pEncabezadoPolitica {
+    margin: 60px 55px;
+}
+.contenedorPoliticas {
+    padding-bottom: 40px;
+}
+.contenedorPoliticas ul {
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+/**FIN POLITICA**/
+
+/**ACCESORIOS**/
+
+.tablaAccesorios {
+    margin: 20px auto;
+    border-spacing: 20px;
+}
+.trAccesorios {
+    padding: 5px;
+}
+
+.seccionAccesorios {
+    background-color: rgb(145, 145, 145, 0.5);
+    margin: 50px 300px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.imgAccesorios {
+    width: 300px;
+    height: 220px;
+    border-radius: 20px;
+}
+
+/**FIN ACCESORIOS**/
+
+
+
+/***************PRUEBAS****************/
+
+
+
+.desplegableTablaIzquierda p {
+    color: white; /*Color de la letra*/
+    padding: 10px 15px;
+    text-align: center;
+    margin: 0 30px;
+    background-color: rgb(71, 73, 77); /*Color de fondo*/
+    border-radius: 20px;
+}
+#cositas {
+    margin-bottom: 20px;
+}
+.desplegableTablaIzquierdaContenido {
+    display: none;
+    position: absolute;
+    background-color: #333; /*Color de fondo*/
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.desplegableTablaIzquierdaContenido {
+    left: 100%;
+    bottom: 0;
+}
+
+.desplegableTablaIzquierdaContenido a {
+    color: white; /*Color de la letra*/
+    text-decoration: none;
+    /*display: block;*/
+    margin: 5px;
+}
+.desplegableTablaIzquierdaContenido li {
+    margin-top: 20px;
+}
+
+.desplegableTablaIzquierdaContenido a:hover {
+    background-color: #575757; /*Color de fondo*/
+    border-radius:  10px;
+}
+
+.desplegableTablaIzquierda:hover .desplegableTablaIzquierdaContenido {
+    display: block;
+}
+
+/************************************************************************************************************/
+
+
+#contenedorMenusDesplegables {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+.menu {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.menu button {
+    width: 150px;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.menuDesplegable {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    min-width: 160px;
+}
+.contenidoMenuDesplegable {
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 5px;
+}
+.contenidoMenuDesplegable a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 8px 0;
+}
+.contenidoMenuDesplegable a:hover {
+    background-color: #ddd;
+}
+
+/* Mantener abierto cuando el cursor está sobre el botón o el menú */
+.menu:hover .menuDesplegable,
+.menuDesplegable:hover {
+    display: block;
+}
