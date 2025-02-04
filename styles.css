@@ -309,9 +309,16 @@ footer .redes {
 .tablaBicis {
     margin: 10px auto;
     border-spacing: 20px;
-}
+}/*
 .trBiciCarretera, .tdBiciCarretera {
     padding: 20px;
+}*/
+.trBici, .tdBici {
+    padding: 20px;
+    width: 400px; /*Ancho de la columna*/
+    text-align: center; /*Texto centrado*/
+    border: 3px solid black;
+    border-radius: 20px;
 }
 
 .contenedorNombreBici,
@@ -322,12 +329,6 @@ footer .redes {
 .contenedorBotonComprar {
     border: 1px solid black;
     padding: 10px 30px;
-}
-.tdBiciCarretera {
-    width: 400px; /*Ancho de la columna*/
-    text-align: center; /*Texto centrado*/
-    border: 3px solid black;
-    border-radius: 20px;
 }
 
 /* Todo lo que va dentro de la celda de cada bici */
