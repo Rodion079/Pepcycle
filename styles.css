@@ -500,7 +500,8 @@ hr {
 .tablaBicis {
     margin: 10px auto;
     border-spacing: 20px;
-}/*
+}
+/*
 .trBiciCarretera, .tdBiciCarretera {
     padding: 20px;
 }*/
@@ -646,34 +647,41 @@ hr {
 /** Fin bicis de pista **/
 /*** FIN FONDOS ***/
 
-/** REGISTRO **/
+/* ========================= */
+/* REGISTRO */
+/* ========================= */
 
 #tablaRegistro {
     border-spacing: 15px;
     margin: 50px auto;
     padding: 20px;
     text-align: center; /*Texto centrado*/
-    background-color: rgb(227, 227, 227); /*Color de fondo*/
+    background-color: rgb(227, 227, 227, 0.8); /*Color de fondo*/
     border-radius: 20px;
 }
+
 .tdRegistro {
     height: 60px; /*Altura de las columnas del registro*/
     width: 350px; /*Ancho de las columnas del registro*/
     border: 2px solid black;
     border-radius: 20px;
 }
+
 .trRegistro {
     font-family: "Roboto Condensed", serif; /*Fuente*/
     text-align: center; /*Texto centrado*/
 }
+
 .pRegistro {
     font-family: "Roboto Condensed", serif; /*Fuente*/
     font-size: 17px;
     padding: 15px 0;
 }
+
 .tdRegistro input {
     margin-bottom: 20px;
 }
+
 #botonRegistro {
     width: 130px; /*Ancho del botón del registro*/
     height: 30px; /*Altura del botón del registro*/
@@ -683,15 +691,14 @@ hr {
     cursor: pointer;
 }
 
-.content {
+#fondoRegistro {
     display: flex;
     flex-direction: column;
     height: 100vh; /* Asegura que la página ocupe toda la altura de la ventana */
-    background-image: url(fotos/imagenesFondo/imagenFondo.jpg); /* Ruta de la imagen de fondo */
+    background-image: url('fotos/imagenesFondo/fondoRegistro.webp'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
     background-attachment: fixed; /* Hace que el fondo no se mueva cuando se hace scroll */
-    /*flex-grow: 1; /* Hace que el contenido ocupe el espacio restante */
     flex: 1;
 }
 
@@ -700,18 +707,16 @@ hr {
     box-sizing: border-box;
     position: relative;
     border-radius: 12px;
-    background-color: rgb(191, 191, 191);
+    background-color: rgb(191, 191, 191,);
     padding: 5px 5px 9px 5px;
-  }
- 
+}
+
 .input {
     outline: none;
     border: none;
     background: none;
     color: black;
 }
-  
-
 
 /**FIN REGISTRO**/
 
@@ -723,7 +728,7 @@ hr {
     margin: 50px auto;
     padding: 20px;
     text-align: center; /*Texto centrado*/
-    background-color: rgb(227, 227, 227); /*Color de fondo*/
+    background-color: rgb(227, 227, 227, 0.8); /*Color de fondo*/
     border-radius: 20px;
 }
 .tdFormulario {
@@ -755,7 +760,7 @@ hr {
     cursor: pointer;
 }
 #formFormulario {
-    background-image: url(fotos/imagenesFondo/fondoPorDeterminar.jpg); /* Ruta de la imagen de fondo */
+    background-image: url(fotos/imagenesFondo/fondoFormularioCompra.webp); /* Ruta de la imagen de fondo */
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center bottom; /* Centra la imagen */
     background-attachment: fixed; /* Hace que el fondo no se mueva cuando se hace scroll */
