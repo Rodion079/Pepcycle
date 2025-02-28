@@ -467,6 +467,8 @@ hr {
 
 
 
+
+
 /** Fin index**/
 /**************/
 
@@ -584,23 +586,31 @@ hr {
 }
 
 .tablaIzquierda {
-    position: sticky; /* Hace que la tabla fija se quede pegada */
-    top: 100px; /* Fija la tabla desde la parte superior */
+    position: sticky;
+    top: 150px; /* Fija la tabla desde la parte superior */
     margin-bottom: 100px;
-    width: 200px; /* Ajusta el ancho según tus necesidades */
-    background-color: rgb(71, 73, 77, 0.6);
+    width: 200px;
+    background-color: rgba(93, 93, 93, 0.6);
     float: left;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    /*overflow-y: auto; /* Asegura que si hay más contenido, se haga scroll */
 }
+
 .tablaIzquierda h3 {
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
+    background-color: rgb(61, 61, 61);
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
 }
+
 .tablaIzquierda a {
     text-decoration: none;
-    color:  black;
+    color: black;
+    border-radius: 10px;
 }
 
 .tablaIzquierda table {
@@ -879,17 +889,27 @@ hr {
     position: relative;
     display: inline-block;
     text-align: center;
+    margin: 0; /* Asegúrate de que no haya margen */
+    padding: 0; /* Asegúrate de que no haya padding */
 }
+
 .menu button {
     width: 150px;
     padding: 10px;
-    background-color: #3498db;
+    background-color: rgb(91, 91, 91);
     color: white;
     border: none;
     cursor: pointer;
     text-align: center;
     font-size: 16px;
     border-radius: 5px;
+    margin: 0; /* Asegúrate de que no haya margen */
+}
+
+#hrTablaIzquierda {
+    border: 1px solid black;
+    margin: 0; /* Asegúrate de que no haya margen */
+    padding: 0; /* Asegúrate de que no haya padding */
 }
 .menuDesplegable {
     position: absolute;
@@ -905,7 +925,7 @@ hr {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .contenidoMenuDesplegable a {
     display: block;
