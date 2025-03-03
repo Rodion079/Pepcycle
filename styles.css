@@ -1,8 +1,6 @@
 /*Imports*/
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playwrite+BR+Guides&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
 /*********************************/
 /* Reset de márgenes y padding por defecto */
 * {
@@ -10,6 +8,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
 #imagenFondoIndex {
     background-size: cover; /* Las imágenes deben cubrir toda la pantalla */
     background-position: center;
@@ -65,14 +65,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 0;
 }
 
 /* Estilo para el contenedor del logo */
 #contenedorLogoHeader img {
     height: 100px;
     width: 130px;
-    padding-bottom: 10px;
 }
 
 /* ========================= */
@@ -89,7 +88,7 @@ nav {
     display: flex;
     justify-content: center; /* Centra los elementos dentro del nav */
     align-items: center;
-    padding: 10px 0; /* Reduce la altura del nav */
+    padding: 5px 0; /* Reduce la altura del nav */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -291,8 +290,10 @@ nav ul li a {
     border-radius: 40px;
     transition: transform 0.3s ease;
 }
-.tdArticulosIndex img:hover {
-    transform: scale(1.06);
+.tdArticulosIndex img:hover,
+.imgBicis:hover,
+.imgAccesorios:hover {
+    transform: scale(1.04); /* Reduce the hover scale effect */
 }
 
 /* Estilo para el texto */
@@ -449,6 +450,7 @@ footer .tiktok:hover {
     flex: 1;
     min-width: 250px;
     text-align: center;
+    padding-top: 40px;
 }
 
 hr {
@@ -462,12 +464,6 @@ hr {
     padding-top: 15px;
     font-size: 13px;
 }
-
-
-
-
-
-
 
 /** Fin index**/
 /**************/
@@ -500,28 +496,23 @@ hr {
 }
 
 .tablaBicis {
-    margin: 10px auto;
-    border-spacing: 20px;
+    width: auto;
+    margin: 0 auto 60px;
+    border-spacing: 10px;
 }
-/*
-.trBiciCarretera, .tdBiciCarretera {
-    padding: 20px;
-}*/
+
 .trBici, .tdBici {
-    padding: 20px;
     width: 400px; /*Ancho de la columna*/
     text-align: center; /*Texto centrado*/
     border: 3px solid black;
     border-radius: 20px;
 }
 
-.contenedorNombreBici,
 .contenedorImgBici,
 .contendorBiografiaBici,
 .contenedorPrecioBici, 
 .contenedorDesplegable,
 .contenedorBotonComprar {
-    border: 1px solid black;
     padding: 10px 30px;
 }
 
@@ -529,49 +520,89 @@ hr {
 
 /*Nombre*/
 .contenedorNombreBici {
-    padding: 20px;
+    padding: 10px;
+}
+
+.contenedorNombreBici p {
+    font-family: "Kanit", sans-serif; /* Use the Kanit font */
+    font-weight: bold; /* Make the text bold */
+    font-size: 18px; /* Adjust the font size */
+}
+
+.contendorBiografiaBici,
+.contenedorPrecioBici,
+.botonComprar {
+    font-family: "Kanit", sans-serif; /* Use the Kanit font */
+    font-size: 16px; /* Adjust the font size */
 }
 
 /*Imagen*/
 .imgBicis {
-    width: 400px; /*Ancho de las imágenes de las bicis*/
-    height: 320px; /*Altura de las imágenes de las bicis*/
-    border-radius: 40px;
+    width: 320px; /*Ancho de las imágenes de las bicis*/
+    height: 260px; /*Altura de las imágenes de las bicis*/
+    border-radius: 20px;
     transition: transform 0.3s ease;
 }
 .imgBicis:hover {
-    transform: scale(1.08);
-}
-
-/*Precio*/
-.contenedorPrecioBiciCarretera {
-    padding: 20px;
+    transform: scale(1.04); /* Reduce the hover scale effect */
 }
 
 /*Desplegable*/
 .contenedorDesplegable {
-    padding: 20px;
-}
-.desplegableNavContenido a {
-    color: white; /*Color de la letra*/
-    text-decoration: none;
-    /*display: block;*/
-    margin: 5px;
+    padding: 15px;
+    text-align: center; /* Center the text */
 }
 
-/*Botón*/
-.contenedorBotonComprar {
-    padding: 15px;
+.contenedorDesplegable label,
+.contenedorDesplegable select {
+    display: inline-block; /* Display elements inline */
+    vertical-align: middle; /* Align elements vertically in the middle */
+    margin: 0 5px; /* Add some space between the label and the dropdown */
 }
-.botonComprar {
-    height: 30px; /*Altura del botón "Comprar"*/
-    width: 100px; /*Ancho del botón "Comprar"*/
+
+.desplegableTallasBicis {
+    width: auto; /* Adjust width to content */
+    padding: 5px; /* Reduce padding */
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    font-family: "Roboto Condensed", serif;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.desplegableTallasBicis:hover {
+    border-color: #ffcc00;
+    background-color: #f9f9f9;
+}
+
+.desplegableTallasBicis:focus {
+    outline: none;
+}
+
+/*Botón Comprar*/
+.botonComprar,
+#botonRegistro,
+#botonFormulario {
+    height: 30px; /*Altura del botón*/
+    width: 100px; /*Ancho del botón*/
     border-radius: 20px;
     border: 3px solid black;
-    background-color: rgb(93, 93, 93); /*Color de fondo*/
+    background-color: rgb(71, 73, 77); /*Color de fondo*/
     color: white; /*Color de la letra*/
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth color change */
 }
+
+.botonComprar:hover,
+#botonRegistro:hover,
+#botonFormulario:hover {
+    background-color: #ffcc00; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
 /** Fin bicis de carretera **/
 
 /***** FONDOS PARA BICIS *****/
@@ -579,12 +610,19 @@ hr {
 /** Bicis de carretera **/
 
 .seccionBicis {
-    background-color: rgb(145, 145, 145, 0.5);
-    margin: 0 220px 100px;
+    background-color: rgb(145, 145, 145, 0.7);
+    margin: 0 auto 100px; /* Centra el contenedor horizontalmente */
+    padding: 10px; /* Espacio entre el contenido y el borde */
     border-radius: 20px;
-    border: 1px solid black;
+    border: 2px solid black;
+    max-width: 1000px; /* Ancho máximo del contenedor */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
-
+.seccionBicis h1 {
+    text-align: center;
+    margin: 20px;
+    font-family: "Kanit", sans-serif;
+}
 .tablaIzquierda {
     position: sticky;
     top: 150px; /* Fija la tabla desde la parte superior */
@@ -606,6 +644,7 @@ hr {
     font-size: 16px;
     color: white;
 }
+
 
 .tablaIzquierda a {
     text-decoration: none;
@@ -655,6 +694,13 @@ hr {
     /*background-attachment: fixed;*/
 }
 /** Fin bicis de pista **/
+
+/** Accesorios **/
+#imagenFondoAccesorios {
+    background-image: url('fotos/imagenesFondo/fondoAccesorios.webp'); /* Ensure the correct path */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+}
 /*** FIN FONDOS ***/
 
 /* ========================= */
@@ -696,7 +742,7 @@ hr {
     width: 130px; /*Ancho del botón del registro*/
     height: 30px; /*Altura del botón del registro*/
     border-radius: 20px;
-    background-color: blue; /*Color de fondo*/
+    background-color: rgb(91, 91, 92); /*Color de fondo*/
     color: white; /*Color de la letra*/
     cursor: pointer;
 }
@@ -717,15 +763,16 @@ hr {
     box-sizing: border-box;
     position: relative;
     border-radius: 12px;
-    background-color: rgb(191, 191, 191,);
+    background-color: rgb(176, 176, 176);
     padding: 5px 5px 9px 5px;
 }
 
 .input {
     outline: none;
     border: none;
-    background: none;
     color: black;
+    padding: 5px; /* Add padding for better visibility */
+    background-color: transparent; /* Remove white background */
 }
 
 /**FIN REGISTRO**/
@@ -765,7 +812,7 @@ hr {
     width: 130px; /*Ancho del botón del formulario*/
     height: 30px; /*Altura del botón del formulario*/
     border-radius: 20px;
-    background-color: blue; /*Color de fondo*/
+    background-color: rgb(91, 91, 92); /*Color de fondo*/
     color: white; /*Color de la letra*/
     cursor: pointer;
 }
@@ -823,6 +870,10 @@ hr {
     width: 300px;
     height: 220px;
     border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+.imgAccesorios:hover {
+    transform: scale(1.04); /* Apply the hover scale effect */
 }
 
 /**FIN ACCESORIOS**/
@@ -922,7 +973,7 @@ hr {
 .contenidoMenuDesplegable {
     background-color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ddd;
     text-align: center;
     border-radius: 10px;
@@ -931,7 +982,7 @@ hr {
     display: block;
     color: black;
     text-decoration: none;
-    padding: 8px 0;
+    padding: 4px 0;
 }
 .contenidoMenuDesplegable a:hover {
     background-color: #ddd;

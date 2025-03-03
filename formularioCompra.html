@@ -6,6 +6,15 @@
     <link rel="shortcut icon" href="fotos/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Formulario de compra Pepcycle</title>
+    <style>
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px rgb(176, 176, 176) inset !important;
+            -webkit-text-fill-color: black !important;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,17 +36,11 @@
                     <li><a href="bicisPista.html" target="_blank">Pista</a></li>
                 </ul>
             </li>
-            <li><a href="#conocenos" class="enlaceNav">Conócenos</a></li>
+            <li><a href="index.html#conocenos" class="enlaceNav">Conócenos</a></li>
             <li><a href="registro.html" class="enlaceNav" target="_blank">Registro</a></li>
         </ul>
-
-        <div id="cesta">
-            <a href="formularioCompra.html" target="_blank">
-                <i class="fa-solid fa-shopping-cart"></i>
-            </a>
-        </div>
     </nav>
-    <form action="/submit" method="POST" id="formFormulario">
+    <form action="compraFinalizada.html" method="GET" id="formFormulario">
         <table id="tablaFormulario">
             <caption style="margin-bottom: 30px; font-size: 25px; color: white;">Formulario compra</caption>
 
@@ -69,7 +72,7 @@
                     <p class="pFormulario">Correo electrónico:</p>
                         
                     <label class="areaEscribir">
-                        <input style="margin-bottom: 20px;" type="email" style="width: 230px;" name="correo" class="input" placeholder="ejemplo@gmail.com" required>
+                        <input style="margin-bottom: 20px;" type="email" style="width: 230px;" name="correo" class="input" placeholder="ejemplo@ejemplo.com">
                     </label>
                 </td>
             </tr>
@@ -102,7 +105,7 @@
                     <label>
                         <input type="checkbox" name="aceptar" required> Acepto los 
                         <span style="color: blue; text-decoration: underline; cursor: pointer;">
-                            <a href="politicaPepcycle.html">términos y condiciones</a></span>
+                            <a href="politicaPepcycle.html" target="_blank">términos y condiciones</a></span>
                     </label><br><br>
                     <label>
                         <input type="checkbox" name="aceptar"> Acepto recibir ofertas 
@@ -117,9 +120,7 @@
             </tr>
             <tr class="trFormulario"> <!--Botón-->
                 <td style="padding-top: 20px;">
-                    <a href="compraFinalizada.html">
-                        <button type="submit" id="botonFormulario">Guardar</button>
-                    </a>
+                    <button type="submit" id="botonFormulario">Guardar</button>
                 </td>
             </tr>
 

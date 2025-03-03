@@ -28,7 +28,7 @@
                     <li><a href="bicisPista.html" target="_blank">Pista</a></li>
                 </ul>
             </li>
-            <li><a href="#conocenos" class="enlaceNav">Conócenos</a></li>
+            <li><a href="index.html#conocenos" class="enlaceNav">Conócenos</a></li>
             <li><a href="registro.html" class="enlaceNav" target="_blank">Registro</a></li>
         </ul>
 
@@ -38,16 +38,10 @@
             </a>
         </div>
     </nav>
-    <div> <!---->
+    <div id="imagenFondoAccesorios"> <!-- Ensure the id is correctly applied -->
         <section class="seccionPresentacionBicis">
 
             <article>
-                <h2 style="border: 1px solid black;">Presentación accesorios Pepcycle</h2>
-                <p class="pPresentacionBicis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut ullamcorper ante, ac vehicula tortor. Nullam vel tortor id felis dictum tincidunt a sit amet purus. Ut maximus sapien sed nisi eleifend, at bibendum libero gravida. Integer vitae nulla sit amet eros feugiat dictum nec eu dui. Fusce aliquam neque non purus vehicula, a tempor enim dignissim. Mauris suscipit urna nec velit pharetra suscipit. Aenean euismod nisl vel augue maximus, ac gravida ante fermentum.
-                
-                    Quisque condimentum velit id sapien tincidunt.</p>
-            </article>
-            <article style="margin-top: 40px;">
                 <h2 style="border: 1px solid black;">Info</h2>
                 <p class="pPresentacionBicis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut ullamcorper ante, ac vehicula tortor. Nullam vel tortor id felis dictum tincidunt a sit amet purus. Ut maximus sapien sed nisi eleifend, at bibendum libero gravida. Integer vitae nulla sit amet eros feugiat dictum nec eu dui. Fusce aliquam neque non purus vehicula, a tempor enim dignissim. Mauris suscipit urna nec velit pharetra suscipit. Aenean euismod nisl vel augue maximus, ac gravida ante fermentum.
                 
@@ -57,50 +51,68 @@
         </section>
 
         <div class="tablaIzquierda">
-            <h3>Tabla Izquierda</h3>
-             
-            <div class="desplegableIzquierda">
+            <h3>Nuestros productos</h3>
+            <div id="contenedorMenusDesplegables">
 
-                <form action="" method="get" class="desplegableIzquierda">
-                    <label for="desplegableTallasBicis">Carretera</label><br>
-                    <select class="desplegableTallasBicis" name="enlaces" onchange="window.location=this.value;">
-                        <option value="elegir">-elegir-</option>
-                        <option value="bicisCarretera.html#biciUnoCarretera"><a href="#biciUnoCarretera">Bici 1</a></option>
-                        <option value="bicisCarretera.html#biciDosCarretera"><a href="#biciDosCarretera">Bici 2</a></option>
-                        <option value="bicisCarretera.html#biciTresCarretera"><a href="#biciTresCarretera">Bici 3</a></option>
-                        <option value="bicisCarretera.html#biciCuatroCarretera"><a href="#biciCuatroCarretera">Bici 4</a></option>
-                        <option value="bicisCarretera.html#biciCincoCarretera"><a href="#biciCincoCarretera">Bici 5</a></option>
-                        <option value="bicisCarretera.html#biciPersonalizableCarretera"><a href="#biciPersonalizableCarretera">Bici 6</a></option>
-                    </select>
-                </form>
+                <div class="menu">
+                    <button>Carretera</button>
+                    <div class="menuDesplegable">
+                        <div class="contenidoMenuDesplegable">
+                            <a href="bicisCarretera.html#biciUnoCarretera">Bici 1</a>
+                            <a href="bicisCarretera.html#biciDosCarretera">Bici 2</a>
+                            <a href="bicisCarretera.html#biciTresCarretera">Bici 3</a>
+                            <a href="bicisCarretera.html#biciCuatroCarretera">Bici 4</a>
+                            <a href="bicisCarretera.html#biciCincoCarretera">Bici 5</a>
+                            <a href="bicisCarretera.html#biciPersonalizableCarretera">Bici 6</a>
+                        </div>
+                    </div>
+                </div>
 
-                <form action="" method="get" class="desplegableIzquierda">
-                    <label for="desplegableTallasBicis">Montaña</label><br>
-                    <select class="desplegableTallasBicis" name="enlaces" onchange="window.location=this.value;">
-                        <option value="elegir">-elegir-</option>
-                        <option value="bicisMontana.html#biciUnoMontana"><a href="#biciUnoMontana">Bici 1</a></option>
-                        <option value="bicisMontana.html#biciDosMontana"><a href="#biciDosMontana">Bici 2</a></option>
-                        <option value="bicisMontana.html#biciTresMontana"><a href="#biciTresMontana">Bici 3</a></option>
-                        <option value="bicisMontana.html#biciCuatroMontana"><a href="#biciCuatroMontana">Bici 4</a></option>
-                        <option value="bicisMontana.html#biciCincoMontana"><a href="#biciCincoMontana">Bici 5</a></option>
-                        <option value="bicisMontana.html#biciPersonalizableMontana"><a href="#biciPersonalizableMontana">Bici 6</a></option>
-                    </select>
-                </form>
+                <div class="menu">
+                    <button>Montaña</button>
+                    <div class="menuDesplegable">
+                        <div class="contenidoMenuDesplegable">
+                            <a href="bicisMontana.html#biciUnoMontana">Bici 1</a>
+                            <a href="bicisMontana.html#biciDosMontana">Bici 2</a>
+                            <a href="bicisMontana.html#biciTresMontana">Bici 3</a>
+                            <a href="bicisMontana.html#biciCuatroMontana">Bici 4</a>
+                            <a href="bicisMontana.html#biciCincoMontana">Bici 5</a>
+                            <a href="bicisMontana.html#biciPersonalizableMontana">Bici 6</a>
+                        </div>
+                    </div>
+                </div>
 
-                <form action="" method="get" class="desplegableIzquierda">
-                    <label for="desplegableTallasBicis">Pista</label><br>
-                    <select class="desplegableTallasBicis" name="enlaces" onchange="window.location=this.value;">
-                        <option value="elegir">-elegir-</option>
-                        <option value="bicisPista.html#biciUnoPista"><a href="#biciUnoPista">Bici 1</a></option>
-                        <option value="bicisPista.html#biciDosPista"><a href="#biciDosPista">Bici 2</a></option>
-                        <option value="bicisPista.html#biciTresPista"><a href="#biciTresPista">Bici 3</a></option>
-                        <option value="bicisPista.html#biciCuatroPista"><a href="#biciCuatroPista">Bici 4</a></option>
-                        <option value="bicisPista.html#biciCincoPista"><a href="#biciCincoPista">Bici 5</a></option>
-                        <option value="bicisPista.html#biciPersonalizablePista"><a href="#biciPersonalizablePista">Bici 6</a></option>
-                    </select>
-                </form>
+                <div class="menu" style="margin-bottom: 15px;">
+                    <button>Pista</button>
+                    <div class="menuDesplegable">
+                        <div class="contenidoMenuDesplegable">
+                            <a href="bicisPista.html#biciUnoPista">Bici 1</a>
+                            <a href="bicisPista.html#biciDosPista">Bici 2</a>
+                            <a href="bicisPista.html#biciTresPista">Bici 3</a>
+                            <a href="bicisPista.html#biciCuatroPista">Bici 4</a>
+                            <a href="bicisPista.html#biciCincoPista">Bici 5</a>
+                            <a href="bicisPista.html#biciPersonalizablePista">Bici 6</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <hr id="hrTablaIzquierda">
+
+            <div id="contenedorMenusDesplegables">
+
+                <div class="menu" style="margin: 15px 0;">
+                    <a href="accesorios.html"><button>Accesorios</button></a>
+                    <div class="menuDesplegable">
+                        <div class="contenidoMenuDesplegable">
+                            <a href="accesorios.html#casco">Casco</a>
+                            <a href="accesorios.html#ropa">Ropa</a>
+                            <a href="accesorios.html#calzado">Calzado</a>
+                            <a href="accesorios.html#botella">Botella</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <section class="seccionAccesorios">
@@ -119,7 +131,7 @@
                         </div>
                         <div class="contenedorDesplegable">
                             <label for="opciones">Selecciona una talla:</label>
-                            <select id="desplegable">
+                            <select class="desplegableTallasBicis">
                                 <option value="talla">-talla-</option>
                                 <option value="talla1">Talla 1</option>
                                 <option value="talla2">Talla 2</option>
@@ -147,7 +159,7 @@
                         </div>
                         <div class="contenedorDesplegable">
                             <label for="opciones">Selecciona una talla:</label>
-                            <select id="desplegable">
+                            <select class="desplegableTallasBicis">
                                 <option value="talla">-talla-</option>
                                 <option value="talla1">Talla 1</option>
                                 <option value="talla2">Talla 2</option>
@@ -177,7 +189,7 @@
                         </div>
                         <div class="contenedorDesplegable">
                             <label for="opciones">Selecciona una talla:</label>
-                            <select id="desplegable">
+                            <select class="desplegableTallasBicis">
                                 <option value="talla">-talla-</option>
                                 <option value="talla1">Talla 1</option>
                                 <option value="talla2">Talla 2</option>
@@ -205,7 +217,7 @@
                         </div>
                         <div class="contenedorDesplegable">
                             <label for="opciones">Selecciona una talla:</label>
-                            <select id="desplegable">
+                            <select class="desplegableTallasBicis">
                                 <option value="talla">-talla-</option>
                                 <option value="talla1">Talla 1</option>
                                 <option value="talla2">Talla 2</option>

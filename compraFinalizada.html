@@ -6,7 +6,25 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="fotos/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Compra Finalizada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>¡Felicidades por tu compra!</title>
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        #thankYouMessage {
+            font-family: 'Pacifico', cursive;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -28,7 +46,7 @@
                     <li><a href="bicisPista.html" target="_blank">Pista</a></li>
                 </ul>
             </li>
-            <li><a href="#conocenos" class="enlaceNav">Conócenos</a></li>
+            <li><a href="index.html#conocenos" class="enlaceNav">Conócenos</a></li>
             <li><a href="registro.html" class="enlaceNav" target="_blank">Registro</a></li>
         </ul>
 
@@ -39,7 +57,16 @@
         </div>
     </nav>
 
-    <p style="margin: auto auto;">Gracias por la compra</p>
+    <section id="thankYouMessage" style="text-align: center; padding: 50px; border-radius: 10px; width: 80%; margin: 0 auto; font-family: 'Pacifico', cursive;">
+        <h1 style="font-size: 36px; color: #333;">¡Gracias por tu compra!</h1>
+        <p style="font-size: 18px; color: #666; margin-top: 20px;">Esperamos que disfrutes de tu nueva bicicleta y que te acompañe en muchas aventuras.</p>
+        <p style="font-size: 18px; color: #666;">Gracias por confiar en Pepcycle.</p>
+        <p style="font-size: 18px; color: #666;">¡Feliz pedaleo!</p>
+        <div style="margin-top: 30px;">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnY4bWprMW95eHM3YWlmYnBmZ295dDB6YjJ2dHU4YTJjYnM1MXUyOSZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9cw/grnQkbK3hwgEB8dvXr/giphy.gif" alt="GIF de Gracias" style="width: 200px; border-radius: 10px; margin-right: 120px;">
+            <img src="fotos/Pokemon-Yes-GIF-by-Pok-mon-JPN-unscreen.gif" alt="GIF animado" style="width: 200px; border-radius: 10px;">
+        </div>
+    </section>
 
     <footer>
         <div class="footer-container">

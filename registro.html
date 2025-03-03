@@ -7,6 +7,15 @@
     <link rel="shortcut icon" href="fotos/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Registro</title>
+    <style>
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px rgb(176, 176, 176) inset !important;
+            -webkit-text-fill-color: black !important;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,7 +37,7 @@
                     <li><a href="bicisPista.html" target="_blank">Pista</a></li>
                 </ul>
             </li>
-            <li><a href="#conocenos" class="enlaceNav">Conócenos</a></li>
+            <li><a href="index.html#conocenos" class="enlaceNav">Conócenos</a></li>
         </ul>
 
         <div id="cesta">
@@ -39,7 +48,7 @@
     </nav>
 
     <div id="fondoRegistro">
-        <form action="/submit" method="POST">
+        <form action="registroCompletado.html" method="GET">
             <table id="tablaRegistro">
                 <caption style="margin-bottom: 30px; font-size: 25px; color: white;">Registro Cliente</caption>
                 
@@ -59,7 +68,7 @@
                 </tr>
                 <tr class="trRegistro"> <!--tlf-->
                     <td class="tdRegistro">
-                        <p class="pRegistro">Teléfono:</p>
+                        <p class="pRegistro">* Teléfono:</p>
                         
                         <label class="areaEscribir">
                             <input type="tel" style="width: 95px;" maxlength="20"  name="telefono" class="input" type="tel" placeholder="Ej: 123456789" required>
@@ -150,7 +159,6 @@
     
         <div class="enlacesWeb">
             <a href="index.html">Inicio</a>
-            <a href="registro.html">Registro</a>
             <a href="politicaPepcycle.html" target="_blank">Política de privacidad</a>
         </div>
     
