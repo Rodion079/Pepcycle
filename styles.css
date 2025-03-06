@@ -123,18 +123,20 @@ nav ul li {
 .enlaceNav::after {
     content: ""; /* Elemento vacío para la línea */
     position: absolute;
-    left: 0;
-    bottom: 3px; /* 📌 Ajusta la altura de la línea */
-    width: 100%;
-    height: 2px; /* Grosor de la línea */
+    left: 50%;
+    bottom: 5px; /* Línea más cerca del texto */
+    width: 0%;
+    height: 1px; /* Línea más delgada */
     background-color: white;
-    transform: scaleX(0); /* Oculta la línea inicialmente */
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    opacity: 0;
 }
 
 /* Efecto hover en enlaces del menú */
 .enlaceNav:hover::after {
-    transform: scaleX(1); /* Hace que la línea aparezca */
+    width: 100%;
+    opacity: 1;
 }
 
 /* ========================= */
@@ -230,6 +232,7 @@ nav ul li a {
     padding: 10px 20px; /* Ajuste de padding */
     border-radius: 10px; /* Evita bordes en cada opción */
     transition: background-color 0.2s ease;
+    margin: 8px 0; /* Añade margen arriba y abajo */
 }
 
 /* Hover sobre los enlaces del submenú */
@@ -450,7 +453,6 @@ footer .tiktok:hover {
     flex: 1;
     min-width: 250px;
     text-align: center;
-    padding-top: 40px;
 }
 
 hr {
@@ -697,9 +699,10 @@ hr {
 
 /** Accesorios **/
 #imagenFondoAccesorios {
-    background-image: url('fotos/imagenesFondo/fondoAccesorios.webp'); /* Ensure the correct path */
+    background-image: url('fotos/imagenesFondo/fondoAccesorios.webp'); /* Path to the background image */
     background-size: cover; /* Ensure the image covers the entire background */
     background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fix the background image */
 }
 /*** FIN FONDOS ***/
 
@@ -714,6 +717,13 @@ hr {
     text-align: center; /*Texto centrado*/
     background-color: rgb(227, 227, 227, 0.8); /*Color de fondo*/
     border-radius: 20px;
+}
+
+.captionRegistroFormulario {
+    font-family: "Roboto Condensed", serif; /*Fuente*/
+    font-size: 25px;
+    color: white;
+    margin-bottom: 30px;
 }
 
 .tdRegistro {
@@ -763,16 +773,35 @@ hr {
     box-sizing: border-box;
     position: relative;
     border-radius: 12px;
-    background-color: rgb(176, 176, 176);
+    background-color: rgb(191, 191, 191,);
     padding: 5px 5px 9px 5px;
 }
 
 .input {
     outline: none;
     border: none;
+    background: none;
     color: black;
-    padding: 5px; /* Add padding for better visibility */
-    background-color: transparent; /* Remove white background */
+}
+
+.inputRegistroFormulario {
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: "Kanit", sans-serif; /* Cambia la fuente a Kanit */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 0 auto; /* Centra el input */
+    margin-top: 0; /* Elimina margen superior */
+    margin-bottom: 0; /* Elimina margen inferior */
+}
+
+.inputRegistroFormulario:focus {
+    border-color: #333; /* Cambia el color del borde al hacer focus */
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.5); /* Cambia el color de la sombra al hacer focus */
+    outline: none;
 }
 
 /**FIN REGISTRO**/

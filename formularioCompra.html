@@ -6,15 +6,6 @@
     <link rel="shortcut icon" href="fotos/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Formulario de compra Pepcycle</title>
-    <style>
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 30px rgb(176, 176, 176) inset !important;
-            -webkit-text-fill-color: black !important;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -42,7 +33,7 @@
     </nav>
     <form action="compraFinalizada.html" method="GET" id="formFormulario">
         <table id="tablaFormulario">
-            <caption style="margin-bottom: 30px; font-size: 25px; color: white;">Formulario compra</caption>
+            <caption class="captionRegistroFormulario">Formulario de compra</caption>
 
             <tr class="trFormulario">
                 <td>
@@ -54,7 +45,7 @@
                     <p class="pFormulario">* Nombre completo:</p>
                         
                     <label class="areaEscribir">
-                        <input style="margin-bottom: 20px;" type="text" name="nombre" class="input" placeholder="Ej: Jose Martínez" required>
+                        <input type="text" name="nombre" class="inputRegistroFormulario" placeholder="Ej: Jose Martínez" required>
                     </label>
                 </td>
             </tr>
@@ -63,7 +54,7 @@
                     <p class="pFormulario">* Teléfono:</p>
                         
                     <label class="areaEscribir">
-                        <input style="margin-bottom: 20px;" type="tel" style="width: 95px;" maxlength="20" name="telefono" class="input" placeholder="Ej: 123456789" required>
+                        <input type="tel" maxlength="20" name="telefono" class="inputRegistroFormulario" placeholder="Ej: 123456789" required>
                     </label>
                 </td>
             </tr>
@@ -72,7 +63,7 @@
                     <p class="pFormulario">Correo electrónico:</p>
                         
                     <label class="areaEscribir">
-                        <input style="margin-bottom: 20px;" type="email" style="width: 230px;" name="correo" class="input" placeholder="ejemplo@ejemplo.com">
+                        <input type="email" name="correo" class="inputRegistroFormulario" placeholder="ejemplo@ejemplo.com">
                     </label>
                 </td>
             </tr>
@@ -81,7 +72,7 @@
                     <p class="pFormulario">* DNI:</p>
                         
                     <label class="areaEscribir">
-                        <input style="margin-bottom: 20px;" type="text" style="width: 90px;" maxlength="9" name="DNI" class="input" placeholder="Ej: 12345678A" required>
+                        <input type="text" maxlength="9" name="DNI" class="inputRegistroFormulario" placeholder="Ej: 12345678A" required>
                     </label>
                 </td>
             </tr>
@@ -90,7 +81,7 @@
                     <p class="pFormulario">* Dirección:</p>
                         
                     <label class="areaEscribir">
-                        <input style="margin-bottom: 20px;" type="text" style="width: 250px;" name="direccion" class="input" placeholder="Ej: C/ San José Nª1" required>
+                        <input type="text" name="direccion" class="inputRegistroFormulario" placeholder="Ej: C/ San José Nª1" required>
                     </label>
                 </td>
             </tr>

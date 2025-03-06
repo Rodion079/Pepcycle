@@ -7,15 +7,6 @@
     <link rel="shortcut icon" href="fotos/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Registro</title>
-    <style>
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 30px rgb(176, 176, 176) inset !important;
-            -webkit-text-fill-color: black !important;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -48,9 +39,9 @@
     </nav>
 
     <div id="fondoRegistro">
-        <form action="registroCompletado.html" method="GET">
+        <form action="/submit" method="POST">
             <table id="tablaRegistro">
-                <caption style="margin-bottom: 30px; font-size: 25px; color: white;">Registro Cliente</caption>
+                <caption class="captionRegistroFormulario">Registro Cliente</caption>
                 
                 <tr class="trRegistro">
                     <td>
@@ -62,16 +53,16 @@
                         <p class="pRegistro">* Nombre:</p>
                         
                         <label class="areaEscribir">
-                            <input type="text" name="nombre" class="input" placeholder="Ej: Jose Martínez" required>
+                            <input type="text" name="nombre" class="inputRegistroFormulario" placeholder="Ej: Jose Martínez" required>
                         </label>
                     </td>
                 </tr>
                 <tr class="trRegistro"> <!--tlf-->
                     <td class="tdRegistro">
-                        <p class="pRegistro">* Teléfono:</p>
+                        <p class="pRegistro">Teléfono:</p>
                         
                         <label class="areaEscribir">
-                            <input type="tel" style="width: 95px;" maxlength="20"  name="telefono" class="input" type="tel" placeholder="Ej: 123456789" required>
+                            <input type="tel" maxlength="20" name="telefono" class="inputRegistroFormulario" placeholder="Ej: 123456789" required>
                         </label>
                     </td>
                 </tr>
@@ -80,7 +71,7 @@
                         <p class="pRegistro">* Correo electrónico:</p>
                         
                         <label class="areaEscribir">
-                            <input type="email" style="width: 230px;" name="correo" class="input" placeholder="ejemplo@gmail.com" required>
+                            <input type="email" name="correo" class="inputRegistroFormulario" placeholder="ejemplo@gmail.com" required>
                         </label>
                     </td>
                 </tr>
