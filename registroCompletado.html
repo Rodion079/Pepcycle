@@ -7,12 +7,21 @@
     <link rel="shortcut icon" href="fotos/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <title>¡Felicidades por tu compra!</title>
+    <title>Registro completado</title>
     <style>
-        #thankYouMessage {
-            font-family: 'Pacifico', cursive;
+        body {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        body.loaded {
+            opacity: 1;
         }
     </style>
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -45,7 +54,13 @@
         </div>
     </nav>
 
-    
+    <section id="thankYouMessage" style="text-align: center; padding: 50px; border-radius: 10px; width: 80%; margin: 0 auto; font-family: 'Pacifico', cursive;">
+        <h1 style="font-size: 36px; color: #333;">¡Gracias por registrarte!</h1>
+        <p style="font-size: 18px; color: #666; margin-top: 20px;">Tu registro ha sido completado con éxito. Esperamos que disfrutes de todas las ventajas que ofrecemos.</p>
+        <p style="font-size: 18px; color: #666;">¡Bienvenido a la familia Pepcycle!</p>
+        <div class="tick-animation"></div>
+        <p style="font-size: 18px; color: #666;">Puedes seguir descubriendo nuestra marca haciendo <a href="index.html">click aquí</a>.</p>
+    </section>
 
     <footer>
         <div class="footer-container">

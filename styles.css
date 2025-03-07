@@ -245,9 +245,6 @@ nav ul li a {
     display: flex;
 }
 
-
-
-
 /* ========================= */
 /* ESTILOS PARA EL CONTENIDO PRINCIPAL */
 /* ========================= */
@@ -1021,4 +1018,36 @@ hr {
 .menu:hover .menuDesplegable,
 .menuDesplegable:hover {
     display: block;
+}
+
+/* Tick animation */
+.tick-animation {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    position: relative;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.tick-animation::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 40px;
+    border: solid white;
+    border-width: 0 10px 10px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
