@@ -11,39 +11,11 @@
 
 
 #imagenFondoIndex {
+    background-image: url(fotos/imagenesFondo/imagenPrueba.jpg);
     background-size: cover; /* Las imágenes deben cubrir toda la pantalla */
     background-position: center;
     background-attachment: fixed;
     animation: cambioImagenIndex 40s ease-in-out infinite;
-}
-@keyframes cambioImagenIndex {
-    0% {
-        background-image: url(fotos/imagenesFondo/imagenTransitiva1.jpg);
-    }
-    12.5% {
-        background-image: url(fotos/imagenesFondo/imagenTransitiva2.jpg);
-    }
-    25% {
-        background-image: url(fotos/imagenesFondo/imagenTransitiva3.jpg);
-    }
-    37.5% {
-        background-image: url(fotos/imagenesFondo/imagenTransitiva4.jpg);
-    }
-    50% {
-        background-image: url(fotos/imagenesFondo/imagenTransitiva5.jpg);
-    }
-    62.5% {
-        background-image: url(fotos/imagenesFondo/imagenTransitiva6.jpg);
-    }
-    75% {
-        background-image: url(fotos/imagenesFondo/imagenTransitiva7.jpg);
-    }
-    87.5% {
-        background-image: url(fotos/imagenesFondo/imagenTransitiva8.jpg);
-    }
-    100% {
-        background-image: url(fotos/imagenesFondo/imagenTransitiva1.jpg); /* Vuelve a la primera imagen */
-    }
 }
 
 /* Body como contenedor flexible */
@@ -253,7 +225,7 @@ nav ul li a {
     font-family: "Roboto Condensed", serif;
     margin: 100px 250px;
     border: 1px solid black;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     padding: 20px;
     margin-top: 60px; /* Agrega margen superior para compensar la altura del nav */
@@ -468,7 +440,7 @@ hr {
 /**************/
 
 /**Estilo bicis en general**/
-.seccionPresentacionBicis, .pPresentacionBicis {
+.seccionPresentacionBicis {
     border: 1px solid black;
 }
 .seccionPresentacionBicis {
@@ -488,9 +460,10 @@ hr {
     padding: 10px 15px;
     border-radius: 20px;
     color: white;
+    border: 1px solid black;
 }
 .pPresentacionBicis {
-    margin: 30px 40px;
+    margin: 20px 25px;
     text-align: justify;
 }
 
@@ -694,13 +667,13 @@ hr {
 }
 /** Fin bicis de pista **/
 
-/** Accesorios **/
+/** Accesorios 
 #imagenFondoAccesorios {
-    background-image: url('fotos/imagenesFondo/fondoAccesorios.webp'); /* Path to the background image */
-    background-size: cover; /* Ensure the image covers the entire background */
-    background-position: center; /* Center the image */
-    background-attachment: fixed; /* Fix the background image */
-}
+    background-image: url('fotos/imagenesFondo/fondoAccesorios.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}*/
 /*** FIN FONDOS ***/
 
 /* ========================= */
@@ -758,7 +731,7 @@ hr {
     display: flex;
     flex-direction: column;
     height: 100vh; /* Asegura que la página ocupe toda la altura de la ventana */
-    background-image: url('fotos/imagenesFondo/fondoRegistro.webp'); /* Ruta de la imagen de fondo */
+    background-image: url('fotos/imagenesFondo/fondoRegistro.jpg'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
     background-attachment: fixed; /* Hace que el fondo no se mueva cuando se hace scroll */
@@ -843,7 +816,7 @@ hr {
     cursor: pointer;
 }
 #formFormulario {
-    background-image: url(fotos/imagenesFondo/fondoFormularioCompra.webp); /* Ruta de la imagen de fondo */
+    background-image: url(fotos/imagenesFondo/fondoFormularioCompra.jpg); /* Ruta de la imagen de fondo */
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center bottom; /* Centra la imagen */
     background-attachment: fixed; /* Hace que el fondo no se mueva cuando se hace scroll */
