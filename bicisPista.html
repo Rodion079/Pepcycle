@@ -23,6 +23,8 @@
     </header>
 
     <nav>
+        <input type="checkbox" id="menu-toggle">
+        <label id="hamburguesa" for="menu-toggle">☰</label>
         <ul>
             <li><a href="index.html" class="enlaceNav">Inicio</a></li>
             <li class="desplegableNav">
@@ -44,7 +46,7 @@
         </div>
     </nav>
     <div id="imagenFondoPista">
-        <section id="fondoElementosPista">
+        <section class="seccionPresentacionBicis" style="color: white;">
 
             <article>
                 <h2>Precisión y explosividad</h2>
@@ -56,7 +58,8 @@
     
         </section>
 
-        <div class="tablaIzquierda">    <h3>Nuestros productos</h3>
+        <div class="tablaIzquierda">
+            <h3>Nuestros productos</h3>
             <div id="contenedorMenusDesplegables">
 
                 <div class="menu">
@@ -123,196 +126,188 @@
         <section class="seccionBicis">
         <h1>Bicicletas de Pista Pepcycle</h1>   
          
-            <table class="tablaBicis">
-                <tr class="trBici">
-                      <td class="tdBici"> <!--Bici 1-->
-    
-                        <div class="contenedorNombreBici">
-                                <p id="biciUnoPista">Pepcycle Velodrome</p>
-                            </div>
-                            <div class="contenedorImgBici">
-                                <img src="fotos/imagenesBicis/bicisPista/Pista_Velodrome.webp" alt="Imagen 1a bici" class="imgBicis">
-                            </div>
-                            <div class="contendorBiografiaBici">
-                                <p>Creada para dominar los velódromos, esta bicicleta cuenta con una construcción rígida y aerodinámica. Su precisión y transmisión directa de potencia permiten alcanzar velocidades extremas sin perder estabilidad.</p>
-                            </div>
-                            <div class="contenedorPrecioBici">
-                                <p>Precio</p>
-                            </div>
-                            <div class="contenedorDesplegable">
-                                <label for="opciones">Talla:</label>
-                                <select class="desplegableTallasBicis">
-                                    <option value="talla">-elegir-</option>
-                                    <option value="talla1">S (49-52 cm)</option>
-                                    <option value="talla2">M (53-56 cm)</option>
-                                    <option value="talla3">L (57-60 cm)</option>
-                                </select>
-                            </div>
-                            <div class="contenedorBotonComprar">
-                                <a href="formularioCompra.html" target="_blank">
-                                    <input type="button" value="Comprar" class="botonComprar">
-                                </a>
-                            </div>
-                            
-                        </td>
-                        <td class="tdBici"> <!--Bici 2-->
-    
-                            <div class="contenedorNombreBici">
-                                <p id="biciDosPista">Pepcycle Pursuit</p>
-                            </div>
-                            <div class="contenedorImgBici">
-                                <img src="fotos/imagenesBicis/bicisPista/Pista_Pursuit.webp" alt="Imagen 2a bici" class="imgBicis">
-                            </div>
-                            <div class="contendorBiografiaBici">
-                                <p>Diseñada para pruebas de persecución, su estructura aerodinámica y su eficiencia en la transmisión de potencia la convierten en la mejor opción para quienes buscan rendimiento en pista.</p>
-                            </div>
-                            <div class="contenedorPrecioBici">
-                                <p>Precio</p>
-                            </div>
-                            <div class="contenedorDesplegable">
-                                <label for="opciones">Talla:</label>
-                                <select class="desplegableTallasBicis">
-                                    <option value="talla">-elegir-</option>
-                                    <option value="talla1">S (49-52 cm)</option>
-                                    <option value="talla2">M (53-56 cm)</option>
-                                    <option value="talla3">L (57-60 cm)</option>
-                                </select>
-                            </div>
-                            <div class="contenedorBotonComprar">
-                                <a href="formularioCompra.html" target="_blank">
-                                    <input type="button" value="Comprar" class="botonComprar">
-                                </a>
-                            </div>
-        
-                        </td>              
-                </tr>
-                <tr class="trBici">
+            <div class="bicisContainer">
 
-                    <td class="tdBici"> <!--Bici 3-->
-
-                        <div class="contenedorNombreBici">
-                            <p id="biciTresPista">Pepcycle Keirin</p>
-                        </div>
-                        <div class="contenedorImgBici">
-                            <img src="fotos/imagenesBicis/bicisPista/Pista_Keirin.webp" alt="Imagen 3a bici" class="imgBicis">
-                        </div>
-                        <div class="contendorBiografiaBici">
-                            <p>Inspirada en las competiciones de alta velocidad, este modelo está optimizado para sprints intensos. Su cuadro reactivo y su ligereza permiten aceleraciones fulminantes y un control total en la pista.</p>
-                        </div>
-                        <div class="contenedorPrecioBici">
-                            <p>Precio</p>
-                        </div>
-                        <div class="contenedorDesplegable">
-                            <label for="opciones">Talla:</label>
-                            <select class="desplegableTallasBicis">
-                                <option value="talla">-elegir-</option>
-                                <option value="talla1">S (49-52 cm)</option>
-                                <option value="talla2">M (53-56 cm)</option>
-                                <option value="talla3">L (57-60 cm)</option>
-                            </select>
-                        </div>
-                        <div class="contenedorBotonComprar">
-                            <a href="formularioCompra.html" target="_blank">
-                                <input type="button" value="Comprar" class="botonComprar">
-                            </a>
-                        </div>
+                <div class="biciItem"> <!--Bici 1-->
     
-                    </td>
-                    <td class="tdBici"> <!--Bici 4-->
+                    <div class="contenedorNombreBici">
+                            <p id="biciUnoPista">Pepcycle Velodrome</p>
+                    </div>
+                    <div class="contenedorImgBici">
+                        <img src="fotos/imagenesBicis/bicisPista/Pista_Velodrome.webp" alt="Imagen 1a bici" class="imgBicis">
+                    </div>
+                    <div class="contendorBiografiaBici">
+                        <p>Creada para dominar los velódromos, esta bicicleta cuenta con una construcción rígida y aerodinámica. Su precisión y transmisión directa de potencia permiten alcanzar velocidades extremas sin perder estabilidad.</p>
+                    </div>
+                    <div class="contenedorPrecioBici">
+                        <p>Precio</p>
+                    </div>
+                    <div class="contenedorDesplegable">
+                        <label for="opciones">Talla:</label>
+                        <select class="desplegableTallasBicis">
+                            <option value="talla">-elegir-</option>
+                            <option value="talla1">S (49-52 cm)</option>
+                            <option value="talla2">M (53-56 cm)</option>
+                            <option value="talla3">L (57-60 cm)</option>
+                        </select>
+                    </div>
+                    <div class="contenedorBotonComprar">
+                        <a href="formularioCompra.html" target="_blank">
+                            <input type="button" value="Comprar" class="botonComprar">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="biciItem"> <!--Bici 2-->
+    
+                    <div class="contenedorNombreBici">
+                        <p id="biciDosPista">Pepcycle Pursuit</p>
+                    </div>
+                    <div class="contenedorImgBici">
+                        <img src="fotos/imagenesBicis/bicisPista/Pista_Pursuit.webp" alt="Imagen 2a bici" class="imgBicis">
+                    </div>
+                    <div class="contendorBiografiaBici">
+                        <p>Diseñada para pruebas de persecución, su estructura aerodinámica y su eficiencia en la transmisión de potencia la convierten en la mejor opción para quienes buscan rendimiento en pista.</p>
+                    </div>
+                    <div class="contenedorPrecioBici">
+                        <p>Precio</p>
+                    </div>
+                    <div class="contenedorDesplegable">
+                        <label for="opciones">Talla:</label>
+                        <select class="desplegableTallasBicis">
+                            <option value="talla">-elegir-</option>
+                            <option value="talla1">S (49-52 cm)</option>
+                            <option value="talla2">M (53-56 cm)</option>
+                            <option value="talla3">L (57-60 cm)</option>
+                        </select>
+                    </div>
+                    <div class="contenedorBotonComprar">
+                        <a href="formularioCompra.html" target="_blank">
+                            <input type="button" value="Comprar" class="botonComprar">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="biciItem"> <!--Bici 3-->
+
+                    <div class="contenedorNombreBici">
+                        <p id="biciTresPista">Pepcycle Keirin</p>
+                    </div>
+                    <div class="contenedorImgBici">
+                        <img src="fotos/imagenesBicis/bicisPista/Pista_Keirin.webp" alt="Imagen 3a bici" class="imgBicis">
+                    </div>
+                    <div class="contendorBiografiaBici">
+                        <p>Inspirada en las competiciones de alta velocidad, este modelo está optimizado para sprints intensos. Su cuadro reactivo y su ligereza permiten aceleraciones fulminantes y un control total en la pista.</p>
+                    </div>
+                    <div class="contenedorPrecioBici">
+                        <p>Precio</p>
+                    </div>
+                    <div class="contenedorDesplegable">
+                        <label for="opciones">Talla:</label>
+                        <select class="desplegableTallasBicis">
+                            <option value="talla">-elegir-</option>
+                            <option value="talla1">S (49-52 cm)</option>
+                            <option value="talla2">M (53-56 cm)</option>
+                            <option value="talla3">L (57-60 cm)</option>
+                        </select>
+                    </div>
+                    <div class="contenedorBotonComprar">
+                        <a href="formularioCompra.html" target="_blank">
+                            <input type="button" value="Comprar" class="botonComprar">
+                        </a>
+                    </div>
+                
+                </div>
+                <div class="biciItem"> <!--Bici 4-->
                     
-                        <div class="contenedorNombreBici">
-                            <p id="biciCuatroPista">Pepcycle Track Pro</p>
-                        </div>
-                        <div class="contenedorImgBici">
-                            <img src="fotos/imagenesBicis/bicisPista/Pista_TrackPro.webp" alt="Imagen 4a bici" class="imgBicis">
-                        </div>
-                        <div class="contendorBiografiaBici">
-                            <p>Una bicicleta de pista de alto nivel con una geometría agresiva y materiales ultraligeros. Creada para ciclistas exigentes que buscan máxima precisión en cada curva y cada sprint.</p>
-                        </div>
-                        <div class="contenedorPrecioBici">
-                            <p>Precio</p>
-                        </div>
-                        <div class="contenedorDesplegable">
-                            <label for="opciones">Talla:</label>
-                            <select class="desplegableTallasBicis">
-                                <option value="talla">-elegir-</option>
-                                <option value="talla1">S (49-52 cm)</option>
-                                <option value="talla2">M (53-56 cm)</option>
-                                <option value="talla3">L (57-60 cm)</option>
-                            </select>
-                        </div>
-                        <div class="contenedorBotonComprar">
-                            <a href="formularioCompra.html" target="_blank">
-                                <input type="button" value="Comprar" class="botonComprar">
-                            </a>
-                        </div>
-    
-                    </td>
-                </tr>
-                <tr class="trBici">
-
-                    <td class="tdBici"> <!--Bici 5-->
+                    <div class="contenedorNombreBici">
+                        <p id="biciCuatroPista">Pepcycle Track Pro</p>
+                    </div>
+                    <div class="contenedorImgBici">
+                        <img src="fotos/imagenesBicis/bicisPista/Pista_TrackPro.webp" alt="Imagen 4a bici" class="imgBicis">
+                    </div>
+                    <div class="contendorBiografiaBici">
+                        <p>Una bicicleta de pista de alto nivel con una geometría agresiva y materiales ultraligeros. Creada para ciclistas exigentes que buscan máxima precisión en cada curva y cada sprint.</p>
+                    </div>
+                    <div class="contenedorPrecioBici">
+                        <p>Precio</p>
+                    </div>
+                    <div class="contenedorDesplegable">
+                        <label for="opciones">Talla:</label>
+                        <select class="desplegableTallasBicis">
+                            <option value="talla">-elegir-</option>
+                            <option value="talla1">S (49-52 cm)</option>
+                            <option value="talla2">M (53-56 cm)</option>
+                            <option value="talla3">L (57-60 cm)</option>
+                        </select>
+                    </div>
+                    <div class="contenedorBotonComprar">
+                        <a href="formularioCompra.html" target="_blank">
+                            <input type="button" value="Comprar" class="botonComprar">
+                        </a>
+                    </div>
                     
-                        <div class="contenedorNombreBici">
-                            <p id="biciCincoPista">Pepcycle Fixie</p>
-                        </div>
-                        <div class="contenedorImgBici">
-                            <img src="fotos/imagenesBicis/bicisPista/Pista_Fixie.webp" alt="Imagen 5a bici" class="imgBicis">
-                        </div>
-                        <div class="contendorBiografiaBici">
-                            <p>Minimalismo y estilo en una bicicleta de piñón fijo diseñada para la ciudad y la pista. Su construcción robusta y diseño limpio la hacen una opción perfecta para quienes buscan control y estética.</p>
-                        </div>
-                        <div class="contenedorPrecioBici">
-                            <p>Precio</p>
-                        </div>
-                        <div class="contenedorDesplegable">
-                            <label for="opciones">Talla:</label>
-                            <select class="desplegableTallasBicis">
-                                <option value="talla">-elegir-</option>
-                                <option value="talla1">S (49-52 cm)</option>
-                                <option value="talla2">M (53-56 cm)</option>
-                                <option value="talla3">L (57-60 cm)</option>
-                            </select>
-                        </div>
-                        <div class="contenedorBotonComprar">
-                            <a href="formularioCompra.html" target="_blank">
-                                <input type="button" value="Comprar" class="botonComprar">
-                            </a>
-                        </div>
-    
-                    </td>
-                    <td class="tdBici"> <!--Bici 6 (personalizable)-->
+                </div>
+                <div class="biciItem"> <!--Bici 5-->
+                    
+                    <div class="contenedorNombreBici">
+                        <p id="biciCincoPista">Pepcycle Fixie</p>
+                    </div>
+                    <div class="contenedorImgBici">
+                        <img src="fotos/imagenesBicis/bicisPista/Pista_Fixie.webp" alt="Imagen 5a bici" class="imgBicis">
+                    </div>
+                    <div class="contendorBiografiaBici">
+                        <p>Minimalismo y estilo en una bicicleta de piñón fijo diseñada para la ciudad y la pista. Su construcción robusta y diseño limpio la hacen una opción perfecta para quienes buscan control y estética.</p>
+                    </div>
+                    <div class="contenedorPrecioBici">
+                        <p>Precio</p>
+                    </div>
+                    <div class="contenedorDesplegable">
+                        <label for="opciones">Talla:</label>
+                        <select class="desplegableTallasBicis">
+                            <option value="talla">-elegir-</option>
+                            <option value="talla1">S (49-52 cm)</option>
+                            <option value="talla2">M (53-56 cm)</option>
+                            <option value="talla3">L (57-60 cm)</option>
+                        </select>
+                    </div>
+                    <div class="contenedorBotonComprar">
+                        <a href="formularioCompra.html" target="_blank">
+                            <input type="button" value="Comprar" class="botonComprar">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="biciItem"> <!--Bici 6 (personalizable)-->
                         
-                        <div class="contenedorNombreBici">
-                            <p id="biciPersonalizablePista">Bici 6</p>
-                        </div>
-                        <div class="contenedorImgBici">
-                            <img src="fotos/biciPistaPrincipal.webp" alt="Imagen bici base para personalizar" class="imgBicis">
-                        </div>
-                        <div class="contendorBiografiaBici">
-                            <p>Biografia</p>
-                        </div>
-                        <div class="contenedorPrecioBici">
-                            <p>Precio</p>
-                        </div>
-                        <div class="contenedorDesplegable">
-                            <label for="opciones">Talla:</label>
-                            <select class="desplegableTallasBicis">
-                                <option value="talla">-elegir-</option>
-                                <option value="talla1">S (49-52 cm)</option>
-                                <option value="talla2">M (53-56 cm)</option>
-                                <option value="talla3">L (57-60 cm)</option>
-                            </select>
-                        </div>
-                        <div class="contenedorBotonComprar">
-                            <a href="formularioCompra.html" target="_blank">
-                                <input type="button" value="Comprar" class="botonComprar">
-                            </a>
-                        </div>
-        
-                    </td>
-                </tr>
-            </table>
+                    <div class="contenedorNombreBici">
+                        <p id="biciPersonalizablePista">Bici 6</p>
+                    </div>
+                    <div class="contenedorImgBici">
+                        <img src="fotos/biciPistaPrincipal.jpg" alt="Imagen bici base para personalizar" class="imgBicis">
+                    </div>
+                    <div class="contendorBiografiaBici">
+                        <p>Biografia</p>
+                    </div>
+                    <div class="contenedorPrecioBici">
+                        <p>Precio</p>
+                    </div>
+                    <div class="contenedorDesplegable">
+                        <label for="opciones">Talla:</label>
+                        <select class="desplegableTallasBicis">
+                            <option value="talla">-elegir-</option>
+                            <option value="talla1">S (49-52 cm)</option>
+                            <option value="talla2">M (53-56 cm)</option>
+                            <option value="talla3">L (57-60 cm)</option>
+                        </select>
+                    </div>
+                    <div class="contenedorBotonComprar">
+                        <a href="formularioCompra.html" target="_blank">
+                            <input type="button" value="Comprar" class="botonComprar">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
     <footer>

@@ -52,19 +52,12 @@ html, body {
     }
 }
 
-/* Body como contenedor flexible */
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Asegura que la página tenga al menos la altura completa de la ventana */
-    padding-top: 60px;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Asegura que la página tenga al menos la altura completa de la ventana */
-    padding-top: 0;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita scroll horizontal */
 }
  
 /* ========================= */
@@ -78,9 +71,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px;
     margin: 0;
     height: 100px; /* Asegurar que el header tenga altura fija */
+    width: 100vw;
+    min-width: 100vw;
+    overflow: hidden;
+    border-bottom: none; /* Asegura que no haya un borde blanco */
 }
 
 #contenedorLogoHeader {
@@ -879,6 +876,10 @@ hr {
     box-sizing: border-box;
 }
 
+.checkboxRegistro {
+    font-family: "Kanit", sans-serif;
+}
+
 @media (max-width: 768px) {
     .biciItem {
         flex: 1 1 100%; /* Ocupa el 100% del ancho */
@@ -933,15 +934,21 @@ hr {
     margin: 20px;
     font-family: "Kanit", sans-serif;
 }
+.contenedorTablaIzquierda {
+    display: flex; 
+    align-items: flex-start; /* Asegurar alineación */
+}
+
+/* Estilos para la tabla */
 .tablaIzquierda {
     position: sticky;
-    top: 150px; /* Fija la tabla desde la parte superior */
+    top: 150px; /* Se quedará fija después de 150px */
     margin-bottom: 100px;
     width: 200px;
     background-color: rgba(93, 93, 93, 0.6);
-    float: left;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    float: left; /* Mantiene la alineación sin romper sticky */
 }
 
 .tablaIzquierda h3 {
@@ -979,16 +986,18 @@ hr {
     margin-top: 10px;
 }
 #imagenFondoCarretera {
+    padding: 40px 0;
     background-image: url(fotos/imagenesFondo/fondoBicisCarretera.jpg);
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
-    /*background-attachment: fixed;*/
+    overflow: visible !important;
 }
 
 /** Fin bicis de carretera **/
 
 /** Bicis de montaña **/
 #imagenFondoMontana {
+    padding: 40px 0;
     background-image: url(fotos/imagenesFondo/fondoBicisMontana.jpg);
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
@@ -998,6 +1007,7 @@ hr {
 
 /** Bicis de pista **/
 #imagenFondoPista {
+    padding: 40px 0;
     background-image: url(fotos/imagenesFondo/fondoBicisPista.jpg);
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
@@ -1030,7 +1040,7 @@ hr {
 .captionRegistroFormulario {
     font-family: "Roboto Condensed", serif; /*Fuente*/
     font-size: 25px;
-    color: white;
+    color: black;
     margin-bottom: 30px;
 }
 
@@ -1068,12 +1078,13 @@ hr {
 #fondoRegistro {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Asegura que la página ocupe toda la altura de la ventana */
-    background-image: url('fotos/imagenesFondo/fondoRegistro.jpg'); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-position: center; /* Centra la imagen */
-    background-attachment: fixed; /* Hace que el fondo no se mueva cuando se hace scroll */
+    min-height: 100vh; /* Ahora crecerá si es necesario */
+    background-image: url('fotos/imagenesFondo/fondoRegistro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     flex: 1;
+    padding-bottom: 60px; /* Asegura más espacio antes del footer */
 }
 
 /*Área para escribir*/
@@ -1117,47 +1128,139 @@ hr {
 
 /**FORMULARIO**/
 
-#tablaFormulario {
-    border-spacing: 15px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center; /*Texto centrado*/
-    background-color: rgb(227, 227, 227, 0.8); /*Color de fondo*/
-    border-radius: 20px;
+/* Contenedor principal del formulario */
+
+#fondoFormulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('fotos/imagenesFondo/fondoFormularioCompra.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 50px 20px;
 }
-.tdFormulario {
-    border: 2px solid black;
+
+#contenedorFormulario {
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
-.trFormulario {
-    font-family: "Roboto Condensed", serif;
-    margin-top: 10px;
+
+/* Título del formulario */
+.tituloFormulario {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
-.tdFormulario {
-    height: 60px; /*Altura de las columnas del formulario*/
-    width: 350px; /*Ancho de las columnas del formulario*/
-    border-radius: 20px;
-}
-.tdFormulario input {
-    margin-top: 5px;
+
+/* Descripción del formulario */
+.descripcionFormulario {
+    font-size: 16px;
     margin-bottom: 15px;
 }
-.pFormulario {
-    font-size: 17px;
-    padding: 10px 0;
+
+/* Campos del formulario */
+.campoFormularioCheckbox {
+    font-family: "Kanit", sans-serif;
+    text-align: center; /* Centrar los checkboxes */
+    margin-bottom: 12px;
 }
+
+.campoFormulario {
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+/* Asegurar que las etiquetas se mantengan centradas */
+.campoFormulario label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilo para los checkboxes */
+.inputCheckbox {
+    display: inline-block; /* Para que se alineen horizontalmente */
+    margin-right: 10px; /* Espaciado entre checkboxes */
+}
+
+/* Campos de entrada de texto */
+.inputFormulario {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al hacer foco en los inputs */
+.inputFormulario:focus {
+    border-color: #444;
+    outline: none;
+    box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+}
+
+/* Nota de obligatorio */
+.notaObligatorio {
+    font-size: 14px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Nota adicional */
+.notaAdicional {
+    font-size: 12px;
+    text-align: justify;
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+/* Botón de guardar */
 #botonFormulario {
-    width: 130px; /*Ancho del botón del formulario*/
-    height: 30px; /*Altura del botón del formulario*/
-    border-radius: 20px;
-    background-color: rgb(91, 91, 92); /*Color de fondo*/
-    color: white; /*Color de la letra*/
+    width: 130px;
+    padding: 0 10px; /* Quitamos el padding top */
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(71, 73, 77);
+    color: white;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 15px auto; /* Lo centra horizontalmente */
 }
-#formFormulario {
-    background-image: url(fotos/imagenesFondo/fondoFormularioCompra.jpg); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-position: center bottom; /* Centra la imagen */
-    background-attachment: fixed; /* Hace que el fondo no se mueva cuando se hace scroll */
+
+/* Efecto hover en el botón */
+#botonFormulario:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    #contenedorFormulario {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .tituloFormulario {
+        font-size: 20px;
+    }
+
+    .inputFormulario {
+        font-size: 14px;
+    }
+
+    #botonFormulario {
+        width: 100%;
+    }
 }
 
 /**FIN FORMULARIO**/
