@@ -502,8 +502,6 @@ nav ul li a {
     transform: scale(1.04); /* Reduce the hover scale effect 
 }*/
 
-
-
 #seccionPresentacionConocenos {
     font-family: "Roboto Condensed", serif; /*Fuente*/
     margin: 75px 100px;
@@ -1313,7 +1311,7 @@ hr {
 
 /**FIN FORMULARIO**/
 
-/**POLITICA**/
+/**POLITICA
 
 #contenedorPolitica {
     font-family: "Roboto Condensed", serif;
@@ -1339,30 +1337,120 @@ hr {
 
 /**ACCESORIOS**/
 
-.tablaAccesorios {
-    margin: 20px auto;
-    border-spacing: 20px;
-}
-.trAccesorios {
-    padding: 5px;
+.seccionAccesorios {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    min-height: 100vh; /* Para que ocupe toda la pantalla */
+    width: 100%;
+    max-width: 1200px;
+    margin: auto; /* Centra el contenedor */
+    padding: 20px; /* Espacio interno */
+    margin-bottom: 80px;
 }
 
-.seccionAccesorios {
-    background-color: rgb(145, 145, 145, 0.5);
-    margin: 50px 300px;
-    border-radius: 20px;
+.contenedorAccesorios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-rows: repeat(2, auto); /* 2 filas */
+    gap: 20px; /* Espaciado entre los accesorios */
+    justify-content: center; /* Centra el grid */
+    align-items: center;
+    max-width: 800px; /* Ajusta el ancho máximo */
+    margin: 0 auto; /* Centra la sección */
+}
+
+/* 🔥 Cada accesorio ocupa su espacio correctamente */
+.accesorio {
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.contenedorBotonComprar,
+.contenedorDesplegable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ✅ Centra bien el texto de los nombres */
+.contenedorNombreBici p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .imgAccesorios {
-    width: 300px;
-    height: 220px;
-    border-radius: 20px;
-    transition: transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
-.imgAccesorios:hover {
-    transform: scale(1.04); /* Apply the hover scale effect */
+
+/* 💰 Ajuste del precio */
+.contenedorPrecioBici p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
 }
+
+.desplegableTallasBicis {
+    width: 90%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contenedorBotonComprar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.botonComprar {
+    width: 100%; /* Ajusta el ancho */
+    max-width: 120px; /* Evita que se estire demasiado */
+    padding: 8px 0; /* Espaciado interno */
+    background-color: #444; /* Color de fondo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a "clickable" */
+    text-align: center;
+    display: block; /* Asegura que el botón ocupe su espacio */
+    font-size: 14px; /* Ajuste del tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    box-shadow: none !important; /* 🔥 Elimina sombras raras */
+}
+
+.botonComprar:hover {
+    background-color: #ffcc00; /* Color en hover */
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .seccionAccesorios {
+        min-height: auto; /* Evita que se estire demasiado */
+        margin-bottom: 80px;
+    }
+
+    .contenedorAccesorios {
+        grid-template-columns: 1fr; /* Solo una columna */
+        grid-template-rows: auto; /* Altura automática */
+    }
+
+    .accesorio {
+        max-width: 100%;
+    }
+}
+
 
 /**FIN ACCESORIOS**/
 
