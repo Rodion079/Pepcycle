@@ -1353,13 +1353,14 @@ hr {
 .contenedorAccesorios {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    grid-template-rows: repeat(2, auto); /* 2 filas */
     gap: 20px; /* Espaciado entre los accesorios */
-    justify-content: center; /* Centra el grid */
+    justify-content: center; /* Centra el grid horizontalmente */
     align-items: center;
     max-width: 800px; /* Ajusta el ancho máximo */
-    margin: 0 auto; /* Centra la sección */
+    margin: 0 auto; /* CENTRA la sección en TODAS las pantallas */
+    padding: 0 20px; /* 🔹 Añadir un poco de padding a los lados */
 }
+
 
 /* 🔥 Cada accesorio ocupa su espacio correctamente */
 .accesorio {
@@ -1442,12 +1443,14 @@ hr {
     }
 
     .contenedorAccesorios {
-        grid-template-columns: 1fr; /* Solo una columna */
-        grid-template-rows: auto; /* Altura automática */
+        grid-template-columns: 1fr; /* SOLO una columna en móviles */
+        padding: 0 10px; /* 🔹 Reduce el padding lateral */
     }
 
     .accesorio {
-        max-width: 100%;
+        width: 100%; /* 🔥 Asegura que no se desplace a la derecha */
+        max-width: 400px; /* 🔹 No lo hagas demasiado ancho */
+        margin: 0 auto; /* 🔥 CENTRAR accesorios en la columna */
     }
 }
 
