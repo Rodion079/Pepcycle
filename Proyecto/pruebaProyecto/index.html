@@ -1,67 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Página Web Simple</title>
+  <style>
+    /* Reset de márgenes y paddings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Cuerpo de la página */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Espacio para el logo */
+    .logo-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      z-index: 10;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .logo-container img {
+      max-width: 150px;
+    }
+
+    /* Estilos del menú */
+    nav {
+      background-color: #333;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 5;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    nav ul li {
+      padding: 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      color: #f0f0f0;
+    }
+
+    /* Estilo para el nav fijo en pantallas grandes */
+    .sticky {
+      position: fixed;
+      top: 80px; /* Espacio para el logo */
+      width: 100%;
+      left: 0;
+      z-index: 5;
+    }
+
+    /* Menú hamburguesa en pantallas pequeñas */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+    }
+
+    /* Menú desplegable para pantallas pequeñas */
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .nav-links ul {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #333;
+      width: 200px;
+      display: none;
+    }
+
+    /* Menú hamburguesa abierto */
+    input[type="checkbox"]:checked ~ .nav-links ul {
+      display: block;
+    }
+
+    /* Estilos de la página */
+    .content {
+      padding: 100px 20px 20px;
+    }
+
+    .section {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      /* Mostrar el menú hamburguesa en pantallas pequeñas */
+      .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      .logo-container {
+        position: static;
+        padding: 10px 0;
+      }
+
+      .content {
+        padding-top: 150px; /* Ajuste del espacio para el logo */
+      }
+
+      /* Estilo del checkbox (oculto pero funcional) */
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      /* Mostrar el menú cuando el checkbox está marcado */
+      input[type="checkbox"]:checked ~ .nav-links {
+        display: block;
+      }
+
+      /* Alinear el menú a la derecha */
+      .nav-links ul {
+        position: static;
+        width: 100%;
+        display: block;
+        background-color: #333;
+      }
+
+      .nav-links ul li {
+        text-align: center;
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    
-  <footer>
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; padding: 20px;">
-        <!-- Columna de Contacto -->
-        <div id="contactoFooter" style="flex: 1; min-width: 250px;">
-            <p style="font-size: 14px; font-weight: 550; margin-top: 10px;">Contáctanos:</p>
-            <ul>
-                <li style="font-size: 14px; text-decoration: none;">&#128241;: +34 123456789</li>
-                <li style="font-size: 14px; text-decoration: none;">&#128233;: ejemplo@ejemplo.com</li>
-                <li style="font-size: 14px; text-decoration: none;">@pepcycle</li>
-            </ul>
-        </div>
 
-        <!-- Columna de Redes Sociales -->
-        <div id="redesFooter" style="flex: 1; min-width: 250px;">
-            <ul id="segundoUlFooter" style="display: flex; justify-content: space-around; padding: 0;">
-                <li>
-                    <a href="https://www.facebook.com" target="_blank">
-                        <img src="fotos/RRSS/facebook.png" alt="facebook" class="redes">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://x.com/?lang=es" target="_blank">
-                        <img src="fotos/RRSS/x.png" alt="X" class="redes">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com" target="_blank">
-                        <img src="fotos/RRSS/instagram.png" alt="instagram" class="redes">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://web.telegram.org/a/" target="_blank">
-                        <img src="fotos/RRSS/telegram.png" alt="telegram" class="redes">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.tiktok.com/login?lang=es&redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fupload%3Flang%3Des" target="_blank">
-                        <img src="fotos/RRSS/tiktok.png" alt="tik tok" class="redes">
-                    </a>
-                </li>
-            </ul>
-        </div>
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="https://via.placeholder.com/150" alt="Logo">
+  </div>
+
+  <!-- Navegación -->
+  <nav id="nav">
+    <label for="menu-toggle" class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+    <input type="checkbox" id="menu-toggle">
+    <div class="nav-links">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- Enlaces adicionales -->
-    <div class="enlacesWeb" style="text-align: center; margin-top: 20px;">
-        <a href="index.html">Inicio</a> |
-        <a href="registro.html">Registro</a> |
-        <a href="politicaPepcycle.html" target="_blank">Política de privacidad</a>
-    </div>
-
-    <!-- Separador y Copyright -->
-    <hr style="margin-top: 40px">
-    <p style="padding-top: 15px; padding-bottom: 0; font-size: 13px; text-align: center;">&copy; Copyright Pepcycle 2025 | Todos los derechos reservados.</p>
-</footer>
+  <!-- Contenido de la página -->
+  <div class="content">
+    <section class="section">
+      <h1>Bienvenido a nuestra página</h1>
+      <p>Este es un ejemplo de una página web simple y responsive.</p>
+    </section>
+    <section class="section">
+      <h2>Sección 2</h2>
+      <p>Este contenido se desplazará mientras haces scroll.</p>
+    </section>
+    <section class="section">
+      <h2>Sección 3</h2>
+      <p>Otra sección con más contenido.</p>
+    </section>
+  </div>
 
 </body>
 </html>

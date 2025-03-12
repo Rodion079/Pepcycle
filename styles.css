@@ -9,13 +9,18 @@
     box-sizing: border-box;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 #imagenFondoIndex {
     background-image: url(fotos/imagenesFondo/imagenPrueba.jpg);
-    background-size: cover; /* Las imágenes deben cubrir toda la pantalla */
+    background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    animation: cambioImagenIndex 40s ease-in-out infinite;
+    padding: 5rem 0; /* Cambiado a rem */
 }
 
 /* Body como contenedor flexible */
@@ -23,6 +28,14 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Asegura que la página tenga al menos la altura completa de la ventana */
+    padding-top: 60px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que la página tenga al menos la altura completa de la ventana */
+    padding-top: 0;
 }
  
 /* ========================= */
@@ -30,14 +43,22 @@ body {
 /* ========================= */
 
 header {
-    z-index: 1000; /* Asegura que el header esté por encima del nav */
-    background-color: rgb(71, 73, 77); /* Color de fondo */
+    background-color: rgb(71, 73, 77);
     text-align: center;
-    color: rgb(252, 252, 253); /* Color del texto */
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px 0;
+    margin: 0;
+    height: 100px; /* Asegurar que el header tenga altura fija */
+}
+
+#contenedorLogoHeader {
+    text-align: center;
+    padding: 0; /* Elimina cualquier padding extra */
+    margin: 0; /* Elimina márgenes */
+    height: auto; /* Evita que tenga altura forzada */
 }
 
 /* Estilo para el contenedor del logo */
@@ -52,53 +73,142 @@ header {
 
 nav {
     font-family: "Kanit", sans-serif;
-    position: sticky; /* Cambiado a sticky para que el nav se quede fijo al hacer scroll */
+    position: sticky;
     top: 0;
     width: 100%;
     background-color: rgb(71, 73, 77);
-    z-index: 999; /* Asegura que el nav esté por debajo del header */
+    z-index: 1000;
     display: flex;
-    justify-content: center; /* Centra los elementos dentro del nav */
+    justify-content: space-between;
     align-items: center;
-    padding: 5px 0; /* Reduce la altura del nav */
+    padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+
+/* Estilo para el botón hamburguesa */
+#menu-toggle {
+    appearance: none; /* Oculta apariencia del checkbox */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    opacity: 0; /* Lo hace invisible */
+    position: absolute; /* Lo saca del flujo del DOM */
+    left: -9999px; /* Lo manda fuera de la pantalla */
+}
+
+#hamburguesa {
+    display: none; /* 🔹 Oculto por defecto en pantallas grandes */
+    font-size: 28px;
+    color: white; /* 🔹 Hace que la hamburguesa sea blanca */
+    cursor: pointer;
+    padding: 10px;
 }
 
 /* Estilo del menú */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Centra las palabras horizontalmente */
+    justify-content: center;
     align-items: center;
+    gap: 20px;
+    margin: 0 auto;
     padding: 0;
-    margin: 0 auto; /* Centra el ul dentro del nav */
-    text-align: center;
 }
 
-/* Elementos del menú */
+/* Mostrar menú cuando el checkbox está activado */
+#menu-toggle:checked + #hamburguesa + ul {
+    display: flex;
+}
+
+/* Espaciado entre elementos del menú */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem 1.25rem; /* Cambiado a rem */
+}
+
 nav ul li {
     display: inline-block;
-    margin: 0 20px; /* Espaciado entre elementos */
 }
+
+/* Esconder el menú en pantallas pequeñas */
+@media (max-width: 768px) {
+
+    nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    #hamburguesa {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 20px; /* 🔹 Ahora estará a la izquierda */
+        color: white; /* 🔹 Asegura que sea blanca */
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* Esconder el menú por defecto */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(71, 73, 77);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        padding: 5px 0; /* 🔹 Reduce el padding */
+        gap: 3px; /* 🔹 Reduce el espacio entre enlaces */
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    /* Mostrar menú cuando se marca el checkbox */
+    #menu-toggle:checked + #hamburguesa + ul {
+        display: flex;
+    }
+
+    #menu-toggle:checked ~ body {
+        overflow: hidden;
+    }
+    nav ul li {
+        padding: 5px 0; /* 🔹 Ajusta la separación */
+    }
+
+    nav ul li a {
+        padding: 8px 10px; /* 🔹 Reduce el padding de los enlaces */
+        font-size: 15px; /* 🔹 Ajusta el tamaño de la fuente si es necesario */
+    }
+}
+
 
 /* Enlaces dentro del nav */
 .enlaceNav {
     text-decoration: none;
     color: white;
     font-size: 18px;
-    text-align: center;
     padding: 10px 15px;
     position: relative; /* Necesario para el efecto */
 }
 
 /* Línea animada al hacer hover */
 .enlaceNav::after {
-    content: ""; /* Elemento vacío para la línea */
+    content: "";
     position: absolute;
     left: 50%;
-    bottom: 5px; /* Línea más cerca del texto */
+    bottom: 5px;
     width: 0%;
-    height: 1px; /* Línea más delgada */
+    height: 1px;
     background-color: white;
     transition: all 0.3s ease-in-out;
     transform: translateX(-50%);
@@ -128,6 +238,18 @@ nav ul li {
     transition: all 0.3s ease-in-out;
     filter: grayscale(100%);
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #cesta {
+        right: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    #cesta i {
+        font-size: 14px;
+    }
 }
 
 #cesta a {
@@ -221,9 +343,9 @@ nav ul li a {
 /* ESTILOS PARA EL CONTENIDO PRINCIPAL */
 /* ========================= */
 
-#presentacionIndex {
+#presentacionIndexUno {
     font-family: "Roboto Condensed", serif;
-    margin: 100px 250px;
+    margin: 20px 100px 0 600px;
     border: 1px solid black;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
@@ -231,12 +353,62 @@ nav ul li a {
     margin-top: 60px; /* Agrega margen superior para compensar la altura del nav */
 }
 
+#presentacionIndexDos {
+    font-family: "Roboto Condensed", serif;
+    margin: 20px 600px 0 100px;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 60px; /* Agrega margen superior para compensar la altura del nav */
+}
+
+#presentacionIndexTres {
+    font-family: "Roboto Condensed", serif;
+    margin: 20px 100px 0 600px;
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 60px; /* Agrega margen superior para compensar la altura del nav */
+}
+
+
+@media (max-width: 768px) {
+    #presentacionIndexUno,
+    #presentacionIndexDos,
+    #presentacionIndexTres {
+        margin: 20px 20px;
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
 #articulosIndex {
-    font-family: "Kanit", serif;
     display: flex;
-    justify-content: center;
-    margin-left: 60px;
-    margin-right: 60px;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Alinear verticalmente */
+    gap: 60px; /* Espaciado uniforme */
+    flex-wrap: wrap;
+    padding: 0 30px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+    #articulosIndex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tdArticulosIndex {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tdArticulosIndex img {
+        width: 90%;
+        height: auto;
+    }
 }
 
 #enlacesBicis {
@@ -244,40 +416,78 @@ nav ul li a {
     background-color: #f39c12;
 }
 
-/*
-.tituloBicisIndex {
-    position: absolute;
-}*/
-
 .tdArticulosIndex {
-    position: relative; /* Contenedor para posicionar el texto sobre la imagen */
-    width: 500px; /*Espacio entre imágenes de las columnas de las imágenes*/
-    text-align: center; /*Imágenes centradas*/
+    width: 350px; /* Mismo ancho para todas */
+    height: 250px; /* Mismo alto para todas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-/* Estilo para las imágenes */
-.tdArticulosIndex img {
-    width: 410px; /*Ancho de las imágenes*/
-    height: 310px; /*Altura de la imagen*/
-    border-radius: 40px;
+.imagenBiciIndex {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción sin distorsionar */
+    border-radius: 20px;
     transition: transform 0.3s ease;
 }
+
+.imagenBiciIndex:hover {
+    transform: scale(1.05);
+}
+
+.tituloBicisIndex {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px 10px;
+    background: none; /* Sin sombras ni fondos */
+}
+
+@media (max-width: 768px) {
+    #articulosIndex {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .tdArticulosIndex {
+        width: 90%;
+        max-width: 400px;
+        height: 230px; /* 🔹 Ajusta la altura de todas */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imagenBiciIndex {
+        width: 100%;
+        height: 100%; /* 🔹 Asegura que todas sean del mismo tamaño */
+        object-fit: cover; /* 🔹 Evita distorsiones */
+        border-radius: 20px;
+    }
+
+    /* 🔹 Asegurar que la imagen de Pista también mantenga proporciones */
+    .tdArticulosIndex:last-child .imagenBiciIndex {
+        height: 230px; /* 🔹 Exactamente igual a las otras */
+    }
+}
+/*
 .tdArticulosIndex img:hover,
 .imgBicis:hover,
 .imgAccesorios:hover {
-    transform: scale(1.04); /* Reduce the hover scale effect */
-}
+    transform: scale(1.04); /* Reduce the hover scale effect 
+}*/
 
-/* Estilo para el texto */
-.tdArticulosIndex .tituloBicisIndex {
-    position: absolute; /* Posiciona el texto de forma absoluta */
-    top: 50%; /* Centra el texto verticalmente */
-    left: 50%; /* Centra el texto horizontalmente */
-    transform: translate(-60%, -90%); /* Ajuste fino para centrar el texto */
-    color: white; /*Color de la letra*/
-    font-size: 24px; /* Tamaño de la fuente */
-    text-shadow: 7px 7px 9px rgba(0, 0, 0, 0.7); /* Sombra para mayor legibilidad */
-}
+
 
 #seccionPresentacionConocenos {
     font-family: "Roboto Condensed", serif; /*Fuente*/
@@ -297,12 +507,58 @@ nav ul li a {
 }
 
 footer {
-    z-index: 2;
     font-family: "Kanit", sans-serif;
     background-color: rgb(71, 73, 77);
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+    margin-top: auto; /* Empujar el footer al final */
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    #redesFooter ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .redes {
+        width: 35px;
+        height: 35px;
+    }
+
+    .enlacesWeb {
+        flex-direction: column;
+        gap: 5px;
+    }
 }
 
 footer ul {
@@ -312,8 +568,9 @@ footer ul {
 }
 
 #contactoFooter ul {
-    margin: 20px 0;
-    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
 }
 
 .footer-title {
@@ -326,8 +583,8 @@ footer ul {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 30px;
     padding: 0;
+    margin-top: 10px;
 }
 
 footer .redes {
@@ -382,7 +639,7 @@ footer .tiktok:hover {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .enlacesWeb a {
@@ -425,14 +682,15 @@ footer .tiktok:hover {
 }
 
 hr {
-    margin-top: 40px;
+    margin: 20px auto;
     border: none;
     height: 1px;
     background: rgba(255, 255, 255, 0.3);
+    width: 80%;
 }
 
 .copyright {
-    padding-top: 15px;
+    padding-top: 10px;
     font-size: 13px;
 }
 
@@ -441,18 +699,25 @@ hr {
 
 /**Estilo bicis en general**/
 .seccionPresentacionBicis {
+    font-family: "Roboto Condensed", serif; 
+    background-color: rgba(145, 145, 145, 0.3);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center; /* Centra el contenido */
+    max-width: 800px; /* Evita que sea demasiado ancho */
+    width: 90%; /* Se adapta al ancho del dispositivo */
+    margin: 60px auto; /* Centra en cualquier pantalla */
     border: 1px solid black;
 }
-.seccionPresentacionBicis {
-    font-family: "Roboto Condensed", serif; /*Fuente*/
-    margin-top: 70px;
-    margin-left: 120px;
-    margin-right: 120px;
-    background-color: rgb(145, 145, 145, 0.3);
-    margin: 120px 220px;
-    padding: 10px 15px;
-    border-radius: 20px;
+
+@media (max-width: 768px) {
+    .seccionPresentacionBicis {
+        padding: 15px;
+        width: 95%; /* Ocupar más espacio en pantallas pequeñas */
+        font-size: 14px; /* Reducir tamaño de texto */
+    }
 }
+
 #fondoElementosPista {
     font-family: "Roboto Condensed", serif; /*Fuente*/
     background-color: rgb(145, 145, 145, 0.4);
@@ -480,7 +745,6 @@ hr {
     border-radius: 20px;
 }
 
-.contenedorImgBici,
 .contendorBiografiaBici,
 .contenedorPrecioBici, 
 .contenedorDesplegable,
@@ -508,16 +772,17 @@ hr {
     font-size: 16px; /* Adjust the font size */
 }
 
-/*Imagen*/
+/*Imagen
 .imgBicis {
-    width: 320px; /*Ancho de las imágenes de las bicis*/
-    height: 260px; /*Altura de las imágenes de las bicis*/
+    width: 320px;
+    height: 260px;
     border-radius: 20px;
     transition: transform 0.3s ease;
 }
 .imgBicis:hover {
-    transform: scale(1.04); /* Reduce the hover scale effect */
+    transform: scale(1.04); /* Reduce the hover scale effect 
 }
+*/
 
 /*Desplegable*/
 .contenedorDesplegable {
@@ -573,6 +838,61 @@ hr {
 #botonFormulario:hover {
     background-color: #ffcc00; /* Change background color on hover */
     color: black; /* Change text color on hover */
+}
+
+.bicisContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre las bicicletas */
+    padding: 20px;
+    max-width: 1200px; /* Para que no se estire demasiado */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.biciItem {
+    flex: 1 1 calc(50% - 20px); /* 50% del ancho con espacio entre ellas */
+    max-width: calc(50% - 20px); /* Máximo ancho del 50% con margen */
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .biciItem {
+        flex: 1 1 100%; /* Ocupa el 100% del ancho */
+        max-width: 100%;
+    }
+}
+
+.contenedorImgBici {
+    text-align: center;
+}
+
+.imgBicis {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .tablaIzquierda {
+        display: none;
+    }
+
+    /* 🔹 Organizar las bicicletas en una columna */
+    .bicisContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .biciItem {
+        flex: 1 1 100%; /* Ocupa el 100% del ancho */
+        max-width: 100%;
+    }
 }
 
 /** Fin bicis de carretera **/
