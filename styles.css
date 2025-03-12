@@ -1244,24 +1244,72 @@ hr {
 }
 
 /* Responsividad */
-@media (max-width: 600px) {
-    #contenedorFormulario {
-        max-width: 90%;
-        padding: 20px;
+
+/* Ajustes para el formulario en móviles */
+@media (max-width: 768px) {
+    #fondoFormulario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url('fotos/imagenesFondo/fondoFormularioCompra.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 50px 20px;
     }
 
-    .tituloFormulario {
-        font-size: 20px;
+    #contenedorFormulario {
+        width: 90%; /* Asegura que el formulario se adapte */
+        max-width: 400px; /* Evita que sea demasiado ancho */
+        margin: 0 auto; /* Centrado */
+        background: rgba(255, 255, 255, 0.85); /* Mayor contraste */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .inputFormulario {
-        font-size: 14px;
+        width: 100%; /* Asegura que los inputs ocupen todo el ancho disponible */
+        padding: 10px;
+        font-size: 16px;
     }
 
-    #botonFormulario {
-        width: 100%;
+    /* Asegurar que el header y la cesta no desaparezcan */
+    header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    #cesta {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        filter: grayscale(100%);
+        transition: all 0.3s ease-in-out;
+    }
+
+    #cesta i {
+        font-size: 16px;
+        color: black;
+    }
+
+    #cesta:hover {
+        transform: scale(1.1);
+        filter: grayscale(0%);
+        background-color: #ffcc00;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
     }
 }
+
 
 /**FIN FORMULARIO**/
 
