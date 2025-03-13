@@ -400,13 +400,47 @@ nav ul li a {
 }
 
 
+#presentacionIndexUno,
+#presentacionIndexTres {
+    margin: 20px 50px 20px auto; /* Derecha */
+}
+
+#presentacionIndexDos {
+    margin: 20px auto 20px 50px; /* Izquierda */
+}
+
+/* 📌 Evitar que se compriman en pantallas anchas pero bajas (modo horizontal en móviles) */
+@media (max-height: 500px) and (min-width: 768px) {
+    #presentacionIndexUno,
+    #presentacionIndexDos,
+    #presentacionIndexTres {
+        width: 60%; /* Se expanden más */
+        max-width: 800px;
+        font-size: 18px;
+        padding: 25px;
+    }
+}
+
+/* 📌 En pantallas pequeñas (móviles verticales), centrar todos los bloques */
 @media (max-width: 768px) {
     #presentacionIndexUno,
     #presentacionIndexDos,
     #presentacionIndexTres {
-        margin: 20px 20px;
-        padding: 15px;
-        font-size: 16px;
+        width: 90%; /* Ocupar más espacio */
+        max-width: 600px;
+        margin: 15px auto; /* Centrado */
+        text-align: center; /* Opcional, para que el texto también quede centrado */
+    }
+}
+
+/* 📌 Solución para evitar que se estiren demasiado en pantallas grandes */
+@media (min-width: 1024px) {
+    #presentacionIndexUno,
+    #presentacionIndexDos,
+    #presentacionIndexTres {
+        width: 75%;
+        max-width: 950px;
+        font-size: 18px;
     }
 }
 
@@ -484,6 +518,7 @@ nav ul li a {
 }
 
 .tituloBicisIndex {
+    font-family: "Roboto Condensed", serif; /*Fuente*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -493,6 +528,7 @@ nav ul li a {
     font-weight: bold;
     padding: 5px 10px;
     background: none; /* Sin sombras ni fondos */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /*
