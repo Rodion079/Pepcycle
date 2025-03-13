@@ -1361,6 +1361,25 @@ hr {
     color: black; /* Color azul */
 }
 
+@media (max-width: 768px) {
+    #contenedorPolitica {
+        padding: 15px;
+        width: 95%; /* Ocupar más espacio en pantallas pequeñas */
+    }
+
+    .contenedorPoliticas {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    .contenedorPoliticas ul li::before {
+        left: -15px; /* Ajustar la posición de la flecha en pantallas pequeñas */
+    }
+}
+
 /**FIN POLITICA**/
 
 /**ACCESORIOS**/
