@@ -1311,26 +1311,54 @@ hr {
 
 /**FIN FORMULARIO**/
 
-/**POLITICA
+/**POLITICA**/
 
 #contenedorPolitica {
-    font-family: "Roboto Condensed", serif;
-    text-align: center;
-    margin: 125px 350px;
-    text-align: justify;
-    border-radius: 20px;
-    background-color: rgb(194, 194, 194);
-    padding: 20px 50px;
+    background-color: #f0f0f0; /* Fondo gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    max-width: 800px; /* Ancho máximo */
+    margin: 20px auto; /* Centrar el contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    font-family: "Roboto Condensed", sans-serif
 }
-#pEncabezadoPolitica {
-    margin: 60px 55px;
-}
+
 .contenedorPoliticas {
-    padding-bottom: 40px;
+    background-color: #ffffff; /* Fondo blanco para las secciones */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    margin-bottom: 20px; /* Espacio entre secciones */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
 }
+
+.contenedorPoliticas b {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.contenedorPoliticas p, .contenedorPoliticas ul {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 .contenedorPoliticas ul {
-    margin-top: 20px;
-    list-style-type: none;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.contenedorPoliticas ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.contenedorPoliticas ul li::before {
+    content: "→"; /* Asegúrate de que solo haya una flecha */
+    position: absolute;
+    left: -20px;
+    color: black; /* Color azul */
 }
 
 /**FIN POLITICA**/
@@ -1603,4 +1631,12 @@ hr {
     50% {
         transform: translateY(-10px);
     }
+}
+
+img {
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
 }
