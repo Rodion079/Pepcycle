@@ -17,7 +17,7 @@ html, body {
 }
 
 #imagenFondoIndex {
-    background-image: url(fotos/imagenesFondo/imagenPrueba.jpg);
+    background-image: url(fotos/imagenesFondo/imagenPrueba.webp);
     background-size: cover;
     background-position: center;
     padding: 5rem 0; /* Cambiado a rem */
@@ -1021,7 +1021,7 @@ hr {
 }
 #imagenFondoCarretera {
     padding: 40px 0;
-    background-image: url(fotos/imagenesFondo/fondoBicisCarretera.jpg);
+    background-image: url(fotos/imagenesFondo/fondoBicisCarretera.webp);
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
     overflow: visible !important;
@@ -1032,7 +1032,7 @@ hr {
 /** Bicis de montaña **/
 #imagenFondoMontana {
     padding: 40px 0;
-    background-image: url(fotos/imagenesFondo/fondoBicisMontana.jpg);
+    background-image: url(fotos/imagenesFondo/fondoBicisMontana.webp);
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
     /*background-attachment: fixed;*/
@@ -1042,7 +1042,7 @@ hr {
 /** Bicis de pista **/
 #imagenFondoPista {
     padding: 40px 0;
-    background-image: url(fotos/imagenesFondo/fondoBicisPista.jpg);
+    background-image: url(fotos/imagenesFondo/fondoBicisPista.webp);
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
     /*background-attachment: fixed;*/
@@ -1113,7 +1113,7 @@ hr {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ahora crecerá si es necesario */
-    background-image: url('fotos/imagenesFondo/fondoRegistro.jpg');
+    background-image: url('fotos/imagenesFondo/fondoRegistro.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1169,7 +1169,7 @@ hr {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('fotos/imagenesFondo/fondoFormularioCompra.jpg');
+    background-image: url('fotos/imagenesFondo/fondoFormularioCompra.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1286,7 +1286,7 @@ hr {
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background-image: url('fotos/imagenesFondo/fondoFormularioCompra.jpg');
+        background-image: url('fotos/imagenesFondo/fondoFormularioCompra.webp');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
