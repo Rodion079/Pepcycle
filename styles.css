@@ -820,8 +820,7 @@ hr {
 }
 
 .contendorBiografiaBici,
-.contenedorPrecioBici,
-.botonComprar {
+.contenedorPrecioBici {
     font-family: "Kanit", sans-serif; /* Use the Kanit font */
     font-size: 16px; /* Adjust the font size */
 }
@@ -1504,24 +1503,25 @@ hr {
 }
 
 .botonComprar {
-    width: 100%; /* Ajusta el ancho */
-    max-width: 120px; /* Evita que se estire demasiado */
-    padding: 8px 0; /* Espaciado interno */
-    background-color: #444; /* Color de fondo */
-    color: white; /* Texto blanco */
-    border: none; /* Sin borde */
+    padding: 15px 20px; /* Aumenta el espaciado interno: arriba/abajo 15px, izquierda/derecha 20px */
+    font-size: 1rem; /* Tamaño de fuente */
+    line-height: 0; /* Ajusta la altura de línea para centrar mejor el texto */
+    border: 2px solid #333; /* Borde del botón */
     border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor a "clickable" */
-    text-align: center;
-    display: block; /* Asegura que el botón ocupe su espacio */
-    font-size: 14px; /* Ajuste del tamaño de la fuente */
-    font-weight: bold; /* Negrita */
-    box-shadow: none !important; /* 🔥 Elimina sombras raras */
+    background-color: rgb(71, 73, 77); /* Color de fondo */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    text-align: center; /* Asegura que el texto esté centrado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
 }
 
 .botonComprar:hover {
-    background-color: #ffcc00; /* Color en hover */
-    color: black;
+    background-color: #ffcc00; /* Color de fondo al pasar el ratón */
+    color: black; /* Cambia el color del texto al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    border-color: #ffcc00; /* Cambia el color del borde */
 }
 
 @media (max-width: 768px) {

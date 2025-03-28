@@ -294,33 +294,101 @@
     </footer>
 
     <script>
+        // Precios base para cada opción
+        const precios = {
+            talla: {
+                "S (49-52 cm)": 2250,
+                "M (53-56 cm)": 2250,
+                "L (57-60 cm)": 2250
+            },
+            material: {
+                "Acero": 600,
+                "Aluminio": 1150,
+                "Aluminio aleado": 1760,
+                "Fibra de carbono": 6380
+            },
+            ruedas: {
+                "26 pulgadas": 450,
+                "27.5 pulgadas": 650,
+                "29 pulgadas": 849
+            },
+            color: {
+                "Azul metálico": 680,
+                "Verde flúor": 590,
+                "Naranja brillante": 490
+            }
+        };
+    
+        // Precio base de la bicicleta
+        const precioBase = 0;
+    
+        // Función para actualizar el precio
+        function actualizarPrecio() {
+            const tallaSeleccionada = document.getElementById('talla').value;
+            const materialSeleccionado = document.getElementById('material').value;
+            const ruedasSeleccionadas = document.getElementById('ruedas').value;
+            const colorSeleccionado = document.getElementById('color').value;
+    
+            // Calcula el precio total sumando los costos adicionales
+            let precioTotal = precioBase;
+    
+            if (precios.talla[tallaSeleccionada]) {
+                precioTotal += precios.talla[tallaSeleccionada];
+            }
+            if (precios.material[materialSeleccionado]) {
+                precioTotal += precios.material[materialSeleccionado];
+            }
+            if (precios.ruedas[ruedasSeleccionadas]) {
+                precioTotal += precios.ruedas[ruedasSeleccionadas];
+            }
+            if (precios.color[colorSeleccionado]) {
+                precioTotal += precios.color[colorSeleccionado];
+            }
+    
+            // Actualiza el precio en la página
+            document.querySelector('.producto-info .precio').textContent = `Precio: ${precioTotal.toFixed(2)}€`;
+            return precioTotal; // Devuelve el precio total calculado
+        }
+    
+        // Función para añadir a la cesta
         function addToCart() {
             const tallaSeleccionada = document.getElementById('talla').value;
             const materialSeleccionado = document.getElementById('material').value;
             const ruedasSeleccionadas = document.getElementById('ruedas').value;
             const colorSeleccionado = document.getElementById('color').value;
-
+    
             if (tallaSeleccionada === "-elegir-" || materialSeleccionado === "-elegir-" || ruedasSeleccionadas === "-elegir-" || colorSeleccionado === "-elegir-") {
                 alert("Por favor, selecciona todas las opciones.");
                 return;
             }
-
+    
+            // Calcula el precio total actualizado
+            const precioTotal = actualizarPrecio();
+    
+            // Crea el objeto del producto
             const producto = {
                 nombre: "Bicicleta Personalizada",
-                precio: 3500.00, // Ajusta según lo que se elija
+                precio: precioTotal, // Usa el precio calculado dinámicamente
                 cantidad: 1,
                 talla: tallaSeleccionada,
                 material: materialSeleccionado,
                 ruedas: ruedasSeleccionadas,
                 color: colorSeleccionado
             };
-
+    
+            // Añade el producto a la cesta
             const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
             cesta.push(producto);
             localStorage.setItem('cesta', JSON.stringify(cesta));
-
+    
             alert("¡Bicicleta añadida a la cesta!");
         }
+    
+        // Escucha los cambios en los selectores
+        document.getElementById('talla').addEventListener('change', actualizarPrecio);
+        document.getElementById('material').addEventListener('change', actualizarPrecio);
+        document.getElementById('ruedas').addEventListener('change', actualizarPrecio);
+        document.getElementById('color').addEventListener('change', actualizarPrecio);
     </script>
 </body>
 </html>
