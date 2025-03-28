@@ -64,6 +64,7 @@ body {
 /* HEADER GENERAL */
 /* ========================= */
 
+/* HEADER GENERAL */
 header {
     background-color: rgb(71, 73, 77);
     text-align: center;
@@ -73,24 +74,28 @@ header {
     align-items: center;
     padding: 10px;
     margin: 0;
-    height: 100px; /* Asegurar que el header tenga altura fija */
+    height: auto; /* Permite que el header se ajuste automáticamente */
     width: 100vw;
     min-width: 100vw;
     overflow: hidden;
-    border-bottom: none; /* Asegura que no haya un borde blanco */
+    border-bottom: none;
 }
 
 #contenedorLogoHeader {
-    text-align: center;
-    padding: 0; /* Elimina cualquier padding extra */
-    margin: 0; /* Elimina márgenes */
-    height: auto; /* Evita que tenga altura forzada */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0; /* Espaciado interno */
+    height: 110px; /* Incrementa la altura del contenedor */
+    background-color: transparent;
+    margin-bottom: 20px; /* Espaciado entre el logo y el nav */
 }
 
-/* Estilo para el contenedor del logo */
 #contenedorLogoHeader img {
-    height: 100px;
-    width: 130px;
+    max-height: 120px; /* Incrementa el tamaño máximo del logo */
+    width: auto; /* Mantiene la proporción */
+    height: auto; /* Ajusta automáticamente la altura */
+    object-fit: contain; /* Asegura que el logo no se distorsione */
 }
 
 /* ========================= */

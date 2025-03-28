@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="shortcut icon" href="../fotos/logo/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Botella Pepcycle</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .volver-container {
+            position: relative;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .btn-volver {
+            background-color: transparent;
+            color: #333;
+            border: 2px solid #333;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            width: auto;
+            max-width: 120px;
+            text-align: center;
+        }
+
+        .btn-volver i {
+            font-size: 0.9rem;
+            margin-right: 6px;
+        }
+
+        .btn-volver:hover {
+            background-color: #f0f0f0;
+            color: #007bff;
+            border-color: #007bff;
+        }
+
+        .producto {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px;
+            margin: 40px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .producto img {
+            width: 40%;
+            border-radius: 10px;
+            margin-right: 40px;
+        }
+
+        .producto-info {
+            width: 55%;
+        }
+
+        .producto-info h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .producto-info .precio {
+            font-size: 1.8rem;
+            color: rgb(71, 73, 77);
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .producto-info p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .contenedorDesplegable {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .contenedorDesplegable label {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .desplegableTallasBicis {
+            width: 40%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .producto-info .btn {
+            display: block;
+            margin: 0 auto;
+            background-color: rgb(71, 73, 77);
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .producto-info .btn:hover {
+            background-color: #4a4c50;
+        }
+
+        @media (max-width: 768px) {
+            .producto {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .producto img {
+                width: 90%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .producto-info {
+                width: 100%;
+                text-align: center;
+            }
+
+            .producto-info h1 {
+                font-size: 1.5rem;
+            }
+
+            .producto-info .precio {
+                font-size: 1.5rem;
+            }
+
+            .producto-info p {
+                font-size: 1rem;
+            }
+
+            .producto-info .btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .desplegableTallasBicis {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="contenedorLogoHeader">
+            <a href="../index.html">
+                <img src="../fotos/logo/logo2.png" alt="Logo de la tienda de bicicletas">
+            </a>
+        </div>
+    </header>
+
+    <nav>
+        <input type="checkbox" id="menu-toggle">
+        <label id="hamburguesa" for="menu-toggle">☰</label>
+        <ul>
+            <li><a href="../index.html" class="enlaceNav">Inicio</a></li>
+            <li class="desplegableNav">
+                <a href="#" class="enlaceNav">Bicis</a>
+                <ul class="desplegableNavContenido">
+                    <li><a href="../bicisCarretera.html">Carretera</a></li>
+                    <li><a href="../bicisMontana.html">Montaña</a></li>
+                    <li><a href="../bicisPista.html">Pista</a></li>
+                    <li><a href="../accesorios.html">Accesorios</a></li>
+                </ul>
+            </li>
+            <li><a href="../index.html#conocenos" class="enlaceNav">Conócenos</a></li>
+            <li><a href="../registro.html" class="enlaceNav">Registro</a></li>
+        </ul>
+        <div id="cesta">
+            <a href="../cestaCompra.html">
+                <i class="fa-solid fa-shopping-cart"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="volver-container">
+        <a href="../accesorios.html#accesorioTres" class="btn-volver">
+            <i class="fa-solid fa-arrow-left"></i> Volver
+        </a>
+    </div>
+
+    <section class="producto">
+        <img src="../fotos/fotosAccesorios/botella.webp" alt="Botella">
+        <div class="producto-info">
+            <h1 style="text-align: center;">Botella Pepcycle</h1>
+            <p class="precio" style="text-align: right;">22,50€</p>
+            <p>Nuestra botella, fabricada con materiales premium, 
+                garantiza que tus bebidas se mantengan a la temperatura 
+                perfecta por más tiempo. Con un diseño elegante y práctico, 
+                es la opción ideal para llevar a todas partes, combinando 
+                estilo y rendimiento.
+            </p>
+
+            <div class="contenedorDesplegable">
+                <label for="opciones">Capacidad:</label>
+                <select class="desplegableTallasBicis">
+                    <option value="Talla no elegida">-elegir-</option>
+                    <option value="500 ml">500 ml</option>
+                    <option value="750 ml">750 ml</option>
+                </select>
+            </div>
+
+            <button class="btn" onclick="addToCart()">Añadir a la cesta</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div id="contactoFooter" class="footer-column">
+                <p class="footer-title">Contáctanos:</p>
+                <ul>
+                    <li>📱: +34 684 181 438</li>
+                    <li>📧: medaccorreo@medac.com</li>
+                    <li>@pepcycle</li>
+                </ul>
+            </div>
+            <div id="redesFooter" class="footer-column">
+                <p class="footer-title">Síguenos:</p>
+                <ul id="segundoUlFooter">
+                    <li><a href="https://www.facebook.com" target="_blank" class="redes facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="https://x.com" target="_blank" class="redes x-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" class="redes instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://web.telegram.org/a/" target="_blank" class="redes telegram"><i class="fa-brands fa-telegram-plane"></i></a></li>
+                    <li><a href="https://www.tiktok.com" target="_blank" class="redes tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="enlacesWeb">
+            <a href="../index.html">Inicio</a>
+            <a href="../registro.html">Registro</a>
+            <a href="../politicaPepcycle.html">Política</a>
+        </div>
+
+        <hr>
+
+        <p class="copyright">&copy; Copyright Pepcycle 2025 | Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function addToCart() {
+            const nombreProducto = "Botellla Pepcycle";
+            const precioProducto = 22.50;
+            const tallaSeleccionada = document.querySelector('.desplegableTallasBicis').value;
+
+            if (tallaSeleccionada === "Talla no elegida") {
+                alert("Por favor, selecciona una talla.");
+                return;
+            }
+
+            const producto = {
+                nombre: nombreProducto,
+                precio: precioProducto,
+                cantidad: 1,
+                talla: tallaSeleccionada
+            };
+
+            const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
+            cesta.push(producto);
+            localStorage.setItem('cesta', JSON.stringify(cesta));
+
+            alert("¡Bicicleta añadida a la cesta!");
+        }
+    </script>
+</body>
+</html>
