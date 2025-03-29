@@ -825,18 +825,6 @@ hr {
     font-size: 16px; /* Adjust the font size */
 }
 
-/*Imagen
-.imgBicis {
-    width: 320px;
-    height: 260px;
-    border-radius: 20px;
-    transition: transform 0.3s ease;
-}
-.imgBicis:hover {
-    transform: scale(1.04); /* Reduce the hover scale effect 
-}
-*/
-
 /*Desplegable*/
 .contenedorDesplegable {
     padding: 15px;

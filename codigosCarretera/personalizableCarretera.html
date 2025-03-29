@@ -1,242 +1,336 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="shortcut icon" href="../fotos/logo/logo2.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Bicicleta personalizable</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="shortcut icon" href="../fotos/logo/logo2.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <title>Bicicleta personalizable</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Modal personalizado */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-contenido {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 2rem;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-contenido h2 {
+      font-size: 1.4rem;
+      color: #e74c3c;
+    }
+
+    .modal-contenido p {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    .cerrar-modal {
+      margin-top: 1.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .cerrar-modal:hover {
+      background-color: #c0392b;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div id="contenedorLogoHeader">
-            <a href="../index.html">
-                <img src="../fotos/logo/logo2.png" alt="Logo de la tienda de bicicletas">
-            </a>
-        </div>
-    </header>
-
-    <nav>
-        <input type="checkbox" id="menu-toggle">
-        <label id="hamburguesa" for="menu-toggle">☰</label>
-        <ul>
-            <li><a href="../index.html" class="enlaceNav">Inicio</a></li>
-            <li class="desplegableNav">
-                <a href="#" class="enlaceNav">Bicis</a>
-                <ul class="desplegableNavContenido">
-                    <li><a href="../bicisCarretera.html">Carretera</a></li>
-                    <li><a href="../bicisMontana.html">Montaña</a></li>
-                    <li><a href="../bicisPista.html">Pista</a></li>
-                    <li><a href="../accesorios.html">Accesorios</a></li>
-                </ul>
-            </li>
-            <li><a href="../index.html#conocenos" class="enlaceNav">Conócenos</a></li>
-            <li><a href="../registro.html" class="enlaceNav">Registro</a></li>
-        </ul>
-        <div id="cesta">
-            <a href="../cestaCompra.html">
-                <i class="fa-solid fa-shopping-cart"></i>
-            </a>
-        </div>
-    </nav>
-
-    <div class="volver-container">
-        <a href="../bicisCarretera.html#biciPersonalizableCarretera" class="btn-volver">
-            <i class="fa-solid fa-arrow-left"></i> Volver
-        </a>
+  <header>
+    <div id="contenedorLogoHeader">
+      <a href="../index.html">
+        <img src="../fotos/logo/logo2.png" alt="Logo de la tienda de bicicletas" />
+      </a>
     </div>
+  </header>
 
-    <section class="producto">
-        <img src="../fotos/imagenesBicis/bicisCarretera/modeloBaseCarretera.webp" alt="Bicicleta de carretera">
-        <div class="producto-info">
-            <h1>Personaliza tu bici</h1>
-            <p class="precio">Precio depende de la elección</p>
-            <p>Elije las características de tu bicicleta para personalizarla a tu gusto. Cada opción puede afectar el precio.</p>
+  <nav>
+    <input type="checkbox" id="menu-toggle" />
+    <label id="hamburguesa" for="menu-toggle">☰</label>
+    <ul>
+      <li><a href="../index.html" class="enlaceNav">Inicio</a></li>
+      <li class="desplegableNav">
+        <a href="#" class="enlaceNav">Bicis</a>
+        <ul class="desplegableNavContenido">
+          <li><a href="../bicisCarretera.html">Carretera</a></li>
+          <li><a href="../bicisMontana.html">Montaña</a></li>
+          <li><a href="../bicisPista.html">Pista</a></li>
+          <li><a href="../accesorios.html">Accesorios</a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#conocenos" class="enlaceNav">Conócenos</a></li>
+      <li><a href="../registro.html" class="enlaceNav">Registro</a></li>
+    </ul>
+    <div id="cesta">
+      <a href="../cestaCompra.html">
+        <i class="fa-solid fa-shopping-cart"></i>
+      </a>
+    </div>
+  </nav>
 
-            <!-- Talla -->
-            <div class="contenedorDesplegable">
-                <label for="talla">Talla:</label>
-                <select id="talla" class="desplegableTallasBicis">
-                    <option value="talla">-elegir-</option>
-                    <option value="S (49-52 cm)">S (49-52 cm)</option>
-                    <option value="M (53-56 cm)">M (53-56 cm)</option>
-                    <option value="L (57-60 cm)">L (57-60 cm)</option>
-                </select>
-            </div>
+  <div class="volver-container">
+    <a href="../bicisCarretera.html#biciPersonalizableCarretera" class="btn-volver">
+      <i class="fa-solid fa-arrow-left"></i> Volver
+    </a>
+  </div>
 
-            <!-- Material -->
-            <div class="contenedorDesplegable">
-                <label for="material">Material:</label>
-                <select id="material" class="desplegableTallasBicis">
-                    <option value="material">-elegir-</option>
-                    <option value="Aluminio">Aluminio</option>
-                    <option value="Aluminio aleado">Aluminio aleado</option>
-                    <option value="Acero">Acero</option>
-                    <option value="Fibra de carbono">Fibra de carbono</option>
-                </select>
-            </div>
+  <section class="producto">
+    <img src="../fotos/imagenesBicis/bicisCarretera/modeloBaseCarretera.webp" alt="Bicicleta de carretera" />
+    <div class="producto-info">
+      <h1>Personaliza tu bici</h1>
+      <p class="precio">Precio depende de la elección</p>
+      <p>Elije las características de tu bicicleta para personalizarla a tu gusto. Cada opción puede afectar el precio.</p>
 
-            <!-- Ruedas -->
-            <div class="contenedorDesplegable">
-                <label for="ruedas">Ruedas:</label>
-                <select id="ruedas" class="desplegableTallasBicis">
-                    <option value="ruedas">-elegir-</option>
-                    <option value="26 pulgadas">26 pulgadas</option>
-                    <option value="27.5 pulgadas">27.5 pulgadas</option>
-                    <option value="29 pulgadas">29 pulgadas</option>
-                </select>
-            </div>
+      <!-- Talla -->
+      <div class="contenedorDesplegable">
+        <label for="talla">Talla:</label>
+        <select id="talla" class="desplegableTallasBicis">
+          <option value="-elegir-">-elegir-</option>
+          <option value="S (49-52 cm)">S (49-52 cm)</option>
+          <option value="M (53-56 cm)">M (53-56 cm)</option>
+          <option value="L (57-60 cm)">L (57-60 cm)</option>
+        </select>
+      </div>
 
-            <!-- Color -->
-            <div class="contenedorDesplegable">
-                <label for="color">Color:</label>
-                <select id="color" class="desplegableTallasBicis">
-                    <option value="color">-elegir-</option>
-                    <option value="Verde flúor">Verde flúor</option>
-                    <option value="Azul metálico">Azul metálico</option>
-                    <option value="Naranja brillante">Naranja brillante</option>
-                </select>
-            </div>
+      <!-- Material -->
+      <div class="contenedorDesplegable">
+        <label for="material">Material:</label>
+        <select id="material" class="desplegableTallasBicis">
+          <option value="-elegir-">-elegir-</option>
+          <option value="Aluminio">Aluminio</option>
+          <option value="Aluminio aleado">Aluminio aleado</option>
+          <option value="Acero">Acero</option>
+          <option value="Fibra de carbono">Fibra de carbono</option>
+        </select>
+      </div>
 
-            <button class="btn" onclick="addToCart()">Añadir a la cesta</button>
-        </div>
-    </section>
+      <!-- Ruedas -->
+      <div class="contenedorDesplegable">
+        <label for="ruedas">Ruedas:</label>
+        <select id="ruedas" class="desplegableTallasBicis">
+          <option value="-elegir-">-elegir-</option>
+          <option value="26 pulgadas">26 pulgadas</option>
+          <option value="27.5 pulgadas">27.5 pulgadas</option>
+          <option value="29 pulgadas">29 pulgadas</option>
+        </select>
+      </div>
 
-    <footer>
-        <div class="footer-container">
-            <div id="contactoFooter" class="footer-column">
-                <p class="footer-title">Contáctanos:</p>
-                <ul>
-                    <li>📱: +34 684 181 438</li>
-                    <li>📧: medaccorreo@medac.com</li>
-                    <li>@pepcycle</li>
-                </ul>
-            </div>
-            <div id="redesFooter" class="footer-column">
-                <p class="footer-title">Síguenos:</p>
-                <ul id="segundoUlFooter">
-                    <li><a href="https://www.facebook.com" target="_blank" class="redes facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="https://x.com" target="_blank" class="redes x-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com" target="_blank" class="redes instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="https://web.telegram.org/a/" target="_blank" class="redes telegram"><i class="fa-brands fa-telegram-plane"></i></a></li>
-                    <li><a href="https://www.tiktok.com" target="_blank" class="redes tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
-                </ul>
-            </div>
-        </div>
+      <!-- Color -->
+      <div class="contenedorDesplegable">
+        <label for="color">Color:</label>
+        <select id="color" class="desplegableTallasBicis">
+          <option value="-elegir-">-elegir-</option>
+          <option value="Verde flúor">Verde flúor</option>
+          <option value="Azul metálico">Azul metálico</option>
+          <option value="Naranja brillante">Naranja brillante</option>
+        </select>
+      </div>
 
-        <div class="enlacesWeb">
-            <a href="../index.html">Inicio</a>
-            <a href="../registro.html">Registro</a>
-            <a href="../politicaPepcycle.html">Política</a>
-        </div>
+      <button class="btn" onclick="addToCart()">Añadir a la cesta</button>
+    </div>
+  </section>
 
-        <hr>
+  <footer>
+    <div class="footer-container">
+      <div id="contactoFooter" class="footer-column">
+        <p class="footer-title">Contáctanos:</p>
+        <ul>
+          <li>📱: +34 684 181 438</li>
+          <li>📧: medaccorreo@medac.com</li>
+          <li>@pepcycle</li>
+        </ul>
+      </div>
+      <div id="redesFooter" class="footer-column">
+        <p class="footer-title">Síguenos:</p>
+        <ul id="segundoUlFooter">
+          <li><a href="https://www.facebook.com" target="_blank" class="redes facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="https://x.com" target="_blank" class="redes x-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com" target="_blank" class="redes instagram"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://web.telegram.org/a/" target="_blank" class="redes telegram"><i class="fa-brands fa-telegram-plane"></i></a></li>
+          <li><a href="https://www.tiktok.com" target="_blank" class="redes tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="enlacesWeb">
+      <a href="../index.html">Inicio</a>
+      <a href="../registro.html">Registro</a>
+      <a href="../politicaPepcycle.html">Política</a>
+    </div>
+    <hr>
+    <p class="copyright">&copy; Copyright Pepcycle 2025 | Todos los derechos reservados.</p>
+  </footer>
 
-        <p class="copyright">&copy; Copyright Pepcycle 2025 | Todos los derechos reservados.</p>
-    </footer>
+  <!-- Modal de error -->
+  <div id="modalError" class="modal">
+    <div class="modal-contenido">
+      <h2>⚠️ ¡Ups! Parece que falta algo...</h2>
+      <p>Por favor, asegúrate de seleccionar:<br>
+        ✅ Talla<br>
+        ✅ Material<br>
+        ✅ Ruedas<br>
+        ✅ Color<br><br>
+        ¡Así podremos crear la bici de tus sueños! 🚴‍♀️✨
+      </p>
+      <button class="cerrar-modal" onclick="cerrarModal()">Entendido</button>
+    </div>
+  </div>
 
-    <script>
-        // Precios base para cada opción
-        const precios = {
-            talla: {
-                "S (49-52 cm)": 2250,
-                "M (53-56 cm)": 2250,
-                "L (57-60 cm)": 2250
-            },
-            material: {
-                "Acero": 600,
-                "Aluminio": 1150,
-                "Aluminio aleado": 1760,
-                "Fibra de carbono": 6380
-            },
-            ruedas: {
-                "26 pulgadas": 450,
-                "27.5 pulgadas": 650,
-                "29 pulgadas": 849
-            },
-            color: {
-                "Azul metálico": 680,
-                "Verde flúor": 590,
-                "Naranja brillante": 490
-            }
-        };
-    
-        // Precio base de la bicicleta
-        const precioBase = 0;
-    
-        // Función para actualizar el precio
-        function actualizarPrecio() {
-            const tallaSeleccionada = document.getElementById('talla').value;
-            const materialSeleccionado = document.getElementById('material').value;
-            const ruedasSeleccionadas = document.getElementById('ruedas').value;
-            const colorSeleccionado = document.getElementById('color').value;
-    
-            // Calcula el precio total sumando los costos adicionales
-            let precioTotal = precioBase;
-    
-            if (precios.talla[tallaSeleccionada]) {
-                precioTotal += precios.talla[tallaSeleccionada];
-            }
-            if (precios.material[materialSeleccionado]) {
-                precioTotal += precios.material[materialSeleccionado];
-            }
-            if (precios.ruedas[ruedasSeleccionadas]) {
-                precioTotal += precios.ruedas[ruedasSeleccionadas];
-            }
-            if (precios.color[colorSeleccionado]) {
-                precioTotal += precios.color[colorSeleccionado];
-            }
-    
-            // Actualiza el precio en la página
-            document.querySelector('.producto-info .precio').textContent = `Precio: ${precioTotal.toFixed(2)}€`;
-            return precioTotal; // Devuelve el precio total calculado
-        }
-    
-        // Función para añadir a la cesta
-        function addToCart() {
-            const tallaSeleccionada = document.getElementById('talla').value;
-            const materialSeleccionado = document.getElementById('material').value;
-            const ruedasSeleccionadas = document.getElementById('ruedas').value;
-            const colorSeleccionado = document.getElementById('color').value;
-    
-            if (tallaSeleccionada === "-elegir-" || materialSeleccionado === "-elegir-" || ruedasSeleccionadas === "-elegir-" || colorSeleccionado === "-elegir-") {
-                alert("Por favor, selecciona todas las opciones.");
-                return;
-            }
-    
-            // Calcula el precio total actualizado
-            const precioTotal = actualizarPrecio();
-    
-            // Crea el objeto del producto
-            const producto = {
-                nombre: "Bicicleta Personalizada",
-                precio: precioTotal, // Usa el precio calculado dinámicamente
-                cantidad: 1,
-                talla: tallaSeleccionada,
-                material: materialSeleccionado,
-                ruedas: ruedasSeleccionadas,
-                color: colorSeleccionado
-            };
-    
-            // Añade el producto a la cesta
-            const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
-            cesta.push(producto);
-            localStorage.setItem('cesta', JSON.stringify(cesta));
-    
-            alert("¡Bicicleta añadida a la cesta!");
-        }
-    
-        // Escucha los cambios en los selectores
-        document.getElementById('talla').addEventListener('change', actualizarPrecio);
-        document.getElementById('material').addEventListener('change', actualizarPrecio);
-        document.getElementById('ruedas').addEventListener('change', actualizarPrecio);
-        document.getElementById('color').addEventListener('change', actualizarPrecio);
-    </script>
+  <script>
+    const precios = {
+      talla: {
+        "S (49-52 cm)": 2250,
+        "M (53-56 cm)": 2250,
+        "L (57-60 cm)": 2250
+      },
+      material: {
+        "Acero": 600,
+        "Aluminio": 1150,
+        "Aluminio aleado": 1760,
+        "Fibra de carbono": 6380
+      },
+      ruedas: {
+        "26 pulgadas": 450,
+        "27.5 pulgadas": 650,
+        "29 pulgadas": 849
+      },
+      color: {
+        "Azul metálico": 680,
+        "Verde flúor": 590,
+        "Naranja brillante": 490
+      }
+    };
+  
+    function actualizarPrecio() {
+      const talla = document.getElementById('talla').value;
+      const material = document.getElementById('material').value;
+      const ruedas = document.getElementById('ruedas').value;
+      const color = document.getElementById('color').value;
+  
+      let precio = 0;
+  
+      if (precios.talla[talla]) precio += precios.talla[talla];
+      if (precios.material[material]) precio += precios.material[material];
+      if (precios.ruedas[ruedas]) precio += precios.ruedas[ruedas];
+      if (precios.color[color]) precio += precios.color[color];
+  
+      const precioTexto = precio > 0 ? `Precio: ${precio.toFixed(2)}€` : 'Precio depende de la elección';
+      document.querySelector('.producto-info .precio').textContent = precioTexto;
+  
+      return precio;
+    }
+  
+    function addToCart() {
+      const talla = document.getElementById('talla').value;
+      const material = document.getElementById('material').value;
+      const ruedas = document.getElementById('ruedas').value;
+      const color = document.getElementById('color').value;
+  
+      const faltantes = [];
+  
+      if (talla === "-elegir-") faltantes.push("✅ Talla");
+      if (material === "-elegir-") faltantes.push("✅ Material");
+      if (ruedas === "-elegir-") faltantes.push("✅ Ruedas");
+      if (color === "-elegir-") faltantes.push("✅ Color");
+  
+      if (faltantes.length > 0) {
+        mostrarModal(faltantes);
+        return;
+      }
+  
+      const precio = actualizarPrecio();
+  
+      const producto = {
+        nombre: "Bicicleta Personalizada",
+        precio,
+        cantidad: 1,
+        talla,
+        material,
+        ruedas,
+        color
+      };
+  
+      const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
+      cesta.push(producto);
+      localStorage.setItem('cesta', JSON.stringify(cesta));
+  
+      guardarSeleccionEnLocalStorage();
+  
+      alert("¡Bicicleta añadida a la cesta!");
+    }
+  
+    function mostrarModal(faltantes) {
+      const modal = document.getElementById('modalError');
+      const contenido = document.querySelector('.modal-contenido p');
+  
+      contenido.innerHTML = `Por favor, asegúrate de seleccionar:<br>${faltantes.join('<br>')}<br><br>¡Así podremos crear la bici de tus sueños! 🚴‍♀️✨`;
+  
+      modal.style.display = 'block';
+    }
+  
+    function cerrarModal() {
+      document.getElementById('modalError').style.display = 'none';
+    }
+  
+    function guardarSeleccionEnLocalStorage() {
+      const seleccion = {
+        talla: document.getElementById('talla').value,
+        material: document.getElementById('material').value,
+        ruedas: document.getElementById('ruedas').value,
+        color: document.getElementById('color').value
+      };
+      localStorage.setItem('seleccionBiciPersonalizada', JSON.stringify(seleccion));
+    }
+  
+    function cargarSeleccionGuardada() {
+      const seleccion = JSON.parse(localStorage.getItem('seleccionBiciPersonalizada'));
+      if (!seleccion) return;
+  
+      if (seleccion.talla) document.getElementById('talla').value = seleccion.talla;
+      if (seleccion.material) document.getElementById('material').value = seleccion.material;
+      if (seleccion.ruedas) document.getElementById('ruedas').value = seleccion.ruedas;
+      if (seleccion.color) document.getElementById('color').value = seleccion.color;
+  
+      actualizarPrecio();
+    }
+  
+    // Escuchadores
+    document.getElementById('talla').addEventListener('change', actualizarPrecio);
+    document.getElementById('material').addEventListener('change', actualizarPrecio);
+    document.getElementById('ruedas').addEventListener('change', actualizarPrecio);
+    document.getElementById('color').addEventListener('change', actualizarPrecio);
+  
+    // Cargar al entrar a la página
+    window.addEventListener('DOMContentLoaded', () => {
+      cargarSeleccionGuardada();
+    });
+  </script>
+  
+  
 </body>
 </html>
