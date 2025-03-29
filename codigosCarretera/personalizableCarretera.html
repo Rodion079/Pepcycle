@@ -11,54 +11,6 @@
     html {
       scroll-behavior: smooth;
     }
-
-    /* Modal personalizado */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .modal-contenido {
-      background-color: #fff;
-      margin: 15% auto;
-      padding: 2rem;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .modal-contenido h2 {
-      font-size: 1.4rem;
-      color: #e74c3c;
-    }
-
-    .modal-contenido p {
-      margin-top: 1rem;
-      font-size: 1rem;
-    }
-
-    .cerrar-modal {
-      margin-top: 1.5rem;
-      padding: 0.5rem 1rem;
-      background-color: #e74c3c;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .cerrar-modal:hover {
-      background-color: #c0392b;
-    }
   </style>
 </head>
 <body>
@@ -202,6 +154,9 @@
   </div>
 
   <script>
+    const tipoBici = "carretera";
+    const claveStorage = `seleccionBiciPersonalizada-${tipoBici}`;
+  
     const precios = {
       talla: {
         "S (49-52 cm)": 2250,
@@ -304,11 +259,11 @@
         ruedas: document.getElementById('ruedas').value,
         color: document.getElementById('color').value
       };
-      localStorage.setItem('seleccionBiciPersonalizada', JSON.stringify(seleccion));
+      localStorage.setItem(claveStorage, JSON.stringify(seleccion));
     }
   
     function cargarSeleccionGuardada() {
-      const seleccion = JSON.parse(localStorage.getItem('seleccionBiciPersonalizada'));
+      const seleccion = JSON.parse(localStorage.getItem(claveStorage));
       if (!seleccion) return;
   
       if (seleccion.talla) document.getElementById('talla').value = seleccion.talla;
@@ -325,11 +280,12 @@
     document.getElementById('ruedas').addEventListener('change', actualizarPrecio);
     document.getElementById('color').addEventListener('change', actualizarPrecio);
   
-    // Cargar al entrar a la página
+    // Al cargar la página
     window.addEventListener('DOMContentLoaded', () => {
       cargarSeleccionGuardada();
     });
   </script>
+  
   
   
 </body>
