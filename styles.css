@@ -1700,3 +1700,211 @@ img {
 img:hover {
     transform: scale(1.05);
 }
+
+/* Botones generales */
+.btn,
+.btn-volver,
+.botonComprar {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: rgb(71, 73, 77);
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover,
+.btn-volver:hover,
+.botonComprar:hover {
+    background-color: #4a4c50;
+    color: #ffcc00;
+}
+
+/* Contenedores generales */
+.producto,
+.contenedorBotonComprar,
+.contenedorDesplegable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Imágenes generales */
+.imgBicis,
+.producto img,
+.imgAccesorios {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imgBicis:hover,
+.producto img:hover,
+.imgAccesorios:hover {
+    transform: scale(1.05);
+}
+
+/* Información de productos */
+.producto-info {
+    width: 100%;
+    text-align: center;
+}
+
+.producto-info h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.producto-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.producto-info .precio {
+    font-size: 1.8rem;
+    color: rgb(71, 73, 77);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Navegación */
+nav ul li a,
+.desplegableNavContenido a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+.desplegableNavContenido a:hover {
+    background-color: #4a4c50;
+    color: #ffcc00;
+}
+
+/* Footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .redes {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    filter: grayscale(100%);
+    background-color: white;
+    color: #444;
+    text-decoration: none;
+}
+
+footer .redes:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover para redes sociales */
+footer .facebook:hover {
+    background-color: #1877F2;
+    color: white;
+}
+
+footer .x-twitter:hover {
+    background-color: #000000;
+    color: white;
+}
+
+footer .instagram:hover {
+    background: linear-gradient(45deg, #833AB4, #E1306C, #FD1D1D);
+    color: white;
+}
+
+footer .telegram:hover {
+    background-color: #0088CC;
+    color: white;
+}
+
+footer .tiktok:hover {
+    background-color: #69C9D0;
+    color: black;
+}
+
+/* Enlaces del footer */
+.enlacesWeb {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.enlacesWeb a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.enlacesWeb a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.enlacesWeb a:hover::after {
+    width: 100%;
+    opacity: 1;
+}

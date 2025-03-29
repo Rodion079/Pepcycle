@@ -156,13 +156,22 @@
   </header>
 
   <nav>
-    <input type="checkbox" id="menu-toggle" />
-    <label id="hamburguesa" for="menu-toggle">☰</label>
-    <ul>
-      <li><a href="index.html" class="enlaceNav">Inicio</a></li>
-      <li><a href="bicisCarretera.html" class="enlaceNav">Bicis</a></li>
-      <li><a href="registro.html" class="enlaceNav">Registro</a></li>
-    </ul>
+      <input type="checkbox" id="menu-toggle">
+      <label id="hamburguesa" for="menu-toggle">☰</label>
+      <ul>
+          <li><a href="index.html" class="enlaceNav">Inicio</a></li>
+          <li class="desplegableNav">
+              <a href="#" class="enlaceNav">Bicis</a>
+              <ul class="desplegableNavContenido">
+                  <li><a href="bicisCarretera.html">Carretera</a></li>
+                  <li><a href="bicisMontana.html">Montaña</a></li>
+                  <li><a href="bicisPista.html">Pista</a></li>
+                  <li><a href="accesorios.html">Accesorios</a></li>
+              </ul>
+          </li>
+          <li><a href="index.html#conocenos" class="enlaceNav">Conócenos</a></li>
+          <li><a href="registro.html" class="enlaceNav">Registro</a></li>
+      </ul>
   </nav>
 
   <main>
