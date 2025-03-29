@@ -1710,29 +1710,28 @@ img:hover {
 .btn-volver {
     background-color: transparent;
     color: #333;
-    border: 2px solid #333;
-    padding: 8px 15px;
-    font-size: 0.9rem;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.95rem;
     border-radius: 5px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    width: fit-content;
-    max-width: 100%;
-    text-align: center;
     transition: all 0.3s ease;
+    font-weight: 500;
+    margin: 15px;
 }
 
 .btn-volver i {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-right: 6px;
+    transition: margin-right 0.3s;
 }
 
 .btn-volver:hover {
-    background-color: #f0f0f0;
+    background-color: #eaeaea;
     color: #007bff;
-    border-color: #007bff;
 }
 
 .producto {
