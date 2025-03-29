@@ -47,9 +47,10 @@
   </nav>
 
   <div class="volver-container">
-    <a href="../bicisPista.html#biciPersonalizablePista" class="btn-volver">
+    <!-- Cambio de <a> por <button> y uso de JavaScript para forzar navegación -->
+    <button class="btn-volver" onclick="volverAlListado()">
       <i class="fa-solid fa-arrow-left"></i> Volver
-    </a>
+    </button>
   </div>
 
   <section class="producto">
@@ -156,7 +157,7 @@
   <script>
     const tipoBici = "pista";
     const claveStorage = `seleccionBiciPersonalizada-${tipoBici}`;
-  
+
     const precios = {
       talla: {
         "S (49-52 cm)": 2250,
@@ -180,48 +181,64 @@
         "Naranja brillante": 490
       }
     };
-  
+
     function actualizarPrecio() {
       const talla = document.getElementById('talla').value;
       const material = document.getElementById('material').value;
       const ruedas = document.getElementById('ruedas').value;
       const color = document.getElementById('color').value;
-  
+
       let precio = 0;
-  
+
       if (precios.talla[talla]) precio += precios.talla[talla];
       if (precios.material[material]) precio += precios.material[material];
       if (precios.ruedas[ruedas]) precio += precios.ruedas[ruedas];
       if (precios.color[color]) precio += precios.color[color];
-  
+
       const precioTexto = precio > 0 ? `Precio: ${precio.toFixed(2)}€` : 'Precio depende de la elección';
       document.querySelector('.producto-info .precio').textContent = precioTexto;
-  
+
       return precio;
     }
-  
+
     function addToCart() {
       const talla = document.getElementById('talla').value;
       const material = document.getElementById('material').value;
       const ruedas = document.getElementById('ruedas').value;
       const color = document.getElementById('color').value;
-  
+
       const faltantes = [];
-  
+
       if (talla === "-elegir-") faltantes.push("✅ Talla");
       if (material === "-elegir-") faltantes.push("✅ Material");
       if (ruedas === "-elegir-") faltantes.push("✅ Ruedas");
       if (color === "-elegir-") faltantes.push("✅ Color");
-  
+
       if (faltantes.length > 0) {
         mostrarModal(faltantes);
         return;
       }
-  
+
       const precio = actualizarPrecio();
-  
+
+      let nombreBonito = "";
+
+      switch (tipoBici) {
+        case "carretera":
+          nombreBonito = "Bicicleta de Carretera Personalizada";
+          break;
+        case "montana":
+          nombreBonito = "Bicicleta de Montaña Personalizada";
+          break;
+        case "pista":
+          nombreBonito = "Bicicleta de Pista Personalizada";
+          break;
+        default:
+          nombreBonito = "Bicicleta Personalizada";
+      }
+
       const producto = {
-        nombre: "Bicicleta Personalizada",
+        nombre: nombreBonito,
         precio,
         cantidad: 1,
         talla,
@@ -229,29 +246,29 @@
         ruedas,
         color
       };
-  
+
       const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
       cesta.push(producto);
       localStorage.setItem('cesta', JSON.stringify(cesta));
-  
+
       guardarSeleccionEnLocalStorage();
-  
+
       alert("¡Bicicleta añadida a la cesta!");
     }
-  
+
     function mostrarModal(faltantes) {
       const modal = document.getElementById('modalError');
       const contenido = document.querySelector('.modal-contenido p');
-  
+
       contenido.innerHTML = `Por favor, asegúrate de seleccionar:<br>${faltantes.join('<br>')}<br><br>¡Así podremos crear la bici de tus sueños! 🚴‍♀️✨`;
-  
+
       modal.style.display = 'block';
     }
-  
+
     function cerrarModal() {
       document.getElementById('modalError').style.display = 'none';
     }
-  
+
     function guardarSeleccionEnLocalStorage() {
       const seleccion = {
         talla: document.getElementById('talla').value,
@@ -261,32 +278,48 @@
       };
       localStorage.setItem(claveStorage, JSON.stringify(seleccion));
     }
-  
-    function cargarSeleccionGuardada() {
-      const seleccion = JSON.parse(localStorage.getItem(claveStorage));
-      if (!seleccion) return;
-  
-      if (seleccion.talla) document.getElementById('talla').value = seleccion.talla;
-      if (seleccion.material) document.getElementById('material').value = seleccion.material;
-      if (seleccion.ruedas) document.getElementById('ruedas').value = seleccion.ruedas;
-      if (seleccion.color) document.getElementById('color').value = seleccion.color;
-  
+
+    function resetearSeleccion() {
+      document.getElementById('talla').value = "-elegir-";
+      document.getElementById('material').value = "-elegir-";
+      document.getElementById('ruedas').value = "-elegir-";
+      document.getElementById('color').value = "-elegir-";
       actualizarPrecio();
     }
-  
+
+    function limpiarOtrasSelecciones() {
+      const tipos = ["carretera", "montana", "pista"];
+      tipos.forEach(tipo => {
+        localStorage.removeItem(`seleccionBiciPersonalizada-${tipo}`);
+      });
+    }
+
     // Escuchadores
     document.getElementById('talla').addEventListener('change', actualizarPrecio);
     document.getElementById('material').addEventListener('change', actualizarPrecio);
     document.getElementById('ruedas').addEventListener('change', actualizarPrecio);
     document.getElementById('color').addEventListener('change', actualizarPrecio);
-  
-    // Al cargar la página
+
+    // Al cargar la página (siempre resetear)
     window.addEventListener('DOMContentLoaded', () => {
-      cargarSeleccionGuardada();
+      limpiarOtrasSelecciones();
+      localStorage.removeItem(claveStorage);
+      setTimeout(() => {
+        resetearSeleccion();
+      }, 0);
     });
+
+    // 🔄 Si el navegador muestra la página desde caché del historial, forzar recarga
+    window.addEventListener("pageshow", function (event) {
+      if (event.persisted) {
+        location.reload();
+      }
+    });
+
+    // Función de navegación al hacer clic en "Volver"
+    function volverAlListado() {
+      location.href = "../bicisPista.html"; // Redirige directamente sin cachear el estado anterior
+    }
   </script>
-  
-  
-  
 </body>
 </html>
