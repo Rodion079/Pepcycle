@@ -147,58 +147,70 @@
         "Naranja brillante": 490
       }
     };
-
+  
     function actualizarPrecio() {
       const talla = document.getElementById('talla').value;
       const material = document.getElementById('material').value;
       const ruedas = document.getElementById('ruedas').value;
       const color = document.getElementById('color').value;
-
+  
       let precio = 0;
-
+  
       if (precios.talla[talla]) precio += precios.talla[talla];
       if (precios.material[material]) precio += precios.material[material];
       if (precios.ruedas[ruedas]) precio += precios.ruedas[ruedas];
       if (precios.color[color]) precio += precios.color[color];
-
-      document.getElementById('precioTotal').textContent = precio.toFixed(2);
+  
+      // Formato español: 3.200,99 €
+      document.getElementById('precioTotal').textContent = precio.toLocaleString('es-ES', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+        useGrouping: true
+      });
+  
       return precio;
     }
-
+  
     function addToCart() {
       const talla = document.getElementById('talla').value;
       const material = document.getElementById('material').value;
       const ruedas = document.getElementById('ruedas').value;
       const color = document.getElementById('color').value;
-
+  
       let faltantes = [];
       if (talla === "-elegir-") faltantes.push("Talla");
       if (material === "-elegir-") faltantes.push("Material");
       if (ruedas === "-elegir-") faltantes.push("Ruedas");
       if (color === "-elegir-") faltantes.push("Color");
-
+  
       if (faltantes.length > 0) {
         mostrarModalError(faltantes);
         return;
       }
-
-      // Guardar en la cesta
+  
+      const precioNumero = actualizarPrecio();
+  
       const producto = {
-        nombre: "Bicicleta Personalizable Pista",
+        nombre: "Bicicleta Personalizable Carretera",
         talla,
         material,
         ruedas,
         color,
-        precio: actualizarPrecio()
+        precioNumero,
+        precio: precioNumero.toLocaleString('es-ES', {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+          useGrouping: true
+        }) + " €"
       };
-
+  
       const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
       cesta.push(producto);
       localStorage.setItem('cesta', JSON.stringify(cesta));
-
+  
       mostrarModalExito();
     }
-
+  
     function mostrarModalError(faltantes) {
       const modal = document.getElementById('modalError');
       const faltantesList = document.getElementById('faltantesList');
@@ -212,23 +224,23 @@
       
       modal.style.display = "flex";
     }
-
+  
     function cerrarModalError() {
       const modal = document.getElementById('modalError');
       modal.style.display = "none";
     }
-
+  
     function mostrarModalExito() {
       const modal = document.getElementById('modalExito');
       modal.style.display = "flex";
     }
-
+  
     function cerrarModalExito() {
       const modal = document.getElementById('modalExito');
       modal.style.display = "none";
     }
-
-    // Resetea las selecciones al cargar la página
+  
+    // Inicializar valores al cargar la página
     window.addEventListener('DOMContentLoaded', function() {
       document.getElementById('talla').value = "-elegir-";
       document.getElementById('material').value = "-elegir-";
@@ -237,5 +249,6 @@
       actualizarPrecio();
     });
   </script>
+  
 </body>
 </html>

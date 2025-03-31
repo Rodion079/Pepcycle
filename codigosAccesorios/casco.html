@@ -131,43 +131,51 @@
     <script>
         function addToCart() {
             const nombreProducto = "Casco Pepcycle";
-            const precioProducto = 185.99;
+            const precioNumero = 185.99; // Usa siempre punto como separador decimal
             const tallaSeleccionada = document.querySelector('.desplegableTallasBicis').value;
-
+    
             if (tallaSeleccionada === "Talla no elegida") {
-                mostrarModalError();  // Mostrar el mensaje de error si no se seleccionó talla
+                mostrarModalError();
                 return;
             }
-
+    
+            // Formatear precio correctamente con separadores españoles:
+            const precioFormateado = precioNumero.toLocaleString('es-ES', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+                useGrouping: true
+            }) + " €";
+    
             const producto = {
                 nombre: nombreProducto,
-                precio: precioProducto,
+                precio: precioFormateado,
+                precioNumero: precioNumero,
                 cantidad: 1,
                 talla: tallaSeleccionada
             };
-
-            const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
+    
+            let cesta = JSON.parse(localStorage.getItem('cesta')) || [];
             cesta.push(producto);
             localStorage.setItem('cesta', JSON.stringify(cesta));
-
-            mostrarModalExito();  // Mostrar el mensaje de éxito si se añade correctamente
+    
+            mostrarModalExito();
         }
-
+    
         function mostrarModalError() {
             const modal = document.getElementById('modalError');
             modal.style.display = 'flex';
         }
-
+    
         function cerrarModalError() {
             const modal = document.getElementById('modalError');
             modal.style.display = 'none';
         }
-
+    
         function mostrarModalExito() {
             const modal = document.getElementById('modalExito');
             modal.style.display = 'flex';
         }
-
+    
         function cerrarModalExito() {
             const modal = document.getElementById('modalExito');
             modal.style.display = 'none';
