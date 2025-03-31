@@ -1829,6 +1829,19 @@ transition: background-color 0.3s ease;
 background-color: #c0392b;
 }
 
+/* Cambiar la fuente del mensaje de error */
+.modal-error-content h3,
+.modal-error-content p,
+.modal-error-content ul {
+  font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente que desees */
+}
+
+/* Cambiar la fuente del mensaje de éxito */
+.modal-contenido-exito h2,
+.modal-contenido-exito p {
+  font-family: 'Poppins', sans-serif; /* Cambia 'Poppins' por la fuente que desees */
+}
+
 /* Efecto de aparición para el mensaje */
 @keyframes popin {
 0% {

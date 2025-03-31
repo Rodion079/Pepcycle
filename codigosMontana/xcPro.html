@@ -75,6 +75,24 @@
         </div>
     </section>
 
+    <!-- Modal de error -->
+    <div id="modalError" class="modal-error">
+        <div class="modal-error-content">
+            <h3>⚠️ ¡Ups! Algo salió mal...</h3>
+            <p>Elige una opción de talla para poder añadirla a la cesta.</p>
+            <button onclick="cerrarModalError()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modal de éxito -->
+    <div id="modalExito" class="modal-exito">
+        <div class="modal-contenido-exito">
+            <h2>¡Bicicleta XC Pro añadida a la cesta!</h2>
+            <p>¡Tu bicicleta personalizada ha sido guardada con éxito! Ahora puedes continuar comprando o revisar tu cesta.</p>
+            <button class="btn-cerrar-exito" onclick="cerrarModalExito()">Cerrar</button>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-container">
             <div id="contactoFooter" class="footer-column">
@@ -115,7 +133,7 @@
             const tallaSeleccionada = document.querySelector('.desplegableTallasBicis').value;
 
             if (tallaSeleccionada === "Talla no elegida") {
-                alert("Por favor, selecciona una talla.");
+                mostrarModalError();  // Mostrar el mensaje de error si no se seleccionó talla
                 return;
             }
 
@@ -130,7 +148,27 @@
             cesta.push(producto);
             localStorage.setItem('cesta', JSON.stringify(cesta));
 
-            alert("¡Bicicleta añadida a la cesta!");
+            mostrarModalExito();  // Mostrar el mensaje de éxito si se añade correctamente
+        }
+
+        function mostrarModalError() {
+            const modal = document.getElementById('modalError');
+            modal.style.display = 'flex';
+        }
+
+        function cerrarModalError() {
+            const modal = document.getElementById('modalError');
+            modal.style.display = 'none';
+        }
+
+        function mostrarModalExito() {
+            const modal = document.getElementById('modalExito');
+            modal.style.display = 'flex';
+        }
+
+        function cerrarModalExito() {
+            const modal = document.getElementById('modalExito');
+            modal.style.display = 'none';
         }
     </script>
 </body>

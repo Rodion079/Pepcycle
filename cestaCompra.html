@@ -104,6 +104,23 @@
       text-decoration: underline;
     }
 
+    .mensaje-vacia-cesta {
+      background-color: #ffeb3b;
+      color: #333;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .mensaje-vacia-cesta i {
+      font-size: 2rem;
+      color: #f44336;
+      margin-right: 10px;
+    }
+
     @media (max-width: 768px) {
       .cesta-container {
         margin: 20px;
@@ -156,27 +173,33 @@
   </header>
 
   <nav>
-      <input type="checkbox" id="menu-toggle">
-      <label id="hamburguesa" for="menu-toggle">☰</label>
-      <ul>
-          <li><a href="index.html" class="enlaceNav">Inicio</a></li>
-          <li class="desplegableNav">
-              <a href="#" class="enlaceNav">Bicis</a>
-              <ul class="desplegableNavContenido">
-                  <li><a href="bicisCarretera.html">Carretera</a></li>
-                  <li><a href="bicisMontana.html">Montaña</a></li>
-                  <li><a href="bicisPista.html">Pista</a></li>
-                  <li><a href="accesorios.html">Accesorios</a></li>
-              </ul>
-          </li>
-          <li><a href="index.html#conocenos" class="enlaceNav">Conócenos</a></li>
-          <li><a href="registro.html" class="enlaceNav">Registro</a></li>
-      </ul>
+    <input type="checkbox" id="menu-toggle">
+    <label id="hamburguesa" for="menu-toggle">☰</label>
+    <ul>
+      <li><a href="index.html" class="enlaceNav">Inicio</a></li>
+      <li class="desplegableNav">
+        <a href="#" class="enlaceNav">Bicis</a>
+        <ul class="desplegableNavContenido">
+          <li><a href="bicisCarretera.html">Carretera</a></li>
+          <li><a href="bicisMontana.html">Montaña</a></li>
+          <li><a href="bicisPista.html">Pista</a></li>
+          <li><a href="accesorios.html">Accesorios</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#conocenos" class="enlaceNav">Conócenos</a></li>
+      <li><a href="registro.html" class="enlaceNav">Registro</a></li>
+    </ul>
   </nav>
 
   <main>
     <section class="cesta-container">
       <h1>Mi Cesta</h1>
+
+      <div id="mensajeVacia" class="mensaje-vacia-cesta">
+        <i class="fa-solid fa-cart-flatbed"></i>
+        <p>¡Ups! Tu cesta está vacía. <br>Añade productos para empezar a comprar.</p>
+      </div>
+
       <table class="tabla-cesta">
         <thead>
           <tr>
@@ -192,7 +215,7 @@
       </table>
 
       <div class="resumen-cesta">
-        <p><strong>Total:</strong> <span id="totalCesta">0,00€</span></p>
+        <p><strong>Total:</strong> <span id="totalCesta">0,00 €</span></p>
         <button class="btn" onclick="validarCesta()">Proceder al Pago</button>
       </div>
     </section>
@@ -200,64 +223,77 @@
 
   <footer>
     <div class="footer-container">
-        <div id="contactoFooter" class="footer-column">
-            <p class="footer-title">Contáctanos:</p>
-            <ul>
-                <li>📱: +34 684 181 438</li>
-                <li>📧: medaccorreo@medac.com</li>
-                <li>@pepcycle</li>
-            </ul>
-        </div>
-        <div id="redesFooter" class="footer-column">
-            <p class="footer-title">Síguenos:</p>
-            <ul id="segundoUlFooter">
-                <li><a href="https://www.facebook.com" target="_blank" class="redes facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="https://x.com" target="_blank" class="redes x-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com" target="_blank" class="redes instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="https://web.telegram.org/a/" target="_blank" class="redes telegram"><i class="fa-brands fa-telegram-plane"></i></a></li>
-                <li><a href="https://www.tiktok.com" target="_blank" class="redes tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
-            </ul>
-        </div>
+      <div id="contactoFooter" class="footer-column">
+        <p class="footer-title">Contáctanos:</p>
+        <ul>
+          <li>📱: +34 684 181 438</li>
+          <li>📧: medaccorreo@medac.com</li>
+          <li>@pepcycle</li>
+        </ul>
+      </div>
+      <div id="redesFooter" class="footer-column">
+        <p class="footer-title">Síguenos:</p>
+        <ul id="segundoUlFooter">
+          <li><a href="https://www.facebook.com" target="_blank" class="redes facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="https://x.com" target="_blank" class="redes x-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com" target="_blank" class="redes instagram"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://web.telegram.org/a/" target="_blank" class="redes telegram"><i class="fa-brands fa-telegram-plane"></i></a></li>
+          <li><a href="https://www.tiktok.com" target="_blank" class="redes tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
+        </ul>
+      </div>
     </div>
 
     <div class="enlacesWeb">
-        <a href="../index.html">Inicio</a>
-        <a href="../registro.html">Registro</a>
-        <a href="../politicaPepcycle.html">Política</a>
+      <a href="../index.html">Inicio</a>
+      <a href="../registro.html">Registro</a>
+      <a href="../politicaPepcycle.html">Política</a>
     </div>
 
     <hr>
 
     <p class="copyright">&copy; Copyright Pepcycle 2025 | Todos los derechos reservados.</p>
-    </footer>
+  </footer>
 
   <script defer>
     function cargarCesta() {
       const productos = JSON.parse(localStorage.getItem('cesta')) || [];
       const tbody = document.getElementById('cestaProductos');
+      const mensajeVacia = document.getElementById('mensajeVacia');
       let total = 0;
 
       tbody.innerHTML = '';
 
-      productos.forEach((producto, index) => {
-        // Asegurar que el precio es un número válido
-        const precioUnitario = parseFloat(producto.precio) || 0;
-        total += precioUnitario;
+      if (productos.length === 0) {
+        mensajeVacia.style.display = 'block';
+      } else {
+        mensajeVacia.style.display = 'none';
+        productos.forEach((producto, index) => {
+          const precioUnitario = Number(producto.precio); // Aseguramos que sea número
+          total += precioUnitario;
 
-        const fila = `
-          <tr>
-            <td>${producto.nombre}</td>
-            <td>${producto.talla || '-'}</td>
-            <td>${precioUnitario.toFixed(2)}€</td>
-            <td>
-              <button class="btn btn-eliminar" onclick="eliminarProducto(${index})">Eliminar</button>
-            </td>
-          </tr>
-        `;
-        tbody.insertAdjacentHTML('beforeend', fila);
-      });
+          const precioFormateado = precioUnitario
+            .toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
+            .replace(/\s€/, '€'); // Elimina el espacio entre número y símbolo €
 
-      document.getElementById('totalCesta').innerText = `${total.toFixed(2)}€`;
+          const fila = `
+            <tr>
+              <td>${producto.nombre}</td>
+              <td>${producto.talla || '-'}</td>
+              <td>${precioFormateado}</td>
+              <td>
+                <button class="btn btn-eliminar" onclick="eliminarProducto(${index})">Eliminar</button>
+              </td>
+            </tr>
+          `;
+          tbody.insertAdjacentHTML('beforeend', fila);
+        });
+      }
+
+      const totalFormateado = total
+        .toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
+        .replace(/\s€/, '€');
+
+      document.getElementById('totalCesta').innerText = totalFormateado;
     }
 
     function eliminarProducto(index) {
@@ -270,13 +306,13 @@
     function validarCesta() {
       const productos = JSON.parse(localStorage.getItem('cesta')) || [];
       if (productos.length === 0) {
-        alert("La cesta está vacía. Añade productos antes de proceder al pago.");
+        document.getElementById('mensajeVacia').style.display = 'block';
       } else {
         window.location.href = "formularioCompra.html";
       }
     }
 
     window.addEventListener('DOMContentLoaded', cargarCesta);
-  </script>
+  </script>  
 </body>
 </html>

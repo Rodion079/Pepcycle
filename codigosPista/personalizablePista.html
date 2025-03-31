@@ -6,12 +6,8 @@
   <link rel="stylesheet" href="../styles.css" />
   <link rel="shortcut icon" href="../fotos/logo/logo2.png" type="image/x-icon"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <title>Bicicleta personalizable</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -47,23 +43,22 @@
   </nav>
 
   <div class="volver-container">
-    <!-- Cambio de <a> por <button> y uso de JavaScript para forzar navegación -->
-    <button class="btn-volver" onclick="volverAlListado()">
+    <a href="../bicisMontana.html#biciPersonalizableMontana" class="btn-volver" id="volverBtn">
       <i class="fa-solid fa-arrow-left"></i> Volver
-    </button>
+    </a>
   </div>
 
   <section class="producto">
     <img src="../fotos/imagenesBicis/bicisPista/modeloBasePista.webp" alt="Bicicleta de pista" />
     <div class="producto-info">
       <h1>Personaliza tu bici</h1>
-      <p class="precio">Precio depende de la elección</p>
+      <p class="precio">Precio: <span id="precioTotal">0</span>€</p>
       <p>Elije las características de tu bicicleta para personalizarla a tu gusto. Cada opción puede afectar el precio.</p>
 
       <!-- Talla -->
       <div class="contenedorDesplegable">
         <label for="talla">Talla:</label>
-        <select id="talla" class="desplegableTallasBicis">
+        <select id="talla" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
           <option value="S (49-52 cm)">S (49-52 cm)</option>
           <option value="M (53-56 cm)">M (53-56 cm)</option>
@@ -74,7 +69,7 @@
       <!-- Material -->
       <div class="contenedorDesplegable">
         <label for="material">Material:</label>
-        <select id="material" class="desplegableTallasBicis">
+        <select id="material" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
           <option value="Aluminio">Aluminio</option>
           <option value="Aluminio aleado">Aluminio aleado</option>
@@ -86,7 +81,7 @@
       <!-- Ruedas -->
       <div class="contenedorDesplegable">
         <label for="ruedas">Ruedas:</label>
-        <select id="ruedas" class="desplegableTallasBicis">
+        <select id="ruedas" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
           <option value="26 pulgadas">26 pulgadas</option>
           <option value="27.5 pulgadas">27.5 pulgadas</option>
@@ -97,7 +92,7 @@
       <!-- Color -->
       <div class="contenedorDesplegable">
         <label for="color">Color:</label>
-        <select id="color" class="desplegableTallasBicis">
+        <select id="color" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
           <option value="Verde flúor">Verde flúor</option>
           <option value="Azul metálico">Azul metálico</option>
@@ -109,55 +104,26 @@
     </div>
   </section>
 
-  <footer>
-    <div class="footer-container">
-      <div id="contactoFooter" class="footer-column">
-        <p class="footer-title">Contáctanos:</p>
-        <ul>
-          <li>📱: +34 684 181 438</li>
-          <li>📧: medaccorreo@medac.com</li>
-          <li>@pepcycle</li>
-        </ul>
-      </div>
-      <div id="redesFooter" class="footer-column">
-        <p class="footer-title">Síguenos:</p>
-        <ul id="segundoUlFooter">
-          <li><a href="https://www.facebook.com" target="_blank" class="redes facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-          <li><a href="https://x.com" target="_blank" class="redes x-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-          <li><a href="https://www.instagram.com" target="_blank" class="redes instagram"><i class="fa-brands fa-instagram"></i></a></li>
-          <li><a href="https://web.telegram.org/a/" target="_blank" class="redes telegram"><i class="fa-brands fa-telegram-plane"></i></a></li>
-          <li><a href="https://www.tiktok.com" target="_blank" class="redes tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="enlacesWeb">
-      <a href="../index.html">Inicio</a>
-      <a href="../registro.html">Registro</a>
-      <a href="../politicaPepcycle.html">Política</a>
-    </div>
-    <hr>
-    <p class="copyright">&copy; Copyright Pepcycle 2025 | Todos los derechos reservados.</p>
-  </footer>
-
   <!-- Modal de error -->
-  <div id="modalError" class="modal">
-    <div class="modal-contenido">
-      <h2>⚠️ ¡Ups! Parece que falta algo...</h2>
-      <p>Por favor, asegúrate de seleccionar:<br>
-        ✅ Talla<br>
-        ✅ Material<br>
-        ✅ Ruedas<br>
-        ✅ Color<br><br>
-        ¡Así podremos crear la bici de tus sueños! 🚴‍♀️✨
-      </p>
-      <button class="cerrar-modal" onclick="cerrarModal()">Entendido</button>
+  <div id="modalError" class="modal-error">
+    <div class="modal-error-content">
+      <h3>¡Oops! Parece que te olvidaste de algo...</h3>
+      <p>Para que podamos crear la bicicleta de tus sueños, necesitamos que elijas los siguientes detalles:</p>
+      <ul id="faltantesList"></ul>
+      <button onclick="cerrarModalError()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Modal de éxito -->
+  <div id="modalExito" class="modal-exito">
+    <div class="modal-contenido-exito">
+      <h2>¡Bicicleta Personalizable de Pista añadida a la cesta!</h2>
+      <p>¡Tu bicicleta personalizada ha sido guardada con éxito! Ahora puedes continuar comprando o revisar tu cesta.</p>
+      <button class="btn-cerrar-exito" onclick="cerrarModalExito()">Cerrar</button>
     </div>
   </div>
 
   <script>
-    const tipoBici = "pista";
-    const claveStorage = `seleccionBiciPersonalizada-${tipoBici}`;
-
     const precios = {
       talla: {
         "S (49-52 cm)": 2250,
@@ -195,9 +161,7 @@
       if (precios.ruedas[ruedas]) precio += precios.ruedas[ruedas];
       if (precios.color[color]) precio += precios.color[color];
 
-      const precioTexto = precio > 0 ? `Precio: ${precio.toFixed(2)}€` : 'Precio depende de la elección';
-      document.querySelector('.producto-info .precio').textContent = precioTexto;
-
+      document.getElementById('precioTotal').textContent = precio.toFixed(2);
       return precio;
     }
 
@@ -207,119 +171,71 @@
       const ruedas = document.getElementById('ruedas').value;
       const color = document.getElementById('color').value;
 
-      const faltantes = [];
-
-      if (talla === "-elegir-") faltantes.push("✅ Talla");
-      if (material === "-elegir-") faltantes.push("✅ Material");
-      if (ruedas === "-elegir-") faltantes.push("✅ Ruedas");
-      if (color === "-elegir-") faltantes.push("✅ Color");
+      let faltantes = [];
+      if (talla === "-elegir-") faltantes.push("Talla");
+      if (material === "-elegir-") faltantes.push("Material");
+      if (ruedas === "-elegir-") faltantes.push("Ruedas");
+      if (color === "-elegir-") faltantes.push("Color");
 
       if (faltantes.length > 0) {
-        mostrarModal(faltantes);
+        mostrarModalError(faltantes);
         return;
       }
 
-      const precio = actualizarPrecio();
-
-      let nombreBonito = "";
-
-      switch (tipoBici) {
-        case "carretera":
-          nombreBonito = "Bicicleta de Carretera Personalizada";
-          break;
-        case "montana":
-          nombreBonito = "Bicicleta de Montaña Personalizada";
-          break;
-        case "pista":
-          nombreBonito = "Bicicleta de Pista Personalizada";
-          break;
-        default:
-          nombreBonito = "Bicicleta Personalizada";
-      }
-
+      // Guardar en la cesta
       const producto = {
-        nombre: nombreBonito,
-        precio,
-        cantidad: 1,
+        nombre: "Bicicleta Personalizable Pista",
         talla,
         material,
         ruedas,
-        color
+        color,
+        precio: actualizarPrecio()
       };
 
       const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
       cesta.push(producto);
       localStorage.setItem('cesta', JSON.stringify(cesta));
 
-      guardarSeleccionEnLocalStorage();
-
-      alert("¡Bicicleta añadida a la cesta!");
+      mostrarModalExito();
     }
 
-    function mostrarModal(faltantes) {
+    function mostrarModalError(faltantes) {
       const modal = document.getElementById('modalError');
-      const contenido = document.querySelector('.modal-contenido p');
-
-      contenido.innerHTML = `Por favor, asegúrate de seleccionar:<br>${faltantes.join('<br>')}<br><br>¡Así podremos crear la bici de tus sueños! 🚴‍♀️✨`;
-
-      modal.style.display = 'block';
+      const faltantesList = document.getElementById('faltantesList');
+      
+      faltantesList.innerHTML = '';
+      faltantes.forEach(faltante => {
+        const li = document.createElement('li');
+        li.innerHTML = `<i class="fa-solid fa-exclamation-triangle"></i>${faltante} <span style="color: #e74c3c;">(¡Debe ser seleccionado!)</span>`;
+        faltantesList.appendChild(li);
+      });
+      
+      modal.style.display = "flex";
     }
 
-    function cerrarModal() {
-      document.getElementById('modalError').style.display = 'none';
+    function cerrarModalError() {
+      const modal = document.getElementById('modalError');
+      modal.style.display = "none";
     }
 
-    function guardarSeleccionEnLocalStorage() {
-      const seleccion = {
-        talla: document.getElementById('talla').value,
-        material: document.getElementById('material').value,
-        ruedas: document.getElementById('ruedas').value,
-        color: document.getElementById('color').value
-      };
-      localStorage.setItem(claveStorage, JSON.stringify(seleccion));
+    function mostrarModalExito() {
+      const modal = document.getElementById('modalExito');
+      modal.style.display = "flex";
     }
 
-    function resetearSeleccion() {
+    function cerrarModalExito() {
+      const modal = document.getElementById('modalExito');
+      modal.style.display = "none";
+    }
+
+    // Resetea las selecciones al cargar la página
+    window.addEventListener('DOMContentLoaded', function() {
       document.getElementById('talla').value = "-elegir-";
       document.getElementById('material').value = "-elegir-";
       document.getElementById('ruedas').value = "-elegir-";
       document.getElementById('color').value = "-elegir-";
       actualizarPrecio();
-    }
-
-    function limpiarOtrasSelecciones() {
-      const tipos = ["carretera", "montana", "pista"];
-      tipos.forEach(tipo => {
-        localStorage.removeItem(`seleccionBiciPersonalizada-${tipo}`);
-      });
-    }
-
-    // Escuchadores
-    document.getElementById('talla').addEventListener('change', actualizarPrecio);
-    document.getElementById('material').addEventListener('change', actualizarPrecio);
-    document.getElementById('ruedas').addEventListener('change', actualizarPrecio);
-    document.getElementById('color').addEventListener('change', actualizarPrecio);
-
-    // Al cargar la página (siempre resetear)
-    window.addEventListener('DOMContentLoaded', () => {
-      limpiarOtrasSelecciones();
-      localStorage.removeItem(claveStorage);
-      setTimeout(() => {
-        resetearSeleccion();
-      }, 0);
     });
-
-    // 🔄 Si el navegador muestra la página desde caché del historial, forzar recarga
-    window.addEventListener("pageshow", function (event) {
-      if (event.persisted) {
-        location.reload();
-      }
-    });
-
-    // Función de navegación al hacer clic en "Volver"
-    function volverAlListado() {
-      location.href = "../bicisPista.html"; // Redirige directamente sin cachear el estado anterior
-    }
   </script>
 </body>
 </html>

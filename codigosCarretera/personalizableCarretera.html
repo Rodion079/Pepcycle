@@ -8,12 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <title>Bicicleta personalizable</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -49,7 +43,7 @@
   </nav>
 
   <div class="volver-container">
-    <a href="../bicisCarretera.html#biciPersonalizableCarretera" class="btn-volver">
+    <a href="../bicisCarretera.html#biciPersonalizableCarretera" class="btn-volver" id="volverBtn">
       <i class="fa-solid fa-arrow-left"></i> Volver
     </a>
   </div>
@@ -123,7 +117,7 @@
   <!-- Modal de éxito -->
   <div id="modalExito" class="modal-exito">
     <div class="modal-contenido-exito">
-      <h2>¡Bicicleta Personalizable Carretera añadida a la cesta!</h2>
+      <h2>¡Bicicleta Personalizable Montaña añadida a la cesta!</h2>
       <p>¡Tu bicicleta personalizada ha sido guardada con éxito! Ahora puedes continuar comprando o revisar tu cesta.</p>
       <button class="btn-cerrar-exito" onclick="cerrarModalExito()">Cerrar</button>
     </div>
@@ -188,8 +182,9 @@
         return;
       }
 
+      // Guardar en la cesta
       const producto = {
-        nombre: "Bicicleta Personalizable Carretera", // Cambié aquí el nombre
+        nombre: "Bicicleta Personalizable Carretera",
         talla,
         material,
         ruedas,
@@ -233,20 +228,13 @@
       modal.style.display = "none";
     }
 
-    function resetearSeleccion() {
-      // Limpiar cualquier valor guardado en localStorage que pueda persistir
-      localStorage.removeItem('seleccionBiciPersonalizada');
-
-      // Restablecer las selecciones de los formularios
+    // Resetea las selecciones al cargar la página
+    window.addEventListener('DOMContentLoaded', function() {
       document.getElementById('talla').value = "-elegir-";
       document.getElementById('material').value = "-elegir-";
       document.getElementById('ruedas').value = "-elegir-";
       document.getElementById('color').value = "-elegir-";
       actualizarPrecio();
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      resetearSeleccion();
     });
   </script>
 </body>
