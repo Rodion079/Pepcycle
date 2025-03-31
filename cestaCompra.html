@@ -254,65 +254,65 @@
     <p class="copyright">&copy; Copyright Pepcycle 2025 | Todos los derechos reservados.</p>
   </footer>
 
-  <script defer>
+  <script>
     function cargarCesta() {
       const productos = JSON.parse(localStorage.getItem('cesta')) || [];
       const tbody = document.getElementById('cestaProductos');
       const mensajeVacia = document.getElementById('mensajeVacia');
       let total = 0;
-
+  
       tbody.innerHTML = '';
-
-      if (productos.length === 0) {
-        mensajeVacia.style.display = 'block';
-      } else {
-        mensajeVacia.style.display = 'none';
-        productos.forEach((producto, index) => {
-          const precioUnitario = Number(producto.precio); // Aseguramos que sea número
-          total += precioUnitario;
-
-          const precioFormateado = precioUnitario
-            .toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
-            .replace(/\s€/, '€'); // Elimina el espacio entre número y símbolo €
-
-          const fila = `
-            <tr>
-              <td>${producto.nombre}</td>
-              <td>${producto.talla || '-'}</td>
-              <td>${precioFormateado}</td>
-              <td>
-                <button class="btn btn-eliminar" onclick="eliminarProducto(${index})">Eliminar</button>
-              </td>
-            </tr>
-          `;
-          tbody.insertAdjacentHTML('beforeend', fila);
-        });
-      }
-
-      const totalFormateado = total
-        .toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
-        .replace(/\s€/, '€');
-
+  
+      // Ocultar siempre el mensaje al cargar o eliminar artículos
+      mensajeVacia.style.display = 'none';
+  
+      productos.forEach((producto, index) => {
+        total += producto.precioNumero || 0;
+  
+        const fila = `
+          <tr>
+            <td>${producto.nombre}</td>
+            <td>${producto.talla || '-'}</td>
+            <td>${producto.precio}</td>
+            <td>
+              <button class="btn btn-eliminar" onclick="eliminarProducto(${index})">Eliminar</button>
+            </td>
+          </tr>
+        `;
+        tbody.insertAdjacentHTML('beforeend', fila);
+      });
+  
+      const totalFormateado = total.toLocaleString('es-ES', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+        useGrouping: true
+      }) + " €";
+  
       document.getElementById('totalCesta').innerText = totalFormateado;
     }
-
+  
     function eliminarProducto(index) {
       let productos = JSON.parse(localStorage.getItem('cesta')) || [];
       productos.splice(index, 1);
       localStorage.setItem('cesta', JSON.stringify(productos));
       cargarCesta();
     }
-
+  
     function validarCesta() {
       const productos = JSON.parse(localStorage.getItem('cesta')) || [];
+      const mensajeVacia = document.getElementById('mensajeVacia');
+  
       if (productos.length === 0) {
-        document.getElementById('mensajeVacia').style.display = 'block';
+        mensajeVacia.style.display = 'block';
       } else {
+        mensajeVacia.style.display = 'none';
         window.location.href = "formularioCompra.html";
       }
     }
-
+  
     window.addEventListener('DOMContentLoaded', cargarCesta);
-  </script>  
+  </script>
+  
+    
 </body>
 </html>
