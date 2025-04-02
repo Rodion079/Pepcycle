@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="../fotos/logo/logo2.png" type="image/x-icon"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <title>Bicicleta personalizable</title>
+  <title>Bicicleta personalizable de montaña</title>
 </head>
 <body>
   <header>
@@ -51,18 +51,21 @@
   <section class="producto">
     <img src="../fotos/imagenesBicis/bicisMontana/modeloBaseMontana.webp" alt="Bicicleta de montaña" />
     <div class="producto-info">
-      <h1>Personaliza tu bici</h1>
-      <p class="precio">Precio: <span id="precioTotal">0</span>€</p>
-      <p>Elije las características de tu bicicleta para personalizarla a tu gusto. Cada opción puede afectar el precio.</p>
+      <h1>Personaliza tu bici de montaña</h1>
 
+      <p>Prepárate para conquistar cualquier terreno con nuestra bicicleta de montaña personalizable. Ya sea que busques velocidad en caminos pavimentados, tracción en senderos empinados o resistencia en rutas rocosas, nuestra bici de montaña está diseñada para adaptarse a tus necesidades. Elige las características que mejor se adapten a ti, desde el material del cuadro hasta el tipo de ruedas, pasando por el color y más.</p>
+
+      <p><strong>¿Listo para personalizar tu bici de montaña?</strong> ¡Hazlo ahora y prepárate para llevar tu experiencia de ciclismo al siguiente nivel!</p>
+
+      <p class="precio">Precio: <span id="precioTotal">0</span>€</p>
       <!-- Talla -->
       <div class="contenedorDesplegable">
         <label for="talla">Talla:</label>
         <select id="talla" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
-          <option value="S (49-52 cm)">S (49-52 cm)</option>
-          <option value="M (53-56 cm)">M (53-56 cm)</option>
-          <option value="L (57-60 cm)">L (57-60 cm)</option>
+          <option value="S (49-52 cm)">S (49-52 cm) - 2699.99€</option>
+          <option value="M (53-56 cm)">M (53-56 cm) - 2699.99€</option>
+          <option value="L (57-60 cm)">L (57-60 cm) - 2699.99€</option>
         </select>
       </div>
 
@@ -71,21 +74,33 @@
         <label for="material">Material:</label>
         <select id="material" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
-          <option value="Aluminio">Aluminio</option>
-          <option value="Aluminio aleado">Aluminio aleado</option>
-          <option value="Acero">Acero</option>
-          <option value="Fibra de carbono">Fibra de carbono</option>
+          <option value="Acero inoxidable">Acero inoxidable - 1750.50€</option>
+          <option value="Aluminio ultraligero">Aluminio ultraligero - 2499.99€</option>
+          <option value="Fibra de carbono">Fibra de carbono - 4500.75€</option>
+          <option value="Titanio">Titanio - 5800.99€</option>
         </select>
       </div>
 
       <!-- Ruedas -->
       <div class="contenedorDesplegable">
-        <label for="ruedas">Ruedas:</label>
+        <label for="ruedas">Tamaño de ruedas:</label>
         <select id="ruedas" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
-          <option value="26 pulgadas">26 pulgadas</option>
-          <option value="27.5 pulgadas">27.5 pulgadas</option>
-          <option value="29 pulgadas">29 pulgadas</option>
+          <option value="26 pulgadas">26 pulgadas - 720.25€</option>
+          <option value="27.5 pulgadas">27.5 pulgadas - 890.45€</option>
+          <option value="29 pulgadas">29 pulgadas - 1150.60€</option>
+        </select>
+      </div>
+
+      <!-- Tipo de rueda -->
+      <div class="contenedorDesplegable">
+        <label for="tipoRueda">Tipo de rueda:</label>
+        <select id="tipoRueda" class="desplegableTallasBicis" onchange="actualizarPrecio()">
+          <option value="-elegir-">-elegir-</option>
+          <option value="Con cámara">Con cámara - 150.80€</option>
+          <option value="Sin tacos">Sin tacos - 200.50€</option>
+          <option value="Con tacos">Con tacos - 300.99€</option>
+          <option value="Tubeless">Tubeless - 450.75€</option>
         </select>
       </div>
 
@@ -94,9 +109,9 @@
         <label for="color">Color:</label>
         <select id="color" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
-          <option value="Verde flúor">Verde flúor</option>
-          <option value="Azul metálico">Azul metálico</option>
-          <option value="Naranja brillante">Naranja brillante</option>
+          <option value="Negro mate">Negro mate - 520.35€</option>
+          <option value="Verde Militar">Verde Militar - 690.60€</option>
+          <option value="Rojo pasión">Rojo pasión - 830.95€</option>
         </select>
       </div>
 
@@ -126,75 +141,85 @@
   <script>
     const precios = {
       talla: {
-        "S (49-52 cm)": 2250,
-        "M (53-56 cm)": 2250,
-        "L (57-60 cm)": 2250
+        "S (49-52 cm)": 2699.99,
+        "M (53-56 cm)": 2699.99,
+        "L (57-60 cm)": 2699.99
       },
       material: {
-        "Acero": 600,
-        "Aluminio": 1150,
-        "Aluminio aleado": 1760,
-        "Fibra de carbono": 6380
+        "Acero inoxidable": 1750.50,
+        "Aluminio ultraligero": 2499.99,
+        "Fibra de carbono": 4500.75,
+        "Titanio": 5800.99
       },
       ruedas: {
-        "26 pulgadas": 450,
-        "27.5 pulgadas": 650,
-        "29 pulgadas": 849
+        "26 pulgadas": 720.25,
+        "27.5 pulgadas": 890.45,
+        "29 pulgadas": 1150.60
+      },
+      tipoRueda: {
+        "Con cámara": 150.80,
+        "Sin tacos": 200.50,
+        "Con tacos": 300.99,
+        "Tubeless": 450.75
       },
       color: {
-        "Azul metálico": 680,
-        "Verde flúor": 590,
-        "Naranja brillante": 490
+        "Negro mate": 520.35,
+        "Verde Militar": 690.60,
+        "Rojo pasión": 830.95
       }
     };
-  
+
     function actualizarPrecio() {
       const talla = document.getElementById('talla').value;
       const material = document.getElementById('material').value;
       const ruedas = document.getElementById('ruedas').value;
+      const tipoRueda = document.getElementById('tipoRueda').value;
       const color = document.getElementById('color').value;
-  
+
       let precio = 0;
-  
+
       if (precios.talla[talla]) precio += precios.talla[talla];
       if (precios.material[material]) precio += precios.material[material];
       if (precios.ruedas[ruedas]) precio += precios.ruedas[ruedas];
+      if (precios.tipoRueda[tipoRueda]) precio += precios.tipoRueda[tipoRueda];
       if (precios.color[color]) precio += precios.color[color];
-  
-      // Formato español: 3.200,99 €
+
       document.getElementById('precioTotal').textContent = precio.toLocaleString('es-ES', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
         useGrouping: true
       });
-  
+
       return precio;
     }
-  
+
     function addToCart() {
       const talla = document.getElementById('talla').value;
       const material = document.getElementById('material').value;
       const ruedas = document.getElementById('ruedas').value;
+      const tipoRueda = document.getElementById('tipoRueda').value;
       const color = document.getElementById('color').value;
-  
+
       let faltantes = [];
       if (talla === "-elegir-") faltantes.push("Talla");
       if (material === "-elegir-") faltantes.push("Material");
       if (ruedas === "-elegir-") faltantes.push("Ruedas");
+      if (tipoRueda === "-elegir-") faltantes.push("Tipo de rueda");
       if (color === "-elegir-") faltantes.push("Color");
-  
+
       if (faltantes.length > 0) {
         mostrarModalError(faltantes);
         return;
       }
-  
+
       const precioNumero = actualizarPrecio();
-  
+
       const producto = {
-        nombre: "Bicicleta Personalizable Carretera",
+        nombre: "Bicicleta Personalizable Montaña",
         talla,
         material,
         ruedas,
+        tipoRueda,
         color,
         precioNumero,
         precio: precioNumero.toLocaleString('es-ES', {
@@ -203,14 +228,14 @@
           useGrouping: true
         }) + " €"
       };
-  
+
       const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
       cesta.push(producto);
       localStorage.setItem('cesta', JSON.stringify(cesta));
-  
+
       mostrarModalExito();
     }
-  
+
     function mostrarModalError(faltantes) {
       const modal = document.getElementById('modalError');
       const faltantesList = document.getElementById('faltantesList');
@@ -224,27 +249,27 @@
       
       modal.style.display = "flex";
     }
-  
+
     function cerrarModalError() {
       const modal = document.getElementById('modalError');
       modal.style.display = "none";
     }
-  
+
     function mostrarModalExito() {
       const modal = document.getElementById('modalExito');
       modal.style.display = "flex";
     }
-  
+
     function cerrarModalExito() {
       const modal = document.getElementById('modalExito');
       modal.style.display = "none";
     }
-  
-    // Inicializar valores al cargar la página
+
     window.addEventListener('DOMContentLoaded', function() {
       document.getElementById('talla').value = "-elegir-";
       document.getElementById('material').value = "-elegir-";
       document.getElementById('ruedas').value = "-elegir-";
+      document.getElementById('tipoRueda').value = "-elegir-";
       document.getElementById('color').value = "-elegir-";
       actualizarPrecio();
     });

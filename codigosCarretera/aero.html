@@ -11,6 +11,14 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Eliminar colores de los mensajes en los modales */
+        .modal-error-content h3,
+        .modal-error-content p,
+        .modal-contenido-exito h2,
+        .modal-contenido-exito p {
+            color: inherit; /* Usa el color predeterminado del navegador */
+        }
     </style>
 </head>
 <body>
@@ -47,7 +55,7 @@
     </nav>
 
     <div class="volver-container">
-        <a href="../bicisCarretera.html#biciCuatroCarretera" class="btn-volver">
+        <a href="../bicisCarretera.html#biciUnoCarretera" class="btn-volver">
             <i class="fa-solid fa-arrow-left"></i> Volver
         </a>
     </div>
@@ -56,7 +64,7 @@
         <img src="../fotos/imagenesBicis/bicisCarretera/Carretera_Aero.webp" alt="Bicicleta de carretera">
         <div class="producto-info">
             <h1 style="text-align: center;">Aero</h1>
-            <p class="precio" style="text-align: right;">3.200,99€</p>
+            <p id="precioProducto" class="precio" style="text-align: right;">4.220,99 €</p>
             <p>Diseñada para la velocidad y la aerodinámica, esta bicicleta es perfecta 
                 para quienes buscan el máximo rendimiento en carretera. Su cuadro 
                 ultraligero y su geometría agresiva permiten cortar el viento con 
@@ -131,7 +139,7 @@
     <script>
         function addToCart() {
             const nombreProducto = "Aero";
-            const precioNumero = 3200.99; // Usa siempre punto como separador decimal
+            const precioNumero = 4220.99; // Precio correcto
             const tallaSeleccionada = document.querySelector('.desplegableTallasBicis').value;
     
             if (tallaSeleccionada === "Talla no elegida") {

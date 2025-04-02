@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="../fotos/logo/logo2.png" type="image/x-icon"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <title>Bicicleta personalizable</title>
+  <title>Bicicleta personalizable de carretera</title>
 </head>
 <body>
   <header>
@@ -51,18 +51,21 @@
   <section class="producto">
     <img src="../fotos/imagenesBicis/bicisCarretera/modeloBaseCarretera.webp" alt="Bicicleta de carretera" />
     <div class="producto-info">
-      <h1>Personaliza tu bici</h1>
-      <p class="precio">Precio: <span id="precioTotal">0</span>€</p>
-      <p>Elije las características de tu bicicleta para personalizarla a tu gusto. Cada opción puede afectar el precio.</p>
+      <h1>Personaliza tu bici de carretera</h1>
 
+      <p>Domina el asfalto con nuestra bicicleta de carretera personalizable. Ya sea que busques velocidad para tus entrenamientos o comodidad para tus largos recorridos, nuestra bici de carretera está diseñada para ofrecerte un rendimiento excepcional. Elige el material más ligero y resistente para el cuadro, ajusta las ruedas a tus necesidades y selecciona el color que mejor refleje tu estilo. Todo está diseñado para que tu experiencia sobre el asfalto sea única.</p>
+      
+      <p><strong>¿Estás listo para alcanzar tus metas en carretera?</strong> ¡Personaliza tu bici ahora y prepárate para alcanzar nuevas velocidades en cada kilómetro!</p>
+      
+      <p class="precio">Precio: <span id="precioTotal">0</span>€</p>
       <!-- Talla -->
       <div class="contenedorDesplegable">
         <label for="talla">Talla:</label>
         <select id="talla" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
-          <option value="S (49-52 cm)">S (49-52 cm)</option>
-          <option value="M (53-56 cm)">M (53-56 cm)</option>
-          <option value="L (57-60 cm)">L (57-60 cm)</option>
+          <option value="S (49-52 cm)">S (49-52 cm) - 2699.99€</option>
+          <option value="M (53-56 cm)">M (53-56 cm) - 2699.99€</option>
+          <option value="L (57-60 cm)">L (57-60 cm) - 2699.99€</option>
         </select>
       </div>
 
@@ -71,21 +74,33 @@
         <label for="material">Material:</label>
         <select id="material" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
-          <option value="Aluminio">Aluminio</option>
-          <option value="Aluminio aleado">Aluminio aleado</option>
-          <option value="Acero">Acero</option>
-          <option value="Fibra de carbono">Fibra de carbono</option>
+          <option value="Acero inoxidable">Acero inoxidable - 1750.50€</option>
+          <option value="Aluminio ultraligero">Aluminio ultraligero - 2499.99€</option>
+          <option value="Fibra de carbono">Fibra de carbono - 4500.75€</option>
+          <option value="Titanio">Titanio - 5800.99€</option>
         </select>
       </div>
 
       <!-- Ruedas -->
       <div class="contenedorDesplegable">
-        <label for="ruedas">Ruedas:</label>
+        <label for="ruedas">Tamaño de ruedas:</label>
         <select id="ruedas" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
-          <option value="26 pulgadas">26 pulgadas</option>
-          <option value="27.5 pulgadas">27.5 pulgadas</option>
-          <option value="29 pulgadas">29 pulgadas</option>
+          <option value="26 pulgadas">26 pulgadas - 720.25€</option>
+          <option value="27.5 pulgadas">27.5 pulgadas - 890.45€</option>
+          <option value="29 pulgadas">29 pulgadas - 1150.60€</option>
+        </select>
+      </div>
+
+      <!-- Tipo de rueda -->
+      <div class="contenedorDesplegable">
+        <label for="tipoRueda">Tipo de rueda:</label>
+        <select id="tipoRueda" class="desplegableTallasBicis" onchange="actualizarPrecio()">
+          <option value="-elegir-">-elegir-</option>
+          <option value="Con cámara">Con cámara - 150.80€</option>
+          <option value="Sin tacos">Sin tacos - 200.50€</option>
+          <option value="Con tacos">Con tacos - 300.99€</option>
+          <option value="Tubeless">Tubeless - 450.75€</option>
         </select>
       </div>
 
@@ -94,9 +109,9 @@
         <label for="color">Color:</label>
         <select id="color" class="desplegableTallasBicis" onchange="actualizarPrecio()">
           <option value="-elegir-">-elegir-</option>
-          <option value="Verde flúor">Verde flúor</option>
-          <option value="Azul metálico">Azul metálico</option>
-          <option value="Naranja brillante">Naranja brillante</option>
+          <option value="Negro mate">Negro mate - 520.35€</option>
+          <option value="Verde Militar">Verde Militar - 690.60€</option>
+          <option value="Rojo pasión">Rojo pasión - 830.95€</option>
         </select>
       </div>
 
@@ -117,7 +132,7 @@
   <!-- Modal de éxito -->
   <div id="modalExito" class="modal-exito">
     <div class="modal-contenido-exito">
-      <h2>¡Bicicleta Personalizable Montaña añadida a la cesta!</h2>
+      <h2>¡Bicicleta Personalizable de Carretera añadida a la cesta!</h2>
       <p>¡Tu bicicleta personalizada ha sido guardada con éxito! Ahora puedes continuar comprando o revisar tu cesta.</p>
       <button class="btn-cerrar-exito" onclick="cerrarModalExito()">Cerrar</button>
     </div>
@@ -126,76 +141,87 @@
   <script>
     const precios = {
       talla: {
-        "S (49-52 cm)": 2250,
-        "M (53-56 cm)": 2250,
-        "L (57-60 cm)": 2250
+        "S (49-52 cm)": 2200.75,
+        "M (53-56 cm)": 2200.75,
+        "L (57-60 cm)": 2200.75
       },
       material: {
-        "Acero": 600,
-        "Aluminio": 1150,
-        "Aluminio aleado": 1760,
-        "Fibra de carbono": 6380
+        "Acero": 750.55,
+        "Aluminio": 1450.99,
+        "Aluminio aleado": 2100.40,
+        "Fibra de carbono": 5700.99
       },
       ruedas: {
-        "26 pulgadas": 450,
-        "27.5 pulgadas": 650,
-        "29 pulgadas": 849
+        "26 pulgadas": 599.99,
+        "27.5 pulgadas": 950.25,
+        "29 pulgadas": 1200.70
       },
       color: {
-        "Azul metálico": 680,
-        "Verde flúor": 590,
-        "Naranja brillante": 490
+        "Azul metálico": 800.65,
+        "Verde flúor": 675.99,
+        "Naranja brillante": 790.50
+      },
+      materialRueda: {
+        "Aluminio": 500.99,
+        "Fibra de carbono": 1200.75,
+        "Titanio": 1500.99,
+        "Acero inoxidable": 850.50,
+        "Magnesio": 1600.85
       }
     };
-  
+
     function actualizarPrecio() {
       const talla = document.getElementById('talla').value;
       const material = document.getElementById('material').value;
       const ruedas = document.getElementById('ruedas').value;
       const color = document.getElementById('color').value;
-  
+      const materialRueda = document.getElementById('materialRueda').value;
+
       let precio = 0;
-  
+
       if (precios.talla[talla]) precio += precios.talla[talla];
       if (precios.material[material]) precio += precios.material[material];
       if (precios.ruedas[ruedas]) precio += precios.ruedas[ruedas];
       if (precios.color[color]) precio += precios.color[color];
-  
-      // Formato español: 3.200,99 €
+      if (precios.materialRueda[materialRueda]) precio += precios.materialRueda[materialRueda];
+
       document.getElementById('precioTotal').textContent = precio.toLocaleString('es-ES', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
         useGrouping: true
       });
-  
+
       return precio;
     }
-  
+
     function addToCart() {
       const talla = document.getElementById('talla').value;
       const material = document.getElementById('material').value;
       const ruedas = document.getElementById('ruedas').value;
       const color = document.getElementById('color').value;
-  
+      const materialRueda = document.getElementById('materialRueda').value;
+
       let faltantes = [];
       if (talla === "-elegir-") faltantes.push("Talla");
       if (material === "-elegir-") faltantes.push("Material");
       if (ruedas === "-elegir-") faltantes.push("Ruedas");
       if (color === "-elegir-") faltantes.push("Color");
-  
+      if (materialRueda === "-elegir-") faltantes.push("Material de las ruedas");
+
       if (faltantes.length > 0) {
         mostrarModalError(faltantes);
         return;
       }
-  
+
       const precioNumero = actualizarPrecio();
-  
+
       const producto = {
         nombre: "Bicicleta Personalizable Carretera",
         talla,
         material,
         ruedas,
         color,
+        materialRueda,
         precioNumero,
         precio: precioNumero.toLocaleString('es-ES', {
           minimumFractionDigits: 2,
@@ -203,14 +229,14 @@
           useGrouping: true
         }) + " €"
       };
-  
+
       const cesta = JSON.parse(localStorage.getItem('cesta')) || [];
       cesta.push(producto);
       localStorage.setItem('cesta', JSON.stringify(cesta));
-  
+
       mostrarModalExito();
     }
-  
+
     function mostrarModalError(faltantes) {
       const modal = document.getElementById('modalError');
       const faltantesList = document.getElementById('faltantesList');
@@ -224,31 +250,30 @@
       
       modal.style.display = "flex";
     }
-  
+
     function cerrarModalError() {
       const modal = document.getElementById('modalError');
       modal.style.display = "none";
     }
-  
+
     function mostrarModalExito() {
       const modal = document.getElementById('modalExito');
       modal.style.display = "flex";
     }
-  
+
     function cerrarModalExito() {
       const modal = document.getElementById('modalExito');
       modal.style.display = "none";
     }
-  
-    // Inicializar valores al cargar la página
+
     window.addEventListener('DOMContentLoaded', function() {
       document.getElementById('talla').value = "-elegir-";
       document.getElementById('material').value = "-elegir-";
       document.getElementById('ruedas').value = "-elegir-";
       document.getElementById('color').value = "-elegir-";
+      document.getElementById('materialRueda').value = "-elegir-";
       actualizarPrecio();
     });
   </script>
-  
 </body>
 </html>
